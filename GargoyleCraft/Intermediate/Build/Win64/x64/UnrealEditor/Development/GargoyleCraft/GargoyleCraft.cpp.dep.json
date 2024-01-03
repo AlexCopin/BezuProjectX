@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\unrealengine\\projectcraftgargoyle\\bezuprojectx\\gargoylecraft\\source\\gargoylecraft\\gargoylecraft.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unrealengine\\projectcraftgargoyle\\bezuprojectx\\gargoylecraft\\intermediate\\build\\win64\\x64\\gargoylecrafteditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "c:\\unrealengine\\projectcraftgargoyle\\bezuprojectx\\gargoylecraft\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gargoylecraft\\definitions.gargoylecraft.h",
+            "c:\\unrealengine\\projectcraftgargoyle\\bezuprojectx\\gargoylecraft\\source\\gargoylecraft\\gargoylecraft.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

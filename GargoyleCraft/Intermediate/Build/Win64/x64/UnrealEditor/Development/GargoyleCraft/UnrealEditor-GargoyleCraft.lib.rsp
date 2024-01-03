@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-GargoyleCraft.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\UnrealEngine\ProjectCraftGargoyle\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\GargoyleCraftEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"C:\UnrealEngine\ProjectCraftGargoyle\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\UnrealEditor\Development\GargoyleCraft\GargoyleCraft.cpp.obj"
+"C:\UnrealEngine\ProjectCraftGargoyle\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\UnrealEditor\Development\GargoyleCraft\Default.rc2.res"
+/OUT:"C:\UnrealEngine\ProjectCraftGargoyle\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\UnrealEditor\Development\GargoyleCraft\UnrealEditor-GargoyleCraft.lib"

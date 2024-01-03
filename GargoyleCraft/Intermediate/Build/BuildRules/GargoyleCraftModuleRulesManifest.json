@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\UnrealEngine\\ProjectCraftGargoyle\\BezuProjectX\\GargoyleCraft\\Source\\GargoyleCraft\\GargoyleCraft.Build.cs",
+		"C:\\UnrealEngine\\ProjectCraftGargoyle\\BezuProjectX\\GargoyleCraft\\Source\\GargoyleCraft.Target.cs",
+		"C:\\UnrealEngine\\ProjectCraftGargoyle\\BezuProjectX\\GargoyleCraft\\Source\\GargoyleCraftEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}
