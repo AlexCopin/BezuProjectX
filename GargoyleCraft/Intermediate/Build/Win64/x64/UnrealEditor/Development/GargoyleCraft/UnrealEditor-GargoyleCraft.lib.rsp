@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-GargoyleCraft.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"C:\UnrealEngine\ProjectCraftGargoyle\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\GargoyleCraftEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
-"C:\UnrealEngine\ProjectCraftGargoyle\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\UnrealEditor\Development\GargoyleCraft\GargoyleCraft.cpp.obj"
-"C:\UnrealEngine\ProjectCraftGargoyle\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\UnrealEditor\Development\GargoyleCraft\Default.rc2.res"
-/OUT:"C:\UnrealEngine\ProjectCraftGargoyle\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\UnrealEditor\Development\GargoyleCraft\UnrealEditor-GargoyleCraft.lib"
+"D:\Mes_Documents\Unreal Projects\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\GargoyleCraftEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"D:\Mes_Documents\Unreal Projects\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\UnrealEditor\Development\GargoyleCraft\GargoyleCraft.cpp.obj"
+"D:\Mes_Documents\Unreal Projects\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\UnrealEditor\Development\GargoyleCraft\Default.rc2.res"
+/OUT:"D:\Mes_Documents\Unreal Projects\BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\UnrealEditor\Development\GargoyleCraft\UnrealEditor-GargoyleCraft.lib"

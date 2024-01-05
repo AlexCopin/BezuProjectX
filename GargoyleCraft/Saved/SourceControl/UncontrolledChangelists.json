@@ -5,6 +5,15 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"D:/Mes_Documents/Unreal Projects/BezuProjectX/GargoyleCraft/Content/MathisTest/L_Mathis_Test.umap",
+				"D:/Mes_Documents/Unreal Projects/BezuProjectX/GargoyleCraft/Content/MathisTest/Level/L_Mathis_Test.umap",
+				"D:/Mes_Documents/Unreal Projects/BezuProjectX/GargoyleCraft/Content/MathisTest/GM_MOBA_GameModeBase.uasset",
+				"D:/Mes_Documents/Unreal Projects/BezuProjectX/GargoyleCraft/Content/MathisTest/BP_MOBA_P_Controller.uasset",
+				"D:/Mes_Documents/Unreal Projects/BezuProjectX/GargoyleCraft/Content/MathisTest/PC_MOBA_PlayerController.uasset",
+				"D:/Mes_Documents/Unreal Projects/BezuProjectX/GargoyleCraft/Content/MathisTest/Core/BP_MOBA_P_Controller.uasset",
+				"D:/Mes_Documents/Unreal Projects/BezuProjectX/GargoyleCraft/Content/MathisTest/Core/GM_MOBA_GameModeBase.uasset",
+				"D:/Mes_Documents/Unreal Projects/BezuProjectX/GargoyleCraft/Content/MathisTest/Core/PC_MOBA_PlayerController.uasset",
+				"D:/Mes_Documents/Unreal Projects/BezuProjectX/GargoyleCraft/Content/MathisTest/BP_MOBA_PlayerController.uasset",
 				"C:/UnrealEngine/ProjectCraftGargoyle/BezuProjectX/GargoyleCraft/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset"
 			]
 		}
