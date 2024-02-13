@@ -11,6 +11,7 @@
     <None Include="..\..\Source\GargoyleCraftEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -37,6 +38,15 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\GargoyleCraft\GargoyleCraft.h">
       <Filter>Source\GargoyleCraft</Filter>
+    </ClInclude>
+    <Filter Include="Source\GargoyleCraft\GameInstance">
+      <UniqueIdentifier>{A572AD93-A90A-3955-AAB1-BE267BB3AA97}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GargoyleCraft\GameInstance\CG_PlayerDataSubsystem.cpp">
+      <Filter>Source\GargoyleCraft\GameInstance</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GargoyleCraft\GameInstance\CG_PlayerDataSubsystem.h">
+      <Filter>Source\GargoyleCraft\GameInstance</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

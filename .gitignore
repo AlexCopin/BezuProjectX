@@ -51,6 +51,16 @@ Plugins/*/Binaries/*
 
 # Builds
 Build/*
+./Build/*
+
+#Logs
+Logs/*
+Saved/*
+GargoyleCraft/Saved/*
+
+#intermediate
+Intermediate/*
+GargoyleCraft/Intermediate/*
 
 # Whitelist PakBlacklist-<BuildConfiguration>.txt files
 !Build/*/
