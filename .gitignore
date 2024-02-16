@@ -57,10 +57,12 @@ Build/*
 Logs/*
 Saved/*
 GargoyleCraft/Saved/*
+GargoyleCraft/Saved/
 
 #intermediate
 Intermediate/*
 GargoyleCraft/Intermediate/*
+GargoyleCraft/Intermediate/
 
 # Whitelist PakBlacklist-<BuildConfiguration>.txt files
 !Build/*/

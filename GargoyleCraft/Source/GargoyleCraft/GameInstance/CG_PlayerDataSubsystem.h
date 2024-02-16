@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class GARGOYLECRAFT_API UCG_PlayerDataSubsystem : public UGameInstanceSubsystem
+class GARGOYLECRAFT_API UGC_PlayerDataSubsystem : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
 	
