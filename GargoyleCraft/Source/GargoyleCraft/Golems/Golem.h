@@ -7,8 +7,10 @@
 UCLASS()
 class AGolem : public AActor
 {
+    GENERATED_BODY()
 public:
   AGolem();
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
   TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 };
