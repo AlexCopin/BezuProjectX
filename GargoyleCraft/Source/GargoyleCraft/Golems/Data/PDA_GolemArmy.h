@@ -15,10 +15,4 @@ class GARGOYLECRAFT_API UPDA_GolemArmy : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 public:
-  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Flavor)
-    FText Name;
-  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Flavor)
-    FText Description;
-  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Golems)
-    TArray<TObjectPtr<UPDA_Golem>> GolemsPDA;
 };

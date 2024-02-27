@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "GargoyleCraft/Golems/Golem.h"
 #include "PDA_Golem.generated.h"
 
 /**
@@ -16,6 +17,9 @@ class GARGOYLECRAFT_API UPDA_Golem : public UPrimaryDataAsset
 public:
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Flavor)
     FText Name;
-  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Flavor)
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category=Flavor)
     FText Description;
+
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+    TSubclassOf<AGolem> GolemClass;
 };
