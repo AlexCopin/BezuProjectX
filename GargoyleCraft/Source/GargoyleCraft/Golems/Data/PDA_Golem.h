@@ -6,6 +6,7 @@
 #include "Engine/DataAsset.h"
 #include "GargoyleCraft/Golems/Golem.h"
 #include "Engine/Texture2D.h"
+#include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
 #include "PDA_Golem.generated.h"
 
 /**
@@ -25,4 +26,6 @@ public:
 
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
     TSubclassOf<AGolem> GolemClass;
+  UPROPERTY(EditDefaultsOnly, Category = Gameplay)
+    TArray<FAttributeDefaults> DefaultStartingData;
 };
