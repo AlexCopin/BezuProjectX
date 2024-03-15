@@ -4,14 +4,25 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameState.h"
+#include "GargoyleCraft/Include/GC_GolemTypes.h"
 #include "GC_GS_RTS.generated.h"
 
-/**
- * 
- */
+
+#define GET_GS_RTS() (GetWorld() ? GetWorld()->GetGameState<AGC_GS_RTS>() : nullptr)
+class AGolem;
+
 UCLASS()
 class GARGOYLECRAFT_API AGC_GS_RTS : public AGameState
 {
 	GENERATED_BODY()
-	
+public:
+  UFUNCTION(BlueprintCallable)
+  void AddToPool(EGolemAllegiance Allegiance, AGolem* Golem);
+private:
+  UPROPERTY(BlueprintReadOnly)
+    TArray<TObjectPtr<AGolem>> FriendlyGolems;
+  UPROPERTY(BlueprintReadOnly)
+    TArray<TObjectPtr<AGolem>> EnemyGolems;
+  UPROPERTY(BlueprintReadOnly)
+    TArray<TObjectPtr<AGolem>> NeutralGolems;
 };
