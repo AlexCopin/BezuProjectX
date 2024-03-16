@@ -14,6 +14,6 @@ public:
   UFUNCTION(BlueprintCallable)
     void AddToPool();
 
-  UPROPERTY(BlueprintType)
-    EGolemAllegiance GolemAllegiance;
+  UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    TEnumAsByte<EGolemAllegiance> GolemAllegiance;
 };
