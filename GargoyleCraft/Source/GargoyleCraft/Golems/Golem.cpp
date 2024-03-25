@@ -17,5 +17,7 @@ AGolem::AGolem()
 void AGolem::UpdateTargetLocation(FVector NewTargetLocation)
 {
   CurrentTargetLocation = NewTargetLocation;
-  Cast<AAIController>(this)->MoveToLocation(CurrentTargetLocation);
+  auto controller = Cast<AAIController>(GetController());
+  if(ensure(controller))
+    controller->MoveToLocation(CurrentTargetLocation);
 }
