@@ -6,9 +6,10 @@
 
 AGolem::AGolem()
 {
-  Root = CreateDefaultSubobject<USceneComponent>("Root");
+  SetRootComponent(GetCapsuleComponent());
+  /*Root = CreateDefaultSubobject<USceneComponent>("Root");
   SetRootComponent(Root);
-  GetCapsuleComponent()->SetupAttachment(Root);
+  GetCapsuleComponent()->SetupAttachment(Root);*/
   PoolComponent = CreateDefaultSubobject<UC_Pool>("PoolComponent");
   AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>("GolemASC");
 }
