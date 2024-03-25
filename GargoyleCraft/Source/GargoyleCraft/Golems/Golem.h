@@ -18,4 +18,13 @@ public:
     TObjectPtr<UC_Pool> PoolComponent;
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
   TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+      FVector CurrentTargetLocation;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+      bool bIsSelected;
+
+    UFUNCTION(BlueprintCallable)
+      void UpdateTargetLocation(FVector NewTargetLocation);
 };

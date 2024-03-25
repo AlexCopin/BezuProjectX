@@ -22,6 +22,8 @@ public:
   UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category=Flavor)
     FText Description;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category = Flavor)
+    FText FlavorComment;
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category = Flavor)
     TSoftObjectPtr<UTexture2D> Icon;
 
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)

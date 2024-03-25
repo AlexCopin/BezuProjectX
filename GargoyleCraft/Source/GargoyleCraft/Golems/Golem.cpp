@@ -2,6 +2,7 @@
 
 #include "ActorTransactionAnnotation.h"
 #include "Components/CapsuleComponent.h"
+#include "AIController.h"
 
 AGolem::AGolem()
 {
@@ -10,4 +11,10 @@ AGolem::AGolem()
   GetCapsuleComponent()->SetupAttachment(Root);
   PoolComponent = CreateDefaultSubobject<UC_Pool>("PoolComponent");
   AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>("GolemASC");
+}
+
+void AGolem::UpdateTargetLocation(FVector NewTargetLocation)
+{
+  CurrentTargetLocation = NewTargetLocation;
+  Cast<AAIController>(this)->MoveToLocation(CurrentTargetLocation);
 }
