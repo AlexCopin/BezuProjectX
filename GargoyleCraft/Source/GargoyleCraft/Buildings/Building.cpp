@@ -1,5 +1,6 @@
 #include "Building.h"
 #include "Components/ArrowComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 ABuilding::ABuilding()
 {
@@ -17,4 +18,7 @@ void ABuilding::RequestGolemCreation(UPDA_Golem* Data)
   //Golem automatically added in pool via its component UC_Pool
   auto tempGolem = GetWorld()->SpawnActorDeferred<AGolem>(Data->GolemClass, GolemSpawnPoint->GetComponentTransform());
   tempGolem->AbilitySystemComponent->DefaultStartingData.Append(Data->DefaultStartingData);
+  UGameplayStatics::FinishSpawningActor(tempGolem, GolemSpawnPoint->GetComponentTransform());
+  tempGolem->Init();
+  tempGolem->UpdateTargetLocation(GolemSpawnFlag->GetComponentLocation());
   }

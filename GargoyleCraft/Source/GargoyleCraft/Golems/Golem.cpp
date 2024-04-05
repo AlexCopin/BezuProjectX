@@ -16,11 +16,11 @@ AGolem::AGolem()
 void AGolem::BeginPlay()
 {
   Super::BeginPlay();
-  Init();
 }
 void AGolem::Init()
 {
   GetCharacterMovement()->MaxWalkSpeed = AbilitySystemComponent->GetSet<UAttributeSet_Character>()->GetMovementSpeed();
+  GetCharacterMovement()->MaxAcceleration = AbilitySystemComponent->GetSet<UAttributeSet_Character>()->GetMovementSpeed();
 }
 
 void AGolem::UpdateTargetLocation(FVector NewTargetLocation)

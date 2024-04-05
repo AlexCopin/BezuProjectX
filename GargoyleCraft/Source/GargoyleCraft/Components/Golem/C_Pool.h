@@ -10,7 +10,6 @@ class UC_Pool : public UActorComponent
 public:
   
   virtual void BeginPlay() override;
-  virtual void BeginDestroy() override;
 
   UPROPERTY(BlueprintReadWrite, EditAnywhere)
   TEnumAsByte<EGolemAllegiance> GolemAllegiance;
