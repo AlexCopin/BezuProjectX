@@ -14,7 +14,7 @@ ABuilding::ABuilding()
 
 void ABuilding::RequestGolemCreation(UPDA_Golem* Data)
 {
+  //Golem automatically added in pool via its component UC_Pool
   auto tempGolem = GetWorld()->SpawnActorDeferred<AGolem>(Data->GolemClass, GolemSpawnPoint->GetComponentTransform());
   tempGolem->AbilitySystemComponent->DefaultStartingData.Append(Data->DefaultStartingData);
-  //Call something to add in a pool -> pool will be used to look for selectable units when drag & drop (don't look every actors, just the actors in the pool)
-}
+  }

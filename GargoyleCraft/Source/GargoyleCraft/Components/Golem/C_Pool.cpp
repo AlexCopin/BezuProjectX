@@ -9,7 +9,18 @@ void UC_Pool::BeginPlay()
   AddToPool();
 }
 
+void UC_Pool::BeginDestroy()
+{
+  Super::BeginDestroy();
+  RemoveFromPool();
+}
+
 void UC_Pool::AddToPool()
 {
   GET_GS_RTS()->AddToPool(GolemAllegiance, Cast<AGolem>(GetOwner()));
+}
+
+void UC_Pool::RemoveFromPool()
+{
+  GET_GS_RTS()->RemoveFromPool(GolemAllegiance, Cast<AGolem>(GetOwner()));
 }

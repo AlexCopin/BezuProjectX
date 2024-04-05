@@ -18,6 +18,8 @@ class GARGOYLECRAFT_API AGC_GS_RTS : public AGameState
 public:
   UFUNCTION(BlueprintCallable)
   void AddToPool(EGolemAllegiance Allegiance, AGolem* Golem);
+  UFUNCTION(BlueprintCallable)
+  void RemoveFromPool(EGolemAllegiance Allegiance, AGolem* Golem);
   UPROPERTY(BlueprintReadOnly)
     TArray<TObjectPtr<AGolem>> FriendlyGolems;
   UPROPERTY(BlueprintReadOnly)

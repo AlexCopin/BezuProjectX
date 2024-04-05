@@ -10,10 +10,14 @@ class UC_Pool : public UActorComponent
 public:
   
   virtual void BeginPlay() override;
-
-  UFUNCTION(BlueprintCallable)
-    void AddToPool();
+  virtual void BeginDestroy() override;
 
   UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    TEnumAsByte<EGolemAllegiance> GolemAllegiance;
+  TEnumAsByte<EGolemAllegiance> GolemAllegiance;
+
+protected:
+  UFUNCTION()
+  void AddToPool();
+  UFUNCTION()
+  void RemoveFromPool();
 };

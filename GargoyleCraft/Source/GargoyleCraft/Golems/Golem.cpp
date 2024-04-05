@@ -1,17 +1,26 @@
 #include "Golem.h"
 
-#include "ActorTransactionAnnotation.h"
 #include "Components/CapsuleComponent.h"
 #include "AIController.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
 
 AGolem::AGolem()
 {
   SetRootComponent(GetCapsuleComponent());
-  /*Root = CreateDefaultSubobject<USceneComponent>("Root");
-  SetRootComponent(Root);
-  GetCapsuleComponent()->SetupAttachment(Root);*/
   PoolComponent = CreateDefaultSubobject<UC_Pool>("PoolComponent");
-  AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>("GolemASC");
+  AbilitySystemComponent = CreateDefaultSubobject<UGC_AbilitySystemComponent>("GolemASC");
+}
+
+
+void AGolem::BeginPlay()
+{
+  Super::BeginPlay();
+  Init();
+}
+void AGolem::Init()
+{
+  GetCharacterMovement()->MaxWalkSpeed = AbilitySystemComponent->GetSet<UAttributeSet_Character>()->GetMovementSpeed();
 }
 
 void AGolem::UpdateTargetLocation(FVector NewTargetLocation)
