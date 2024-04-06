@@ -6,14 +6,14 @@
 #include "Engine/DataAsset.h"
 #include "GargoyleCraft/Golems/Golem.h"
 #include "Engine/Texture2D.h"
-#include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
+#include "GargoyleCraft/DataAssets/PDA_DefaultActorData.h"
 #include "PDA_Golem.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class GARGOYLECRAFT_API UPDA_Golem : public UPrimaryDataAsset
+class GARGOYLECRAFT_API UPDA_Golem : public UPDA_DefaultActorData
 {
 	GENERATED_BODY()
 public:
@@ -28,6 +28,4 @@ public:
 
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
     TSubclassOf<AGolem> GolemClass;
-  UPROPERTY(EditDefaultsOnly, Category = Gameplay)
-    TArray<FAttributeDefaults> DefaultStartingData;
 };

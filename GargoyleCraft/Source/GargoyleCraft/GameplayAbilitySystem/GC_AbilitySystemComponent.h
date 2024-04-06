@@ -7,5 +7,8 @@ UCLASS()
 class GARGOYLECRAFT_API UGC_AbilitySystemComponent : public UAbilitySystemComponent
 {
   GENERATED_BODY()
-
+public:
+  void Init();
+  UFUNCTION()
+  void ApplyDefaultValues();
 };

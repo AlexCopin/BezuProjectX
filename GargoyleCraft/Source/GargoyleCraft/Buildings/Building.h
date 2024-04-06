@@ -23,5 +23,5 @@ public:
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TArray<TObjectPtr<UPDA_Golem>> GolemPool;
   UFUNCTION(BlueprintCallable)
-    void RequestGolemCreation(UPDA_Golem* Data);
+    void RequestGolemCreation(TSoftObjectPtr<UPDA_Golem> Data);
 };
