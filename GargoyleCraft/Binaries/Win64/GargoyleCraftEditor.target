@@ -11,14 +11,14 @@
 	"Version": 
 	{
 		"MajorVersion": 5,
-		"MinorVersion": 3,
-		"PatchVersion": 2,
-		"Changelist": 29314046,
-		"CompatibleChangelist": 27405482,
+		"MinorVersion": 4,
+		"PatchVersion": 1,
+		"Changelist": 33305029,
+		"CompatibleChangelist": 33043543,
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
-		"BranchName": "++UE5+Release-5.3",
-		"BuildId": "27405482"
+		"BranchName": "++UE5+Release-5.4",
+		"BuildId": "33043543"
 	},
 	"BuildProducts": [
 		{
@@ -42,27 +42,7 @@
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/Android/UnrealEditor-AndroidDeviceDetection.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/Android/UnrealEditor-AndroidPlatformEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/Android/UnrealEditor-AndroidRuntimeSettings.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/Android/UnrealEditor-AndroidTargetPlatform.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/Android/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/OpenColorIO_2_2.dll",
+			"Path": "$(EngineDir)/Binaries/Win64/OpenColorIO_2_3.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -90,11 +70,19 @@
 			"Type": "DynamicLibrary"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-ActionableMessage.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-ActorPickerMode.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AddContentDialog.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AdpcmAudioDecoder.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -150,6 +138,10 @@
 			"Type": "DynamicLibrary"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AnimationEditorWidgets.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AnimationModifiers.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -202,10 +194,6 @@
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AudioCodecEngine.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AudioEditor.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -227,6 +215,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AudioFormatOpus.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AudioFormatRad.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -263,6 +255,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AutomationController.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AutomationDriver.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -347,6 +343,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-ChaosSolverEngine.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-ChaosVDData.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-ChaosVDRuntime.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -1070,6 +1074,10 @@
 			"Type": "DynamicLibrary"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-OpusAudioDecoder.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-OutputLog.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -1215,6 +1223,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-RSA.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-RadAudioDecoder.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -1498,15 +1510,7 @@
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-TextureFormatASTC.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-TextureFormatDXT.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-TextureFormatETC2.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -1602,6 +1606,14 @@
 			"Type": "DynamicLibrary"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-UniversalObjectLocator.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-UniversalObjectLocatorEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-UnrealEd.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -1651,6 +1663,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-Voice.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-VorbisAudioDecoder.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -1723,6 +1739,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/oo2tex_win64_2.9.10.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/oo2tex_win64_2.9.11.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/oo2tex_win64_2.9.12.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -1898,7 +1922,39 @@
 			"Type": "DynamicLibrary"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Cameras/GameplayCameras/Binaries/Win64/UnrealEditor-GameplayCamerasEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Cameras/GameplayCameras/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/ChaosCloth/Binaries/Win64/UnrealEditor-ChaosCloth.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/ChaosCloth/Binaries/Win64/UnrealEditor-ChaosClothEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/ChaosCloth/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/ChaosVD/Binaries/Win64/UnrealEditor-ChaosVD.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/ChaosVD/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/CmdLinkServer/Binaries/Win64/UnrealEditor-CmdLinkServer.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/CmdLinkServer/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -2210,6 +2266,14 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Editor/MeshLODToolset/Binaries/Win64/UnrealEditor-MeshLODToolset.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/MeshLODToolset/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Editor/MobileLauncherProfileWizard/Binaries/Win64/UnrealEditor-MobileLauncherProfileWizard.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -2247,6 +2311,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Editor/PluginBrowser/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/ProxyLODPlugin/Binaries/Win64/UnrealEditor-ProxyLODMeshReduction.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/ProxyLODPlugin/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -2378,22 +2450,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosClothEditor/Binaries/Win64/UnrealEditor-ChaosClothEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosClothEditor/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCloth/Binaries/Win64/UnrealEditor-ChaosCloth.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCloth/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/ChaosEditor/Binaries/Win64/UnrealEditor-FractureEditor.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -2432,6 +2488,18 @@
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/CharacterAI/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/CharacterFXEditor/BaseCharacterFXEditor/Binaries/Win64/UnrealEditor-BaseCharacterFXEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/CharacterFXEditor/BaseCharacterFXEditor/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/Dataflow/Binaries/Win64/UnrealEditor-DataflowAssetTools.dll",
+			"Type": "DynamicLibrary"
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/Dataflow/Binaries/Win64/UnrealEditor-DataflowEditor.dll",
@@ -2518,14 +2586,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/MeshLODToolset/Binaries/Win64/UnrealEditor-MeshLODToolset.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/MeshLODToolset/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/MeshModelingToolsetExp/Binaries/Win64/UnrealEditor-GeometryProcessingAdapters.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -2547,6 +2607,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/MeshModelingToolsetExp/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/MetaHuman/MetaHumanProjectUtilities/Binaries/Win64/UnrealEditor-MetaHumanProjectUtilities.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/MetaHuman/MetaHumanProjectUtilities/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -2579,14 +2647,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PlatformCrypto/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ProxyLODPlugin/Binaries/Win64/UnrealEditor-ProxyLODMeshReduction.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ProxyLODPlugin/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -2634,6 +2694,22 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/StudioTelemetry/Binaries/Win64/UnrealEditor-AnalyticsHorde.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/StudioTelemetry/Binaries/Win64/UnrealEditor-AnalyticsLog.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/StudioTelemetry/Binaries/Win64/UnrealEditor-StudioTelemetry.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/StudioTelemetry/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/ToolPresets/Binaries/Win64/UnrealEditor-ToolPresetAsset.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -2646,11 +2722,27 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/FX/NiagaraSimCaching/Binaries/Win64/UnrealEditor-NiagaraSimCaching.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/FX/NiagaraSimCaching/Binaries/Win64/UnrealEditor-NiagaraSimCachingEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/FX/NiagaraSimCaching/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/FX/Niagara/Binaries/Win64/UnrealEditor-Niagara.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/FX/Niagara/Binaries/Win64/UnrealEditor-NiagaraAnimNotifies.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/FX/Niagara/Binaries/Win64/UnrealEditor-NiagaraBlueprintNodes.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -2715,6 +2807,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Interchange/Runtime/Binaries/Win64/UnrealEditor-GLTFCore.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Interchange/Runtime/Binaries/Win64/UnrealEditor-InterchangeCommon.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -3006,6 +3102,14 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/RenderGraphInsights/Binaries/Win64/UnrealEditor-RenderGraphInsights.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/RenderGraphInsights/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ActorLayerUtilities/Binaries/Win64/UnrealEditor-ActorLayerUtilities.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3155,6 +3259,18 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ExampleDeviceProfileSelector/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/GameInput/Binaries/Win64/UnrealEditor-GameInputBase.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/GameInput/Binaries/Win64/UnrealEditor-GameInputBaseEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/GameInput/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -3426,6 +3542,14 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Runtime/Windows/XInputDevice/Binaries/Win64/UnrealEditor-XInputDevice.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/Windows/XInputDevice/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Tests/InterchangeTests/Binaries/Win64/UnrealEditor-InterchangeTestEditor.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3479,6 +3603,22 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/WorldMetrics/Binaries/Win64/UnrealEditor-CsvMetrics.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/WorldMetrics/Binaries/Win64/UnrealEditor-WorldMetricsCore.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/WorldMetrics/Binaries/Win64/UnrealEditor-WorldMetricsTest.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/WorldMetrics/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -3608,15 +3748,15 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/DLLs/libcrypto-1_1.dll",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/DLLs/libcrypto-3.dll",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/DLLs/libffi-7.dll",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/DLLs/libffi-8.dll",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/DLLs/libssl-1_1.dll",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/DLLs/libssl-3.dll",
 			"Type": "NonUFS"
 		},
 		{
@@ -3676,15 +3816,27 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/__phello__.foo.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/__hello__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/__phello__/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/__phello__/ham/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/__phello__/ham/eggs.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/__phello__/spam.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/_aix_support.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/_bootlocale.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -3820,6 +3972,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/asyncio/mixins.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/asyncio/proactor_events.py",
 			"Type": "NonUFS"
 		},
@@ -3856,11 +4012,19 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/asyncio/taskgroups.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/asyncio/tasks.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/asyncio/threads.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/asyncio/timeouts.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -3893,10 +4057,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/bdb.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/binhex.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -4364,15 +4524,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/bdist_msi.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/bdist_rpm.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/bdist_wininst.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -4445,42 +4597,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/upload.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/wininst-10.0-amd64.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/wininst-10.0.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/wininst-14.0-amd64.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/wininst-14.0.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/wininst-6.0.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/wininst-7.1.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/wininst-8.0.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/wininst-9.0-amd64.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/command/wininst-9.0.exe",
 			"Type": "NonUFS"
 		},
 		{
@@ -4580,15 +4696,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/tests/test_bdist_msi.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/tests/test_bdist_rpm.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/distutils/tests/test_bdist_wininst.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -5376,15 +5484,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/ensurepip/_bundled/__init__.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/ensurepip/_bundled/pip-24.0-py3-none-any.whl",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/ensurepip/_bundled/pip-21.2.3-py3-none-any.whl",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/ensurepip/_bundled/setuptools-57.4.0-py3-none-any.whl",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/ensurepip/_bundled/setuptools-65.5.0-py3-none-any.whl",
 			"Type": "NonUFS"
 		},
 		{
@@ -5405,10 +5509,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/fnmatch.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/formatter.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -5568,11 +5668,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/NEWS.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/NEWS2x.txt",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/NEWS2x.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/News3.txt",
 			"Type": "NonUFS"
 		},
 		{
@@ -5733,6 +5833,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/idle_test/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/idle_test/example_noext",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/idle_test/example_stub.pyi",
 			"Type": "NonUFS"
 		},
 		{
@@ -5968,6 +6076,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/idle_test/test_util.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/idle_test/test_warning.py",
 			"Type": "NonUFS"
 		},
@@ -5981,6 +6093,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/idle_test/test_zzdummy.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/idle_test/tkinter_testing_utils.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -6096,6 +6212,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/util.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/idlelib/window.py",
 			"Type": "NonUFS"
 		},
@@ -6124,15 +6244,15 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/_abc.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/_bootstrap.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/_bootstrap_external.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/_common.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -6144,11 +6264,71 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/metadata.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/metadata/__init__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/resources.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/metadata/_adapters.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/metadata/_collections.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/metadata/_functools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/metadata/_itertools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/metadata/_meta.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/metadata/_text.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/readers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/resources/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/resources/_adapters.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/resources/_common.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/resources/_itertools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/resources/_legacy.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/resources/abc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/resources/readers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/resources/simple.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/importlib/simple.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -6880,7 +7060,23 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/re.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/re/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/re/_casefix.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/re/_compiler.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/re/_constants.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/re/_parser.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -6940,35 +7136,39 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-21.2.3.dist-info/INSTALLER",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-24.0.dist-info/AUTHORS.txt",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-21.2.3.dist-info/LICENSE.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-24.0.dist-info/INSTALLER",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-21.2.3.dist-info/METADATA",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-24.0.dist-info/LICENSE.txt",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-21.2.3.dist-info/RECORD",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-24.0.dist-info/METADATA",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-21.2.3.dist-info/REQUESTED",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-24.0.dist-info/RECORD",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-21.2.3.dist-info/WHEEL",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-24.0.dist-info/REQUESTED",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-21.2.3.dist-info/entry_points.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-24.0.dist-info/WHEEL",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-21.2.3.dist-info/top_level.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-24.0.dist-info/entry_points.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip-24.0.dist-info/top_level.txt",
 			"Type": "NonUFS"
 		},
 		{
@@ -6977,6 +7177,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/__main__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/__pip-runner__.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7084,6 +7288,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/commands/inspect.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/commands/install.py",
 			"Type": "NonUFS"
 		},
@@ -7176,7 +7384,27 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/metadata/_json.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/metadata/base.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/metadata/importlib/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/metadata/importlib/_compat.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/metadata/importlib/_dists.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/metadata/importlib/_envs.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7201,6 +7429,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/models/index.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/models/installation_report.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7268,7 +7500,15 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/operations/build/build_tracker.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/operations/build/metadata.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/operations/build/metadata_editable.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7277,6 +7517,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/operations/build/wheel.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/operations/build/wheel_editable.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7297,10 +7541,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/operations/install/editable_legacy.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/operations/install/legacy.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7333,10 +7573,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/req/req_set.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/req/req_tracker.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7404,6 +7640,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/utils/_jaraco_text.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/utils/_log.py",
 			"Type": "NonUFS"
 		},
@@ -7432,7 +7672,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/utils/distutils_args.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/utils/egg_link.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7460,10 +7700,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/utils/inject_securetransport.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/utils/logging.py",
 			"Type": "NonUFS"
 		},
@@ -7477,14 +7713,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/utils/packaging.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/utils/parallel.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_internal/utils/pkg_resources.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7548,10 +7776,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/appdirs.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/cachecontrol/__init__.py",
 			"Type": "NonUFS"
 		},
@@ -7580,10 +7804,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/cachecontrol/compat.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/cachecontrol/controller.py",
 			"Type": "NonUFS"
 		},
@@ -7593,6 +7813,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/cachecontrol/heuristics.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/cachecontrol/py.typed",
 			"Type": "NonUFS"
 		},
 		{
@@ -7617,6 +7841,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/certifi/core.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/certifi/py.typed",
 			"Type": "NonUFS"
 		},
 		{
@@ -7656,7 +7884,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/compat.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/codingstatemachinedict.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7712,6 +7940,14 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/johabfreq.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/johabprober.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/jpcntx.py",
 			"Type": "NonUFS"
 		},
@@ -7748,6 +7984,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/macromanprober.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/mbcharsetprober.py",
 			"Type": "NonUFS"
 		},
@@ -7768,6 +8008,14 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/py.typed",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/resultdict.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/sbcharsetprober.py",
 			"Type": "NonUFS"
 		},
@@ -7781,6 +8029,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/universaldetector.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/chardet/utf1632prober.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7808,6 +8060,34 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/colorama/tests/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/colorama/tests/ansi_test.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/colorama/tests/ansitowin32_test.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/colorama/tests/initialise_test.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/colorama/tests/isatty_test.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/colorama/tests/utils.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/colorama/tests/winterm_test.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/colorama/win32.py",
 			"Type": "NonUFS"
 		},
@@ -7817,30 +8097,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/_backport/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/_backport/misc.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/_backport/shutil.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/_backport/sysconfig.cfg",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/_backport/sysconfig.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/_backport/tarfile.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -7884,6 +8140,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/t64-arm.exe",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/t64.exe",
 			"Type": "NonUFS"
 		},
@@ -7900,6 +8160,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/w64-arm.exe",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distlib/w64.exe",
 			"Type": "NonUFS"
 		},
@@ -7908,139 +8172,19 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distro.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distro/__init__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/__init__.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distro/__main__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/_ihatexml.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distro/distro.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/_inputstream.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/_tokenizer.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/_trie/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/_trie/_base.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/_trie/py.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/_utils.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/constants.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/filters/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/filters/alphabeticalattributes.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/filters/base.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/filters/inject_meta_charset.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/filters/lint.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/filters/optionaltags.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/filters/sanitizer.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/filters/whitespace.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/html5parser.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/serializer.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treeadapters/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treeadapters/genshi.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treeadapters/sax.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treebuilders/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treebuilders/base.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treebuilders/dom.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treebuilders/etree.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treebuilders/etree_lxml.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treewalkers/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treewalkers/base.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treewalkers/dom.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treewalkers/etree.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treewalkers/etree_lxml.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/html5lib/treewalkers/genshi.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/distro/py.typed",
 			"Type": "NonUFS"
 		},
 		{
@@ -8072,15 +8216,15 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/idna/py.typed",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/idna/uts46data.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/msgpack/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/msgpack/_version.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8120,6 +8264,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/packaging/py.typed",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/packaging/requirements.py",
 			"Type": "NonUFS"
 		},
@@ -8140,75 +8288,251 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/build.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/check.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/colorlog.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/compat.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/dirtools.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/envbuild.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/in_process/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/in_process/_in_process.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/meta.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pep517/wrappers.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pkg_resources/__init__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pkg_resources/py31compat.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/platformdirs/__init__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/progress/__init__.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/platformdirs/__main__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/progress/bar.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/platformdirs/android.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/progress/counter.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/platformdirs/api.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/progress/spinner.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/platformdirs/macos.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/platformdirs/py.typed",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/platformdirs/unix.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/platformdirs/version.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/platformdirs/windows.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/__main__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/cmdline.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/console.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/filter.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/filters/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatter.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/_mapping.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/bbcode.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/groff.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/html.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/img.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/irc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/latex.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/other.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/pangomarkup.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/rtf.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/svg.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/terminal.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/formatters/terminal256.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/lexer.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/lexers/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/lexers/_mapping.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/lexers/python.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/modeline.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/plugin.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/regexopt.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/scanner.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/sphinxext.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/style.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/styles/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/token.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/unistring.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pygments/util.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/actions.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/common.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/core.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/diagram/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/exceptions.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/helpers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/py.typed",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/results.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/testing.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/unicode.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyparsing/util.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyproject_hooks/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyproject_hooks/_compat.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyproject_hooks/_impl.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyproject_hooks/_in_process/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8300,6 +8624,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/resolvelib/py.typed",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/resolvelib/reporters.py",
 			"Type": "NonUFS"
 		},
@@ -8309,6 +8637,318 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/resolvelib/structs.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/__main__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_cell_widths.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_emoji_codes.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_emoji_replace.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_export_format.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_extension.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_fileno.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_inspect.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_log_render.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_loop.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_null_file.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_palettes.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_pick.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_ratio.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_spinners.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_stack.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_timer.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_win32_console.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_windows.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_windows_renderer.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/_wrap.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/abc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/align.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/ansi.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/bar.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/box.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/cells.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/color.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/color_triplet.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/columns.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/console.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/constrain.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/containers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/control.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/default_styles.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/diagnose.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/emoji.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/errors.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/file_proxy.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/filesize.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/highlighter.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/json.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/jupyter.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/layout.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/live.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/live_render.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/logging.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/markup.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/measure.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/padding.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/pager.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/palette.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/panel.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/pretty.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/progress.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/progress_bar.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/prompt.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/protocol.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/py.typed",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/region.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/repr.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/rule.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/scope.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/screen.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/segment.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/spinner.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/status.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/style.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/styled.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/syntax.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/table.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/terminal_theme.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/text.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/theme.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/themes.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/traceback.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/rich/tree.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8344,6 +8984,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/tenacity/py.typed",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/tenacity/retry.py",
 			"Type": "NonUFS"
 		},
@@ -8369,6 +9013,46 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/tomli/_re.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/tomli/_types.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/tomli/py.typed",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/truststore/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/truststore/_api.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/truststore/_macos.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/truststore/_openssl.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/truststore/_ssl_constants.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/truststore/_windows.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/truststore/py.typed",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/typing_extensions.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8456,15 +9140,11 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/urllib3/packages/backports/weakref_finalize.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/urllib3/packages/six.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/urllib3/packages/ssl_match_hostname/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/urllib3/packages/ssl_match_hostname/_implementation.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8509,6 +9189,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/urllib3/util/ssl_.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pip/_vendor/urllib3/util/ssl_match_hostname.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8568,6 +9252,70 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/importlib_resources/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/importlib_resources/_adapters.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/importlib_resources/_common.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/importlib_resources/_compat.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/importlib_resources/_itertools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/importlib_resources/_legacy.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/importlib_resources/abc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/importlib_resources/readers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/importlib_resources/simple.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/jaraco/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/jaraco/context.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/jaraco/functools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/jaraco/text/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/more_itertools/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/more_itertools/more.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/more_itertools/recipes.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/packaging/__about__.py",
 			"Type": "NonUFS"
 		},
@@ -8576,15 +9324,15 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/packaging/_compat.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/packaging/_manylinux.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/packaging/_musllinux.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/packaging/_structures.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/packaging/_typing.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8612,7 +9360,51 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/actions.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/common.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/core.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/diagram/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/exceptions.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/helpers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/results.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/testing.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/unicode.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/pyparsing/util.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/_vendor/zipp.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8620,39 +9412,35 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/pkg_resources/tests/data/my-test-package-source/setup.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-65.5.0.dist-info/INSTALLER",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-57.4.0.dist-info/INSTALLER",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-65.5.0.dist-info/LICENSE",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-57.4.0.dist-info/LICENSE",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-65.5.0.dist-info/METADATA",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-57.4.0.dist-info/METADATA",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-65.5.0.dist-info/RECORD",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-57.4.0.dist-info/RECORD",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-65.5.0.dist-info/REQUESTED",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-57.4.0.dist-info/REQUESTED",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-65.5.0.dist-info/WHEEL",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-57.4.0.dist-info/WHEEL",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-65.5.0.dist-info/entry_points.txt",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-57.4.0.dist-info/entry_points.txt",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-57.4.0.dist-info/top_level.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools-65.5.0.dist-info/top_level.txt",
 			"Type": "NonUFS"
 		},
 		{
@@ -8665,6 +9453,18 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/_collections.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/_functools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/_macos_compat.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8692,6 +9492,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/command/_framework_compat.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/command/bdist.py",
 			"Type": "NonUFS"
 		},
@@ -8700,15 +9504,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/command/bdist_msi.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/command/bdist_rpm.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/command/bdist_wininst.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8844,11 +9640,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/py35compat.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/py38compat.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/py38compat.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_distutils/py39compat.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8880,11 +9676,115 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_entry_points.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_imp.py",
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_importlib.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_itertools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_path.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_reqs.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_metadata/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_metadata/_adapters.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_metadata/_collections.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_metadata/_compat.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_metadata/_functools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_metadata/_itertools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_metadata/_meta.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_metadata/_text.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_resources/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_resources/_adapters.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_resources/_common.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_resources/_compat.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_resources/_itertools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_resources/_legacy.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_resources/abc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_resources/readers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/importlib_resources/simple.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/jaraco/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/jaraco/context.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/jaraco/functools.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/jaraco/text/__init__.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8912,15 +9812,15 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/packaging/_compat.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/packaging/_manylinux.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/packaging/_musllinux.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/packaging/_structures.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/packaging/_typing.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8948,7 +9848,71 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/actions.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/common.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/core.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/diagram/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/exceptions.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/helpers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/results.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/testing.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/unicode.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/pyparsing/util.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/tomli/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/tomli/_parser.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/tomli/_re.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/tomli/_types.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/typing_extensions.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/_vendor/zipp.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -8965,6 +9929,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/cli-64.exe",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/cli-arm64.exe",
 			"Type": "NonUFS"
 		},
 		{
@@ -8985,6 +9953,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/command/bdist_rpm.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/command/build.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -9009,6 +9981,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/command/easy_install.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/command/editable_wheel.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -9072,7 +10048,47 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/_apply_pyprojecttoml.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/_validate_pyproject/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/_validate_pyproject/error_reporting.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/_validate_pyproject/extra_validations.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/_validate_pyproject/fastjsonschema_exceptions.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/_validate_pyproject/fastjsonschema_validations.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/_validate_pyproject/formats.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/expand.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/pyprojecttoml.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/config/setupcfg.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -9081,6 +10097,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/depends.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/discovery.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -9112,6 +10132,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/gui-arm64.exe",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/gui.exe",
 			"Type": "NonUFS"
 		},
@@ -9124,7 +10148,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/lib2to3_ex.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/site-packages/setuptools/logging.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -9212,46 +10236,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/backup.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/dbapi.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/dump.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/factory.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/hooks.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/regression.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/transactions.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/types.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sqlite3/test/userfunctions.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/sre_compile.py",
 			"Type": "NonUFS"
 		},
@@ -9296,10 +10280,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/symbol.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/symtable.py",
 			"Type": "NonUFS"
 		},
@@ -9324,6 +10304,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/.ruff.toml",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/Sine-1000Hz-300ms.aif",
 			"Type": "NonUFS"
 		},
@@ -9336,27 +10320,31 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/_test_atexit.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/_test_eintr.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/_test_embed_set_config.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/_test_embed_structseq.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/_test_multiprocessing.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/_typed_dict_helper.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/_test_venv_multiprocessing.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/allsans.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/ann_module.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/ann_module2.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/ann_module3.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/archiver_tests.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -9436,111 +10424,131 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/bad_coding.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/bad_coding2.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/bad_getattr.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/bad_getattr2.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/bad_getattr3.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badcert.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badkey.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_3131.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_future10.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_future3.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_future4.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_future5.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_future6.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_future7.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_future8.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_future9.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/badsyntax_pep3120.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/bisect_cmd.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/capath/4e1295a3.0",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/allsans.pem",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/capath/5ed36f99.0",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/badcert.pem",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/capath/6e88d7b8.0",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/badkey.pem",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/capath/99d0fa06.0",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/capath/4e1295a3.0",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/capath/b1930218.0",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/capath/5ed36f99.0",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/capath/ceff1710.0",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/capath/6e88d7b8.0",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/cfgparser.1",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/capath/99d0fa06.0",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/cfgparser.2",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/capath/b1930218.0",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/cfgparser.3",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/capath/ceff1710.0",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/ffdh3072.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/idnsans.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/keycert.passwd.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/keycert.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/keycert2.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/keycert3.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/keycert4.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/keycertecc.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/make_ssl_certs.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/nokia.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/nosan.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/nullbytecert.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/nullcert.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/pycacert.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/pycakey.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/revocation.crl",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/secp384r1.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/selfsigned_pythontestdotnet.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/ssl_cert.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/ssl_key.passwd.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/ssl_key.pem",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/certdata/talos-2019-0758.pem",
 			"Type": "NonUFS"
 		},
 		{
@@ -9664,7 +10672,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/clinic.test",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/clinic.test.c",
 			"Type": "NonUFS"
 		},
 		{
@@ -9672,7 +10680,15 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/coding20731.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/configdata/cfgparser.1",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/configdata/cfgparser.2",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/configdata/cfgparser.3",
 			"Type": "NonUFS"
 		},
 		{
@@ -9713,26 +10729,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/data/README",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/dataclass_module_1.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/dataclass_module_1_str.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/dataclass_module_2.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/dataclass_module_2_str.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/dataclass_textanno.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -10316,14 +11312,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/doctest_aliases.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/double_const.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/dtracedata/assert_usable.d",
 			"Type": "NonUFS"
 		},
@@ -10388,10 +11376,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/eintrdata/eintr_tester.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/empty.vbs",
 			"Type": "NonUFS"
 		},
@@ -10412,18 +11396,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/ffdh3072.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/final_a.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/final_b.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/floating_points.txt",
 			"Type": "NonUFS"
 		},
@@ -10436,27 +11408,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/future_test1.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/future_test2.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/gdb_sample.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/good_getattr.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/idnsans.pem",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/ieee754.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/imghdrdata/python-raw.jpg",
 			"Type": "NonUFS"
 		},
 		{
@@ -10516,38 +11472,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/inspect_fodder.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/inspect_fodder2.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/keycert.passwd.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/keycert.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/keycert2.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/keycert3.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/keycert4.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/keycertecc.pem",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/leakers/README.txt",
 			"Type": "NonUFS"
 		},
@@ -10572,7 +11496,23 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/filter.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/findtests.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/logger.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/main.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/mypy.ini",
 			"Type": "NonUFS"
 		},
 		{
@@ -10584,11 +11524,19 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/runtest.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/result.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/runtest_mp.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/results.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/run_workers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/runtests.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -10600,11 +11548,23 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/single.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/testresult.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/utils.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/win_utils.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/libregrtest/worker.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -10617,10 +11577,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/mailcap.txt",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/make_ssl_certs.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -10644,10 +11600,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/mod_generics_cache.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/mp_fork_bomb.py",
 			"Type": "NonUFS"
 		},
@@ -10660,22 +11612,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/nokia.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/nosan.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/nullbytecert.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/nullcert.pem",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/pickletester.py",
 			"Type": "NonUFS"
 		},
@@ -10685,14 +11621,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/pstats.pck",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/pycacert.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/pycakey.pem",
 			"Type": "NonUFS"
 		},
 		{
@@ -10736,6 +11664,22 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/regrtestdata/import_from_tests/test_regrtest_a.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/regrtestdata/import_from_tests/test_regrtest_b/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/regrtestdata/import_from_tests/test_regrtest_b/util.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/regrtestdata/import_from_tests/test_regrtest_c.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/relimport.py",
 			"Type": "NonUFS"
 		},
@@ -10744,35 +11688,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/revocation.crl",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/sample_doctest.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/sample_doctest_no_docstrings.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/sample_doctest_no_doctests.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/secp384r1.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/selfsigned_pythontestdotnet.pem",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/seq_tests.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/sgml_input.html",
 			"Type": "NonUFS"
 		},
 		{
@@ -10820,18 +11736,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/ssl_cert.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/ssl_key.passwd.pem",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/ssl_key.pem",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/ssl_servers.py",
 			"Type": "NonUFS"
 		},
@@ -10876,7 +11780,23 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/support/import_helper.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/support/interpreters.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/support/logging_helper.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/support/os_helper.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/support/pty_helper.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -10888,7 +11808,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/support/testresult.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/support/threading_helper.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -10896,15 +11816,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/talos-2019-0758.pem",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test___all__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test___future__.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -10984,10 +11896,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_asyncio_waitfor.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_base_events.py",
 			"Type": "NonUFS"
 		},
@@ -11052,6 +11960,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_ssl.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_sslproto.py",
 			"Type": "NonUFS"
 		},
@@ -11064,6 +11976,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_taskgroups.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_tasks.py",
 			"Type": "NonUFS"
 		},
@@ -11072,11 +11988,19 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_timeouts.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_transports.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_unix_events.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_asyncio/test_waitfor.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -11136,10 +12060,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_binhex.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_binop.py",
 			"Type": "NonUFS"
 		},
@@ -11184,7 +12104,35 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_capi.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_capi/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_capi/__main__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_capi/test_codecs.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_capi/test_eval_code_ex.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_capi/test_getargs.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_capi/test_misc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_capi/test_structmembers.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_capi/test_unicode.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -11316,7 +12264,47 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/executor.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/test_as_completed.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/test_deadlock.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/test_future.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/test_init.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/test_process_pool.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/test_shutdown.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/test_thread_pool.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/test_wait.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_concurrent_futures/util.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -11352,6 +12340,18 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_cppext/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_cppext/extension.cpp",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_cppext/setup.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_cprofile.py",
 			"Type": "NonUFS"
 		},
@@ -11376,7 +12376,27 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_dataclasses.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_dataclasses/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_dataclasses/dataclass_module_1.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_dataclasses/dataclass_module_1_str.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_dataclasses/dataclass_module_2.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_dataclasses/dataclass_module_2_str.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_dataclasses/dataclass_textanno.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -11460,27 +12480,51 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/__init__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/doctest_aliases.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest2.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/doctest_lineno.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest2.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/sample_doctest.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest3.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/sample_doctest_no_docstrings.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest4.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/sample_doctest_no_doctests.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/test_doctest.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/test_doctest.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/test_doctest2.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/test_doctest2.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/test_doctest3.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_doctest/test_doctest4.txt",
 			"Type": "NonUFS"
 		},
 		{
@@ -11509,14 +12553,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/__main__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/PyBanner048.gif",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/audiotest.au",
 			"Type": "NonUFS"
 		},
 		{
@@ -11708,6 +12744,78 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/msg_47.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.bmp",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.exr",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.gif",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.jpg",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.pbm",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.pgm",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.png",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.ppm",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.ras",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.sgi",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.tiff",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.webp",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/python.xbm",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/sndhdr.aifc",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/sndhdr.aiff",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/sndhdr.au",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/data/sndhdr.wav",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_email/test__encoded_words.py",
 			"Type": "NonUFS"
 		},
@@ -11796,6 +12904,14 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_except_star.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_exception_group.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_exception_hierarchy.py",
 			"Type": "NonUFS"
 		},
@@ -11837,6 +12953,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_fileio.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_fileutils.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -11892,19 +13012,67 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/__init__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future3.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/badsyntax_future10.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future4.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/badsyntax_future3.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future5.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/badsyntax_future4.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/badsyntax_future5.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/badsyntax_future6.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/badsyntax_future7.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/badsyntax_future8.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/badsyntax_future9.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/future_test1.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/future_test2.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/test_future.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/test_future_flags.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/test_future_multiple_features.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/test_future_multiple_imports.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_future_stmt/test_future_single_import.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -11912,7 +13080,35 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_gdb.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_gdb/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_gdb/gdb_sample.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_gdb/test_backtrace.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_gdb/test_cfunction.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_gdb/test_cfunction_full.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_gdb/test_misc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_gdb/test_pretty_print.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_gdb/util.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -11940,15 +13136,15 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_getargs2.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_getopt.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_getpass.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_getpath.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12088,6 +13284,18 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_import/data/circular_imports/subpkg2/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_import/data/circular_imports/subpkg2/parent/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_import/data/circular_imports/subpkg2/parent/child.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_import/data/circular_imports/subpkg/subpackage2.py",
 			"Type": "NonUFS"
 		},
@@ -12101,6 +13309,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_import/data/circular_imports/util.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_import/data/double_const.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12225,6 +13437,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/data/example-21.12-py3.6.egg",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/data/example2-1.0.0-py3-none-any.whl",
 			"Type": "NonUFS"
 		},
 		{
@@ -12372,11 +13588,31 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/namespacedata01/binary.file",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/namespacedata01/utf-16.file",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/namespacedata01/utf-8.file",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/partial/cfimport.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/partial/pool_in_threads.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/resources/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/resources/util.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12420,6 +13656,14 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/test_compatibilty_files.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/test_contents.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/test_files.py",
 			"Type": "NonUFS"
 		},
@@ -12460,6 +13704,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/test_reader.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/test_resource.py",
 			"Type": "NonUFS"
 		},
@@ -12488,6 +13736,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/update-zips.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_importlib/util.py",
 			"Type": "NonUFS"
 		},
@@ -12512,7 +13764,31 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_inspect.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_inspect/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_inspect/inspect_fodder.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_inspect/inspect_fodder2.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_inspect/inspect_stock_annotations.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_inspect/inspect_stringized_annotations.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_inspect/inspect_stringized_annotations_2.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_inspect/test_inspect.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12521,6 +13797,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_int_literal.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_interpreters.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12644,6 +13924,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_launcher.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_lib2to3.py",
 			"Type": "NonUFS"
 		},
@@ -12724,7 +14008,31 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_module.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_module/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_module/bad_getattr.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_module/bad_getattr2.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_module/bad_getattr3.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_module/final_a.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_module/final_b.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_module/good_getattr.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12740,11 +14048,43 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_fork.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_fork/__init__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_forkserver.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_fork/test_manager.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_fork/test_misc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_fork/test_processes.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_fork/test_threads.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_forkserver/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_forkserver/test_manager.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_forkserver/test_misc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_forkserver/test_processes.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_forkserver/test_threads.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12752,7 +14092,23 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_spawn.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_spawn/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_spawn/test_manager.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_spawn/test_misc.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_spawn/test_processes.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_multiprocessing_spawn/test_threads.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12777,6 +14133,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_numeric_tower.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_opcache.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12812,11 +14172,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_parser.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_pathlib.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_pathlib.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_patma.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -12844,11 +14204,15 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_peg_generator/test_grammar_validator.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_peg_generator/test_pegen.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_peg_parser.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_pep646_syntax.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -13116,11 +14480,55 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/__main__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/test_backup.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/test_dbapi.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/test_dump.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/test_factory.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/test_hooks.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/test_regression.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/test_transactions.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/test_types.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_sqlite3/test_userfunctions.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_ssl.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_stable_abi_ctypes.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -13164,10 +14572,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_structmembers.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_structseq.py",
 			"Type": "NonUFS"
 		},
@@ -13193,10 +14597,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_support.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_symbol.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -13248,6 +14648,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_termios.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_textwrap.py",
 			"Type": "NonUFS"
 		},
@@ -13296,6 +14700,326 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/__main__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/burntsushi.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/array-missing-comma.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/array-of-tables/overwrite-array-in-parent.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/array-of-tables/overwrite-bool-with-aot.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/array/file-end-after-val.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/array/unclosed-after-item.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/array/unclosed-empty.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/basic-str-ends-in-escape.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/boolean/invalid-false-casing.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/boolean/invalid-true-casing.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/dates-and-times/invalid-day.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/dotted-keys/access-non-table.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/dotted-keys/extend-defined-aot.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/dotted-keys/extend-defined-table-with-subtable.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/dotted-keys/extend-defined-table.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table-missing-comma.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/define-twice-in-subtable.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/define-twice.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/file-end-after-key-val.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/mutate.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/override-val-in-table.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/override-val-with-array.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/override-val-with-table.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/overwrite-implicitly.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/overwrite-value-in-inner-array.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/overwrite-value-in-inner-table.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/inline-table/unclosed-empty.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/invalid-comment-char.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/invalid-escaped-unicode.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/invalid-hex.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/keys-and-vals/ends-early-table-def.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/keys-and-vals/ends-early.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/keys-and-vals/no-value.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/keys-and-vals/only-ws-after-dot.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/keys-and-vals/overwrite-with-deep-table.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/literal-str/unclosed.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/missing-closing-double-square-bracket.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/missing-closing-square-bracket.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/multiline-basic-str/carriage-return.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/multiline-basic-str/escape-only.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/multiline-basic-str/file-ends-after-opening.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/multiline-basic-str/last-line-escape.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/multiline-basic-str/unclosed-ends-in-whitespace-escape.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/multiline-literal-str/file-ends-after-opening.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/multiline-literal-str/unclosed.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/non-scalar-escaped.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/table/eof-after-opening.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/table/redefine-1.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/table/redefine-2.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/unclosed-multiline-string.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/invalid/unclosed-string.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/apostrophes-in-literal-string.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/apostrophes-in-literal-string.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/array/array-subtables.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/array/array-subtables.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/array/open-parent-table.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/array/open-parent-table.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/boolean.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/boolean.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/dates-and-times/datetimes.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/dates-and-times/datetimes.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/dates-and-times/localtime.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/dates-and-times/localtime.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/empty-inline-table.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/empty-inline-table.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/five-quotes.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/five-quotes.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/hex-char.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/hex-char.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/multiline-basic-str/ends-in-whitespace-escape.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/multiline-basic-str/ends-in-whitespace-escape.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/no-newlines.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/no-newlines.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/trailing-comma.json",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/data/valid/trailing-comma.toml",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/test_data.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/test_error.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tomllib/test_misc.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/__init__.py",
 			"Type": "NonUFS"
 		},
@@ -13304,87 +15028,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/__main__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_common/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_common/test_files.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_common/test_info.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_common/test_show.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_cpython/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_cpython/test___main__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_cpython/test_functional.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_cpython/test_supported.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_parser/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_parser/test_declarations.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_parser/test_preprocessor.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_symbols/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_symbols/test_info.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_variables/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_variables/test_find.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_variables/test_info.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/test_variables/test_known.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_c_analyzer/util.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_fixcid.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tools/test_freeze.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -13444,11 +15092,23 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tty.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_tuple.py",
 			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_turtle.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_type_annotations.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_type_cache.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -13660,6 +15320,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_xxlimited.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/test_xxtestfuzz.py",
 			"Type": "NonUFS"
 		},
@@ -13724,6 +15388,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/testtar.tar.xz",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tf_inherit_check.py",
 			"Type": "NonUFS"
 		},
@@ -13732,23 +15400,47 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenize_tests-latin1-coding-cookie-and-utf8-bom-sig.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/__init__.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenize_tests-no-coding-cookie-and-utf8-bom-sig-only.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/bad_coding.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenize_tests-utf8-coding-cookie-and-no-utf8-bom-sig.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/bad_coding2.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenize_tests-utf8-coding-cookie-and-utf8-bom-sig.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/badsyntax_3131.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenize_tests.txt",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/badsyntax_pep3120.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/coding20731.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/tokenize_tests-latin1-coding-cookie-and-utf8-bom-sig.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/tokenize_tests-no-coding-cookie-and-utf8-bom-sig-only.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/tokenize_tests-utf8-coding-cookie-and-no-utf8-bom-sig.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/tokenize_tests-utf8-coding-cookie-and-utf8-bom-sig.txt",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tokenizedata/tokenize_tests.txt",
 			"Type": "NonUFS"
 		},
 		{
@@ -13757,6 +15449,54 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/tracedmodules/testmod.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/_typed_dict_helper.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/ann_module.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/ann_module2.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/ann_module3.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/ann_module4.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/ann_module5.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/ann_module6.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/ann_module7.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/ann_module8.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/ann_module9.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/test/typinganndata/mod_generics_cache.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -14112,10 +15852,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tkinter/test/runtktests.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tkinter/test/support.py",
 			"Type": "NonUFS"
 		},
@@ -14141,6 +15877,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tkinter/test/test_tkinter/test_loadtk.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tkinter/test/test_tkinter/test_messagebox.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -14172,10 +15912,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tkinter/test/test_ttk/test_functions.py",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tkinter/test/test_ttk/test_style.py",
 			"Type": "NonUFS"
 		},
@@ -14201,6 +15937,22 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tokenize.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tomllib/__init__.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tomllib/_parser.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tomllib/_re.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/tomllib/_types.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -14596,6 +16348,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/wsgiref/types.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Lib/wsgiref/util.py",
 			"Type": "NonUFS"
 		},
@@ -14740,15 +16496,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Python_Windows_Binary_v3.9.tps",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Scripts/pip.exe",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Scripts/pip3.9.exe",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Scripts/pip3.11.exe",
 			"Type": "NonUFS"
 		},
 		{
@@ -14820,82 +16572,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/ChipViewer.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/ColorDB.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/DetailsViewer.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/ListViewer.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/Main.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/PyncheWidget.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/StripViewer.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/Switchboard.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/TextViewer.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/TypeinViewer.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/X/rgb.txt",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/X/xlicense.txt",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/__init__.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/html40colors.txt",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/namedcolors.txt",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/pyColorChooser.py",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/pynche.pyw",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/webcolors.txt",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/pynche/websafe.txt",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/2to3.py",
 			"Type": "NonUFS"
 		},
@@ -14937,6 +16613,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/db2pickle.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/deepfreeze.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -14992,11 +16672,27 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/freeze_modules.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/generate_global_objects.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/generate_opcode_h.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/generate_symbol_py.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/generate_re_casefix.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/generate_sre_constants.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/generate_stdlib_module_names.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -15128,11 +16824,15 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/serve.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/smelly.py",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/smelly.py",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/stable_abi.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/startuptime.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -15140,7 +16840,15 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/summarize_stats.py",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/texi2html.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/umarshal.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -15153,6 +16861,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/var_access_benchmark.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/verify_ensurepip_wheels.py",
 			"Type": "NonUFS"
 		},
 		{
@@ -15172,7 +16884,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/python39.dll",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/python311.dll",
 			"Type": "NonUFS"
 		},
 		{
@@ -15204,6 +16916,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/nmake/x86_64-w64-mingw32-nmakehlp.exe",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/reg1.3/pkgIndex.tcl",
 			"Type": "NonUFS"
 		},
@@ -15225,6 +16941,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/encoding/big5.enc",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/encoding/cns11643.enc",
 			"Type": "NonUFS"
 		},
 		{
@@ -15397,6 +17117,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/encoding/iso8859-10.enc",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/encoding/iso8859-11.enc",
 			"Type": "NonUFS"
 		},
 		{
@@ -16784,6 +18508,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/tzdata/America/Nuuk",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/tzdata/America/Ojinaga",
 			"Type": "NonUFS"
 		},
@@ -17285,6 +19013,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/tzdata/Asia/Qatar",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/tzdata/Asia/Qostanay",
 			"Type": "NonUFS"
 		},
 		{
@@ -18252,6 +19984,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/tzdata/Pacific/Kanton",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8.6/tzdata/Pacific/Kiritimati",
 			"Type": "NonUFS"
 		},
@@ -18516,7 +20252,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8/8.4/platform-1.0.14.tm",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8/8.4/platform-1.0.18.tm",
 			"Type": "NonUFS"
 		},
 		{
@@ -18528,11 +20264,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8/8.5/tcltest-2.5.0.tm",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8/8.5/tcltest-2.5.3.tm",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8/8.6/http-2.9.0.tm",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/tcl/tcl8/8.6/http-2.9.5.tm",
 			"Type": "NonUFS"
 		},
 		{
@@ -21376,7 +23112,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/OpenColorIO_2_2.dll",
+			"Path": "$(EngineDir)/Binaries/Win64/OpenColorIO_2_3.dll",
 			"Type": "NonUFS"
 		},
 		{
@@ -21385,6 +23121,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/oo2tex_win64_2.9.10.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/oo2tex_win64_2.9.11.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/oo2tex_win64_2.9.12.dll",
 			"Type": "NonUFS"
 		},
 		{
@@ -21409,6 +23153,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/tbb12.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Renderer/TessellationTable.bin",
 			"Type": "NonUFS"
 		},
 		{
@@ -23088,6 +24836,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/Common/Calendar.svg",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/Common/Console.svg",
 			"Type": "UFS"
 		},
@@ -23169,6 +24921,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/Common/Monitor.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/Common/Normalize.png",
 			"Type": "UFS"
 		},
 		{
@@ -23472,6 +25228,14 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/Common/folder-virtual-closed.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/Common/folder-virtual-open.svg",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/Common/help.svg",
 			"Type": "UFS"
 		},
@@ -23593,6 +25357,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/Common/x-circle.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/CoreWidgets/CheckBox/CheckBoxIndeterminate_12.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/CoreWidgets/CheckBox/CheckBoxIndeterminate_14.svg",
 			"Type": "UFS"
 		},
 		{
@@ -23948,11 +25720,27 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_Added.svg",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_BranchModifiedBadge.svg",
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_CheckCircleLine.svg",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_CheckIn.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_CheckInAvailable.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_CheckInAvailableRewound.svg",
 			"Type": "UFS"
 		},
 		{
@@ -23972,7 +25760,19 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_ConflictResolution_Clear.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_ConflictResolution_OpenExternal.svg",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_Conflicted.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_ConflictedState.svg",
 			"Type": "UFS"
 		},
 		{
@@ -23980,7 +25780,23 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_DiskSize.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_File.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_LineCircle.svg",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_MarkedForAdd.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_Modified.svg",
 			"Type": "UFS"
 		},
 		{
@@ -23989,6 +25805,26 @@
 		},
 		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_NewerVersion.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_Promote.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_Promote_Large.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_Removed.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_Rewind.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_Rewound.svg",
 			"Type": "UFS"
 		},
 		{
@@ -24013,6 +25849,18 @@
 		},
 		{
 			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_SyncAndCheckOut.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_VerticalLine.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_VerticalLineDashed.svg",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Starship/SourceControl/RC_VerticalLineStart.svg",
 			"Type": "UFS"
 		},
 		{
@@ -24184,6 +26032,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Animation/ControlRigModules/ControlRigModules.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Animation/ControlRigSpline/ControlRigSpline.uplugin",
 			"Type": "UFS"
 		},
@@ -24205,6 +26057,18 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Cameras/GameplayCameras/GameplayCameras.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/ChaosCloth/ChaosCloth.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/ChaosVD/ChaosVD.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/CmdLinkServer/CmdLinkServer.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -24352,6 +26216,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Editor/MeshLODToolset/MeshLODToolset.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Editor/MobileLauncherProfileWizard/MobileLauncherProfileWizard.uplugin",
 			"Type": "UFS"
 		},
@@ -24369,6 +26237,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Editor/PluginBrowser/PluginBrowser.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/ProxyLODPlugin/ProxyLODPlugin.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -24420,14 +26292,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosClothEditor/ChaosClothEditor.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCloth/ChaosCloth.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/ChaosEditor/ChaosEditor.uplugin",
 			"Type": "UFS"
 		},
@@ -24445,6 +26309,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/CharacterAI/CharacterAI.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/CharacterFXEditor/BaseCharacterFXEditor/BaseCharacterFXEditor.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -24472,11 +26340,11 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/MeshLODToolset/MeshLODToolset.uplugin",
+			"Path": "$(EngineDir)/Plugins/Experimental/MeshModelingToolsetExp/MeshModelingToolsetExp.uplugin",
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/MeshModelingToolsetExp/MeshModelingToolsetExp.uplugin",
+			"Path": "$(EngineDir)/Plugins/Experimental/MetaHuman/MetaHumanProjectUtilities/MetaHumanProjectUtilities.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -24492,10 +26360,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ProxyLODPlugin/ProxyLODPlugin.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PythonScriptPlugin/PythonScriptPlugin.uplugin",
 			"Type": "UFS"
 		},
@@ -24508,7 +26372,15 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/StudioTelemetry/StudioTelemetry.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/ToolPresets/ToolPresets.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/FX/NiagaraSimCaching/NiagaraSimCaching.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -24624,6 +26496,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/RenderGraphInsights/RenderGraphInsights.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ActorLayerUtilities/ActorLayerUtilities.uplugin",
 			"Type": "UFS"
 		},
@@ -24681,6 +26557,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ExampleDeviceProfileSelector/ExampleDeviceProfileSelector.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/GameInput/GameInput.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -24768,6 +26648,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Runtime/Windows/XInputDevice/XInputDevice.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Tests/InterchangeTests/InterchangeTests.uplugin",
 			"Type": "UFS"
 		},
@@ -24780,9 +26664,192 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/WorldMetrics/WorldMetrics.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/XGEController/XGEController.uplugin",
 			"Type": "UFS"
 		}
+	],
+	"BuildPlugins": [
+		"ACLPlugin",
+		"AISupport",
+		"ActorLayerUtilities",
+		"ActorSequence",
+		"AlembicImporter",
+		"AndroidDeviceProfileSelector",
+		"AndroidFileServer",
+		"AndroidMedia",
+		"AndroidMoviePlayer",
+		"AndroidPermission",
+		"AnimationData",
+		"AnimationModifierLibrary",
+		"AnimationSharing",
+		"AppleImageUtils",
+		"AppleMoviePlayer",
+		"ArchVisCharacter",
+		"AssetManagerEditor",
+		"AssetTags",
+		"AudioCapture",
+		"AudioSynesthesia",
+		"AudioWidgets",
+		"AutomationUtils",
+		"AvfMedia",
+		"BackChannel",
+		"BaseCharacterFXEditor",
+		"BlendSpaceMotionAnalysis",
+		"BlueprintHeaderView",
+		"Bridge",
+		"CLionSourceCodeAccess",
+		"CableComponent",
+		"CameraShakePreviewer",
+		"ChangelistReview",
+		"ChaosCaching",
+		"ChaosCloth",
+		"ChaosEditor",
+		"ChaosNiagara",
+		"ChaosSolverPlugin",
+		"ChaosUserDataPT",
+		"ChaosVD",
+		"CharacterAI",
+		"ChunkDownloader",
+		"CmdLinkServer",
+		"CodeLiteSourceCodeAccess",
+		"ContentBrowserAssetDataSource",
+		"ContentBrowserClassDataSource",
+		"ContentBrowserFileDataSource",
+		"ControlRig",
+		"ControlRigModules",
+		"ControlRigSpline",
+		"CryptoKeys",
+		"CurveEditorTools",
+		"CustomMeshComponent",
+		"DataRegistry",
+		"DataValidation",
+		"Dataflow",
+		"DatasmithContent",
+		"DumpGPUServices",
+		"EditorDebugTools",
+		"EditorScriptingUtilities",
+		"EngineAssetDefinitions",
+		"EnhancedInput",
+		"EnvironmentQueryEditor",
+		"ExampleDeviceProfileSelector",
+		"FacialAnimation",
+		"FastBuildController",
+		"Fracture",
+		"FullBodyIK",
+		"GLTFExporter",
+		"GameInput",
+		"GameplayAbilities",
+		"GameplayCameras",
+		"GameplayTagsEditor",
+		"GeometryCache",
+		"GeometryCollectionPlugin",
+		"GeometryFlow",
+		"GeometryMode",
+		"GeometryProcessing",
+		"GitSourceControl",
+		"GoogleCloudMessaging",
+		"GooglePAD",
+		"IKRig",
+		"IOSDeviceProfileSelector",
+		"ImgMedia",
+		"InputDebugging",
+		"Interchange",
+		"InterchangeEditor",
+		"InterchangeTests",
+		"KDevelopSourceCodeAccess",
+		"LauncherChunkInstaller",
+		"LevelSequenceEditor",
+		"LightMixer",
+		"LinuxDeviceProfileSelector",
+		"LocalizableMessage",
+		"LocationServicesBPLibrary",
+		"MacGraphicsSwitching",
+		"MaterialAnalyzer",
+		"MediaCompositing",
+		"MediaPlate",
+		"MediaPlayerEditor",
+		"MeshLODToolset",
+		"MeshModelingToolset",
+		"MeshModelingToolsetExp",
+		"MeshPainting",
+		"MetaHumanProjectUtilities",
+		"Metasound",
+		"MobileLauncherProfileWizard",
+		"MobilePatchingUtils",
+		"ModelingToolsEditorMode",
+		"MsQuic",
+		"N10XSourceCodeAccess",
+		"Niagara",
+		"NiagaraSimCaching",
+		"NullSourceCodeAccess",
+		"ObjectMixer",
+		"OnlineBase",
+		"OnlineServices",
+		"OnlineSubsystem",
+		"OnlineSubsystemGooglePlay",
+		"OnlineSubsystemIOS",
+		"OnlineSubsystemNull",
+		"OnlineSubsystemUtils",
+		"OodleNetwork",
+		"OpenImageDenoise",
+		"Paper2D",
+		"PerforceSourceControl",
+		"PixWinPlugin",
+		"PlanarCut",
+		"PlasticSourceControl",
+		"PlatformCrypto",
+		"PluginBrowser",
+		"PluginUtils",
+		"PortableObjectFileDataSource",
+		"ProceduralMeshComponent",
+		"PropertyAccessEditor",
+		"PropertyAccessNode",
+		"ProxyLODPlugin",
+		"PythonScriptPlugin",
+		"RenderDocPlugin",
+		"RenderGraphInsights",
+		"ResonanceAudio",
+		"RiderSourceCodeAccess",
+		"RigVM",
+		"SequencerAnimTools",
+		"SequencerScripting",
+		"SignificanceManager",
+		"SkeletalReduction",
+		"SoundFields",
+		"SpeedTreeImporter",
+		"StructUtils",
+		"StudioTelemetry",
+		"SubversionSourceControl",
+		"Synthesis",
+		"Takes",
+		"TcpMessaging",
+		"TemplateSequence",
+		"TextureFormatOodle",
+		"ToolPresets",
+		"TraceDataFilters",
+		"TraceUtilities",
+		"UObjectPlugin",
+		"UVEditor",
+		"UdpMessaging",
+		"VariantManager",
+		"VariantManagerContent",
+		"VisualStudioCodeSourceCodeAccess",
+		"VisualStudioSourceCodeAccess",
+		"WaveTable",
+		"WebMMedia",
+		"WebMMoviePlayer",
+		"WindowsDeviceProfileSelector",
+		"WindowsMoviePlayer",
+		"WmfMedia",
+		"WorldMetrics",
+		"WorldPartitionHLODUtilities",
+		"XCodeSourceCodeAccess",
+		"XGEController",
+		"XInputDevice"
 	],
 	"AdditionalProperties": [
 		{
