@@ -13,6 +13,8 @@ public:
 
   UPROPERTY(BlueprintReadWrite, EditAnywhere)
   TEnumAsByte<EGolemAllegiance> GolemAllegiance;
+  UPROPERTY(BlueprintReadWrite, EditAnywhere)
+  TArray<TEnumAsByte<EGolemAllegiance>> HostileDiplomacies;
 
 protected:
   UFUNCTION()

@@ -29,7 +29,9 @@ void AGolem::BeginPlay()
 void AGolem::OnFinishedCreated()
 {
 	UpdateTargetLocation(CurrentTargetLocation);
-	DataAsset->Apply(this);
+	if(ensure(DataAsset))
+		DataAsset->Apply(this);
+
 	const UAttributeSet_Character* set = AbilitySystemComponent->GetSet<UAttributeSet_Character>();
 	auto name = set->GetName();
 	if (ensure(AbilitySystemComponent))
