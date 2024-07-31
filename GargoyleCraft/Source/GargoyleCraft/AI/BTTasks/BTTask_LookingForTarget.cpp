@@ -16,18 +16,15 @@ UBTTask_LookingForTarget::UBTTask_LookingForTarget(const FObjectInitializer& obj
 
 EBTNodeResult::Type UBTTask_LookingForTarget::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
-	auto pawn = Cast<AAIController>(OwnerComp.GetOwner())->GetPawn();
-	;
-	auto target = UAbilityTools::FindNearestGolem(OwnerComp.GetOwner(), pawn, pawn->GetComponentByClass<UC_Pool>()->HostileDiplomacies, 500);
-	//UAIBlueprintHelperLibrary::GetBlackboard(OwnerComp.GetOwner())->SetValueAsObject("Target", target);
-	if(target)
-		return EBTNodeResult::Succeeded;
-	else
-	{
-		return EBTNodeResult::Failed;
-	}
+	return EBTNodeResult::InProgress;
+	//auto pawn = Cast<AAIController>(OwnerComp.GetOwner())->GetPawn();
+	//;
+	//auto target = UAbilityTools::FindNearestGolem(OwnerComp.GetOwner(), pawn, pawn->GetComponentByClass<UC_Pool>()->HostileDiplomacies, 500);
+	////UAIBlueprintHelperLibrary::GetBlackboard(OwnerComp.GetOwner())->SetValueAsObject("Target", target);
+	//if(target)
+	//	return EBTNodeResult::Succeeded;
+	//else
+	//{
+	//	EBTNodeResult::Failed;
+	//}
 }
-
-void UBTTask_LookingForTarget::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
-{
-	Super::TickTask(OwnerComp, NodeMemory, DeltaSeconds);}

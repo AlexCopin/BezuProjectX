@@ -17,7 +17,7 @@ public:
   UPROPERTY(BlueprintAssignable)
   FOnGolemSelection OnGolemRemoved;
   UFUNCTION(BlueprintCallable)
-  void AddToSelectedGolems(AGolem* Golem);
+  bool AddToSelectedGolems(AGolem* Golem);
   UFUNCTION(BlueprintCallable)
   void RemoveFromSelectedGolems(AGolem* Golem);
 

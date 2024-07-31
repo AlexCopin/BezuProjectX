@@ -32,13 +32,13 @@ void AGolem::OnFinishedCreated()
 	if(ensure(DataAsset))
 		DataAsset->Apply(this);
 
-	const UAttributeSet_Character* set = AbilitySystemComponent->GetSet<UAttributeSet_Character>();
-	auto name = set->GetName();
 	if (ensure(AbilitySystemComponent))
 	{
+		const UAttributeSet_Character* set = AbilitySystemComponent->GetSet<UAttributeSet_Character>();
+		AbilitySystemComponent->ApplyDefaultValues();
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UAttributeSet_Character::GetMovementSpeedAttribute()).AddUObject(this, &AGolem::OnSpeedChanged);
-		GetCharacterMovement()->MaxWalkSpeed = AbilitySystemComponent->GetSet<UAttributeSet_Character>()->GetMovementSpeed();
-		GetCharacterMovement()->MaxAcceleration = AbilitySystemComponent->GetSet<UAttributeSet_Character>()->GetMovementSpeed();
+		GetCharacterMovement()->MaxWalkSpeed = set->GetMovementSpeed();
+		GetCharacterMovement()->MaxAcceleration = set->GetMovementSpeed();
 	}
 }
 
