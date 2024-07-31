@@ -19,7 +19,7 @@ EBTNodeResult::Type UBTTask_LookingForTarget::ExecuteTask(UBehaviorTreeComponent
 	auto pawn = Cast<AAIController>(OwnerComp.GetOwner())->GetPawn();
 	;
 	auto target = UAbilityTools::FindNearestGolem(OwnerComp.GetOwner(), pawn, pawn->GetComponentByClass<UC_Pool>()->HostileDiplomacies, 500);
-	UAIBlueprintHelperLibrary::GetBlackboard(OwnerComp.GetOwner())->SetValueAsObject("Target", target);
+	//UAIBlueprintHelperLibrary::GetBlackboard(OwnerComp.GetOwner())->SetValueAsObject("Target", target);
 	if(target)
 		return EBTNodeResult::Succeeded;
 	else

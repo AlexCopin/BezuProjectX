@@ -31,4 +31,18 @@ public:
   GAMEPLAYATTRIBUTE_VALUE_SETTER(MovementSpeed);
   GAMEPLAYATTRIBUTE_VALUE_INITTER(MovementSpeed);
 
+  UPROPERTY(EditAnywhere, BlueprintReadOnly)
+  FGameplayAttributeData AggroRange;
+  GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UAttributeSet_Character, AggroRange);
+  GAMEPLAYATTRIBUTE_VALUE_GETTER(AggroRange);
+  GAMEPLAYATTRIBUTE_VALUE_SETTER(AggroRange);
+  GAMEPLAYATTRIBUTE_VALUE_INITTER(AggroRange);
+
+  UPROPERTY(EditAnywhere, BlueprintReadOnly)
+  FGameplayAttributeData AttackRange;
+  GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UAttributeSet_Character, AttackRange);
+  GAMEPLAYATTRIBUTE_VALUE_GETTER(AttackRange);
+  GAMEPLAYATTRIBUTE_VALUE_SETTER(AttackRange);
+  GAMEPLAYATTRIBUTE_VALUE_INITTER(AttackRange);
+
 };
