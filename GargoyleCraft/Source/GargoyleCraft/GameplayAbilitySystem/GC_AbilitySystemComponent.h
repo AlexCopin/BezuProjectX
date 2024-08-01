@@ -1,6 +1,8 @@
 #pragma once
 #include "AbilitySystemComponent.h"
 
+#include "AbilitySystemInterface.h"
+#include "GameplayEffectTypes.h"
 #include "GC_AbilitySystemComponent.generated.h"
 
 UCLASS()

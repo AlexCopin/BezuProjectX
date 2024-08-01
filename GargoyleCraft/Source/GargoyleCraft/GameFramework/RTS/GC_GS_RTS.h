@@ -11,6 +11,8 @@
 #define GET_GS_RTS() (GetWorld() ? GetWorld()->GetGameState<AGC_GS_RTS>() : nullptr)
 class AGolem;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPoolUpdated, AGC_GS_RTS*, GameState);
+
 UCLASS()
 class GARGOYLECRAFT_API AGC_GS_RTS : public AGameState
 {
@@ -26,4 +28,7 @@ public:
     TArray<TObjectPtr<AGolem>> EnemyGolems;
   UPROPERTY(BlueprintReadOnly)
     TArray<TObjectPtr<AGolem>> NeutralGolems;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnPoolUpdated OnPoolUpdated;
 };

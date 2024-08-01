@@ -2,19 +2,22 @@
 
 #include "GargoyleCraft/Golems/Golem.h"
 
-bool AGC_PC_RTS::AddToSelectedGolems(AGolem* Golem)
+void AGC_PC_RTS::AddToSelectedGolems(AGolem* Golem)
 {
-	if(Golem->PoolComponent->GolemAllegiance == Ally)
+	if(ensureAlways(Golem))
 	{
 		SelectedGolems.Add(Golem);
 		OnGolemAdded.Broadcast(Golem);
-		return true;
+		OnTargetsUpdated.Broadcast(this);
 	}
-	return false;
 }
 
 void AGC_PC_RTS::RemoveFromSelectedGolems(AGolem* Golem)
 {
-  SelectedGolems.Remove(Golem);
-  OnGolemRemoved.Broadcast(Golem);
+	if (ensureAlways(Golem))
+	{
+		SelectedGolems.Remove(Golem);
+		OnGolemRemoved.Broadcast(Golem);
+		OnTargetsUpdated.Broadcast(this);
+	}
 }

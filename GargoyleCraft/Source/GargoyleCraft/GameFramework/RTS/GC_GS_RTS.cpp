@@ -22,6 +22,7 @@ void AGC_GS_RTS::AddToPool(EGolemAllegiance Allegiance, AGolem* Golem)
       NeutralGolems.Add(Golem);
       break;
   }
+  OnPoolUpdated.Broadcast(this);
 }
 
 void AGC_GS_RTS::RemoveFromPool(EGolemAllegiance Allegiance, AGolem* Golem)
@@ -40,4 +41,5 @@ void AGC_GS_RTS::RemoveFromPool(EGolemAllegiance Allegiance, AGolem* Golem)
       NeutralGolems.Remove(Golem);
       break;
   }
+  OnPoolUpdated.Broadcast(this);
 }

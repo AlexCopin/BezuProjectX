@@ -1,5 +1,7 @@
 #include "GC_AbilitySystemComponent.h"
 
+#include "AttributeSets/AttributeSet_Character.h"
+
 void UGC_AbilitySystemComponent::Init()
 {
 }
