@@ -6,6 +6,7 @@
 #include "AbilitySystemInterface.h"
 #include "GargoyleCraft/GameplayAbilitySystem/GC_AbilitySystemComponent.h"
 #include "GameplayEffectTypes.h"
+#include "Interfaces/Selectable.h"
 #include "Golem.generated.h"
 
 class UPDA_Golem;
@@ -13,7 +14,7 @@ class UPDA_Golem;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFinishedCreated);
 
 UCLASS()
-class AGolem : public ACharacter, public IAbilitySystemInterface
+class AGolem : public ACharacter, public IAbilitySystemInterface, public ISelectable
 {
     GENERATED_BODY()
 public:
@@ -42,17 +43,28 @@ public:
   //AbilitySystemInterface
     virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override { return AbilitySystemComponent; }
 
+	//SelectableInterface
+	virtual AActor* Selected_Implementation(AGC_PC_RTS* PlayerController) override;
+	virtual AActor* Unselected_Implementation(AGC_PC_RTS* PlayerController) override;
+
     void OnSpeedChanged(const FOnAttributeChangeData& Values);
 
 	void ApplyMoveForced();
 	void RemoveMoveForced();
+
+	void SetTarget(AActor* _Target);
+	TObjectPtr<AActor> GetTarget() { return Target; };
 private:
 
+	TObjectPtr<AActor> Target = nullptr;
+
+	bool IsMovingToTarget;
 	UFUNCTION()
 	void ReachLocationTick();
 
     FVector CurrentTargetLocation;
 	FActiveGameplayEffectHandle ForcedMoveEffect;
+	FActiveGameplayEffectHandle TargetEffect;
 
 	FTimerHandle TimerReachLocation;
 };

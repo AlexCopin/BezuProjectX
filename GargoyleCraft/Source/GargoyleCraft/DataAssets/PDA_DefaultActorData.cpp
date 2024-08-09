@@ -3,15 +3,14 @@
 #include "AbilitySystemInterface.h"
 #include "GargoyleCraft/GameplayAbilitySystem/GC_AbilitySystemComponent.h"
 
-void UPDA_DefaultActorData::Apply(AActor* Actor)
+void UPDA_DefaultActorData::Apply(UAbilitySystemComponent* ASC)
 {
-	/*auto asc = Cast<IAbilitySystemInterface>(Actor)->GetAbilitySystemComponent();
-    if(asc)
+    if(ASC)
     {
-		asc->DefaultStartingData.Append(DefaultStartingData);
-	    if(auto gcAsc = Cast<UGC_AbilitySystemComponent>(asc))
-	    {
-			gcAsc->ApplyDefaultValues();
-	    }
-    }*/
+		for(auto ability : StartingAbilities)
+		{
+			auto spec = FGameplayAbilitySpec(ability, 1, INDEX_NONE, this);
+			ASC->GiveAbility(spec);
+		}
+    }
 }

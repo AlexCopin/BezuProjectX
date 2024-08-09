@@ -26,10 +26,12 @@ void UBTService_SetTarget::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* No
 	OwnerComp.GetBlackboardComponent()->SetValueAsObject(BlackboardKey.SelectedKeyName, golem);
 	if(golem)
 	{
+		Cast<AGolem>(pawn)->SetTarget(golem);
 		Cast<UBTTaskNode>(GetMyNode())->WrappedOnTaskFinished(OwnerComp, NodeMemory, EBTNodeResult::Succeeded);
 	}
 	else
 	{
+		Cast<AGolem>(pawn)->SetTarget(nullptr);
 		Cast<UBTTaskNode>(GetMyNode())->WrappedOnTaskFinished(OwnerComp, NodeMemory, EBTNodeResult::Failed);
 	}
 }

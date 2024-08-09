@@ -20,3 +20,13 @@ void ABuilding::RequestGolemCreation(TSoftObjectPtr<UPDA_Golem> Data)
 	tempGolem->Init(Data.LoadSynchronous(), GolemSpawnFlag->GetComponentLocation());
 	UGameplayStatics::FinishSpawningActor(tempGolem, GolemSpawnPoint->GetComponentTransform());
 }
+
+AActor* ABuilding::Selected_Implementation(AGC_PC_RTS* PlayerController)
+{
+	return this;
+}
+
+AActor* ABuilding::Unselected_Implementation(AGC_PC_RTS* PlayerController)
+{
+	return this;
+}

@@ -16,6 +16,6 @@ class GARGOYLECRAFT_API UAbilityTools : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 public:
-	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"), Category = "Something")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
 	static AGolem* FindNearestGolem(const UObject* WorldContextObject, const AActor* From, TArray<TEnumAsByte<EGolemAllegiance>> AllegiancesToSearch, float Range);
 };

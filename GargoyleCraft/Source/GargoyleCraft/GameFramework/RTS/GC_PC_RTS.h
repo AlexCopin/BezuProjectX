@@ -26,4 +26,6 @@ public:
 
   UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TArray<AGolem*> SelectedGolems;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TArray<AGolem*> ControlableGolems;
 };

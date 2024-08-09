@@ -4,8 +4,11 @@
 #include "AIController.h"
 #include "Data/PDA_Golem.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "GargoyleCraft/GameFramework/RTS/GC_PC_RTS.h"
 #include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
 #include "GargoyleCraft/GameplayAbilitySystem/GameplayEffects/GE_MoveForced.h"
+#include "GargoyleCraft/GameplayAbilitySystem/GameplayEffects/GE_Target.h"
+#include "GargoyleCraft/Include/GC_Macros.h"
 
 AGolem::AGolem()
 {
@@ -30,6 +33,25 @@ void AGolem::BeginPlay()
 void AGolem::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
+	DrawDebugCircle(GetWorld(), GetActorLocation(), AbilitySystemComponent->GetSet<UAttributeSet_Character>()->GetAggroRange(), 50, FColor::Red, false, -1, 0, 0, FVector(0,1,0), FVector(1,0,0), false);
+
+	if(AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Moving.Forced")))
+	{
+		GEngine->AddOnScreenDebugMessage(INDEX_NONE, 0.1f, FColor::Red, "Moving Forced");
+	}else
+	{
+		if(Target)
+		{
+			if(AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Targeting")))
+			{
+				auto controller = Cast<AAIController>(GetController());
+				if (ensure(controller))
+				{
+					controller->MoveToLocation(Target->GetActorLocation());
+				}
+			}
+		}
+	}
 }
 
 void AGolem::OnFinishedCreated()
@@ -37,7 +59,7 @@ void AGolem::OnFinishedCreated()
 	if(ensure(DataAsset))
 	{
 		UpdateTargetLocation(CurrentTargetLocation);
-		DataAsset->Apply(this);
+		DataAsset->Apply(GetAbilitySystemComponent());
 	}
 
 	if (ensure(AbilitySystemComponent))
@@ -60,6 +82,18 @@ void AGolem::UpdateTargetLocation(FVector NewTargetLocation)
 	  ApplyMoveForced();
   }
 }
+
+AActor* AGolem::Selected_Implementation(AGC_PC_RTS* PlayerController)
+{
+	PlayerController->AddToSelectedGolems(this);
+	return this;
+}
+AActor* AGolem::Unselected_Implementation(AGC_PC_RTS* PlayerController)
+{
+	PlayerController->RemoveFromSelectedGolems(this);
+	return this;
+}
+
 
 void AGolem::OnSpeedChanged(const FOnAttributeChangeData& Values)
 {
@@ -102,4 +136,19 @@ void AGolem::RemoveMoveForced()
 		ForcedMoveEffect.Invalidate();
 		GetWorld()->GetTimerManager().ClearTimer(TimerReachLocation);
 	}
+}
+
+void AGolem::SetTarget(AActor* _Target)
+{
+	Target = _Target;
+	if(_Target)
+	{
+		auto context = GetAbilitySystemComponent()->MakeEffectContext();
+		auto spec = GetAbilitySystemComponent()->MakeOutgoingSpec(UGE_Target::StaticClass(), 1, context);
+		TargetEffect = GetAbilitySystemComponent()->ApplyGameplayEffectSpecToSelf(*spec.Data);
+	}else
+	{
+		GetAbilitySystemComponent()->RemoveActiveGameplayEffect(TargetEffect);
+	}
+
 }
