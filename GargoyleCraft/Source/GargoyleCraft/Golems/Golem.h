@@ -21,6 +21,7 @@ public:
 	UFUNCTION()
 		void Init(UPDA_Golem* PDAGolem, FVector FirstTargetLocation);
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaSeconds) override;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TObjectPtr<UC_Pool> PoolComponent;
@@ -42,6 +43,16 @@ public:
     virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override { return AbilitySystemComponent; }
 
     void OnSpeedChanged(const FOnAttributeChangeData& Values);
+
+	void ApplyMoveForced();
+	void RemoveMoveForced();
 private:
+
+	UFUNCTION()
+	void ReachLocationTick();
+
     FVector CurrentTargetLocation;
+	FActiveGameplayEffectHandle ForcedMoveEffect;
+
+	FTimerHandle TimerReachLocation;
 };

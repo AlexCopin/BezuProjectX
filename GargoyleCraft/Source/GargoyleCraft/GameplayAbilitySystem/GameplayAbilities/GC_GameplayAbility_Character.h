@@ -13,5 +13,8 @@ UCLASS()
 class GARGOYLECRAFT_API UGC_GameplayAbility_Character : public UGC_GameplayAbility
 {
 	GENERATED_BODY()
-	
+public:
+	UGC_GameplayAbility_Character();
+private:
+	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
 };

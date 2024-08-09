@@ -5,6 +5,7 @@
 #include "Data/PDA_Golem.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
+#include "GargoyleCraft/GameplayAbilitySystem/GameplayEffects/GE_MoveForced.h"
 
 AGolem::AGolem()
 {
@@ -26,11 +27,18 @@ void AGolem::BeginPlay()
   OnFinishedCreated();
 }
 
+void AGolem::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+}
+
 void AGolem::OnFinishedCreated()
 {
-	UpdateTargetLocation(CurrentTargetLocation);
 	if(ensure(DataAsset))
+	{
+		UpdateTargetLocation(CurrentTargetLocation);
 		DataAsset->Apply(this);
+	}
 
 	if (ensure(AbilitySystemComponent))
 	{
@@ -47,11 +55,51 @@ void AGolem::UpdateTargetLocation(FVector NewTargetLocation)
   CurrentTargetLocation = NewTargetLocation;
   auto controller = Cast<AAIController>(GetController());
   if(ensure(controller))
-    controller->MoveToLocation(CurrentTargetLocation);
+  {
+	  controller->MoveToLocation(CurrentTargetLocation);
+	  ApplyMoveForced();
+  }
 }
 
 void AGolem::OnSpeedChanged(const FOnAttributeChangeData& Values)
 {
   GetCharacterMovement()->MaxWalkSpeed = Values.NewValue;
   GetCharacterMovement()->MaxAcceleration = Values.NewValue;
+}
+
+void AGolem::ApplyMoveForced()
+{
+	if (ForcedMoveEffect.IsValid())
+		return;
+	auto context = GetAbilitySystemComponent()->MakeEffectContext();
+	auto spec = GetAbilitySystemComponent()->MakeOutgoingSpec(UGE_MoveForced::StaticClass(), 1, context);
+	ForcedMoveEffect = GetAbilitySystemComponent()->ApplyGameplayEffectSpecToSelf(*spec.Data);
+
+	if (ForcedMoveEffect.IsValid())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("AGolem::ApplyMoveForced"));
+		GetWorld()->GetTimerManager().SetTimer(TimerReachLocation, this, &AGolem::ReachLocationTick, 0.2f, true);
+	}
+}
+
+
+void AGolem::ReachLocationTick()
+{
+	if (ForcedMoveEffect.IsValid())
+	{
+		if (GetMovementComponent()->Velocity.Length() <= 0.1f)
+		{
+			RemoveMoveForced();
+		}
+	}
+}
+void AGolem::RemoveMoveForced()
+{
+	if (ForcedMoveEffect.IsValid())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("AGolem::RemoveMoveForced"));
+		GetAbilitySystemComponent()->RemoveActiveGameplayEffect(ForcedMoveEffect);
+		ForcedMoveEffect.Invalidate();
+		GetWorld()->GetTimerManager().ClearTimer(TimerReachLocation);
+	}
 }
