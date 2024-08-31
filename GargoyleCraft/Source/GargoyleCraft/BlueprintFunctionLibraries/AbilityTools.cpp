@@ -19,12 +19,13 @@ AGolem* UAbilityTools::FindNearestGolem(const UObject* WorldContextObject, const
 		{
 		case Ally :
 			GolemsToSearch.Append(WorldContextObject->GetWorld()->GetGameState<AGC_GS_RTS>()->FriendlyGolems);
-
+			break;
 		case Enemy:
 			GolemsToSearch.Append(WorldContextObject->GetWorld()->GetGameState<AGC_GS_RTS>()->EnemyGolems);
-
+			break;
 		case Neutral:
 			GolemsToSearch.Append(WorldContextObject->GetWorld()->GetGameState<AGC_GS_RTS>()->NeutralGolems);
+			break;
 		}
 	}
 	AGolem* returnGolem = nullptr;

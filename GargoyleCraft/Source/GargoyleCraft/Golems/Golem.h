@@ -19,7 +19,7 @@ class AGolem : public ACharacter, public IAbilitySystemInterface, public ISelect
     GENERATED_BODY()
 public:
 	AGolem();
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 		void Init(UPDA_Golem* PDAGolem, FVector FirstTargetLocation);
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaSeconds) override;
