@@ -2,15 +2,25 @@
 
 #include "AbilitySystemInterface.h"
 #include "GargoyleCraft/GameplayAbilitySystem/GC_AbilitySystemComponent.h"
+#include "GargoyleCraft/GameplayAbilitySystem/Data/PDA_GameplayAbility.h"
 
 void UPDA_DefaultActorData::Apply(UAbilitySystemComponent* ASC)
 {
     if(ASC)
     {
-		for(auto ability : StartingAbilities)
+		for(auto abilityPda : StartingAbilities)
 		{
-			auto spec = FGameplayAbilitySpec(ability, 1, INDEX_NONE, this);
-			ASC->GiveAbility(spec);
+			if(ensure(abilityPda))
+			{
+
+				Cast<UGC_AbilitySystemComponent>(ASC)->AddGameplayAbility(abilityPda);
+			}
+		}
+		auto context = ASC->MakeEffectContext();
+		for(auto effect : StartingGameplayEffects)
+		{
+			auto effectSpec = ASC->MakeOutgoingSpec(effect, 1, context);
+			ASC->ApplyGameplayEffectSpecToSelf(*effectSpec.Data);
 		}
     }
 }

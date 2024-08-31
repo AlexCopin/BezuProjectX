@@ -6,6 +6,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "AbilityTools.generated.h"
 
+class UAbilitySystemComponent;
 enum EGolemAllegiance : uint8;
 class AGolem;
 /**
@@ -18,4 +19,8 @@ class GARGOYLECRAFT_API UAbilityTools : public UBlueprintFunctionLibrary
 public:
 	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
 	static AGolem* FindNearestGolem(const UObject* WorldContextObject, const AActor* From, TArray<TEnumAsByte<EGolemAllegiance>> AllegiancesToSearch, float Range);
+
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
+	static void ApplyDamage(UAbilitySystemComponent* Source, UAbilitySystemComponent* Target, float Value);
+
 };

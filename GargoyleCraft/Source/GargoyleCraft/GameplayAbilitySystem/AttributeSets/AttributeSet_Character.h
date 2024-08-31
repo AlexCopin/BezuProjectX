@@ -4,45 +4,48 @@
 
 #include "AttributeSet_Character.generated.h"
 
+// Uses macros from AttributeSet.h
+#define ATTRIBUTE_ACCESSORS(ClassName, PropertyName) \
+	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, PropertyName) \
+	GAMEPLAYATTRIBUTE_VALUE_GETTER(PropertyName) \
+	GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName) \
+	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
+
 UCLASS()
 class GARGOYLECRAFT_API UAttributeSet_Character : public UAttributeSet
 {
   GENERATED_BODY()
 public:
+	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FGameplayAttributeData MetaDamage;
+	ATTRIBUTE_ACCESSORS(UAttributeSet_Character, MetaDamage);
 
   UPROPERTY(EditAnywhere, BlueprintReadOnly)
     FGameplayAttributeData HP;
-  GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UAttributeSet_Character, HP);
-  GAMEPLAYATTRIBUTE_VALUE_GETTER(HP);
-  GAMEPLAYATTRIBUTE_VALUE_SETTER(HP);
-  GAMEPLAYATTRIBUTE_VALUE_INITTER(HP);
+	ATTRIBUTE_ACCESSORS(UAttributeSet_Character, HP);
 
   UPROPERTY(EditAnywhere, BlueprintReadOnly)
     FGameplayAttributeData MaxHP;
-  GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UAttributeSet_Character, MaxHP);
-  GAMEPLAYATTRIBUTE_VALUE_GETTER(MaxHP);
-  GAMEPLAYATTRIBUTE_VALUE_SETTER(MaxHP);
-  GAMEPLAYATTRIBUTE_VALUE_INITTER(MaxHP);
+	ATTRIBUTE_ACCESSORS(UAttributeSet_Character, MaxHP);
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FGameplayAttributeData RegenHP;
+	ATTRIBUTE_ACCESSORS(UAttributeSet_Character, RegenHP);
 
   UPROPERTY(EditAnywhere, BlueprintReadOnly)
     FGameplayAttributeData MovementSpeed;
-  GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UAttributeSet_Character, MovementSpeed);
-  GAMEPLAYATTRIBUTE_VALUE_GETTER(MovementSpeed);
-  GAMEPLAYATTRIBUTE_VALUE_SETTER(MovementSpeed);
-  GAMEPLAYATTRIBUTE_VALUE_INITTER(MovementSpeed);
+	ATTRIBUTE_ACCESSORS(UAttributeSet_Character, MovementSpeed);
 
   UPROPERTY(EditAnywhere, BlueprintReadOnly)
   FGameplayAttributeData AggroRange;
-  GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UAttributeSet_Character, AggroRange);
-  GAMEPLAYATTRIBUTE_VALUE_GETTER(AggroRange);
-  GAMEPLAYATTRIBUTE_VALUE_SETTER(AggroRange);
-  GAMEPLAYATTRIBUTE_VALUE_INITTER(AggroRange);
+  ATTRIBUTE_ACCESSORS(UAttributeSet_Character, AggroRange);
 
   UPROPERTY(EditAnywhere, BlueprintReadOnly)
   FGameplayAttributeData AttackRange;
-  GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UAttributeSet_Character, AttackRange);
-  GAMEPLAYATTRIBUTE_VALUE_GETTER(AttackRange);
-  GAMEPLAYATTRIBUTE_VALUE_SETTER(AttackRange);
-  GAMEPLAYATTRIBUTE_VALUE_INITTER(AttackRange);
+  ATTRIBUTE_ACCESSORS(UAttributeSet_Character, AttackRange);
+
 
 };

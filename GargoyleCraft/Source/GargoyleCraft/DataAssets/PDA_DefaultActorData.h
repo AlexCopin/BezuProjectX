@@ -1,8 +1,10 @@
 #pragma once
+#include "GameplayEffect.h"
 
 #include "PDA_DefaultActorData.generated.h"
 
 
+class UPDA_GameplayAbility;
 class UGameplayAbility;
 class UAbilitySystemComponent;
 class UGC_GameplayAbility_Character;
@@ -15,7 +17,9 @@ class GARGOYLECRAFT_API UPDA_DefaultActorData : public UPrimaryDataAsset
 public:
   virtual void Apply(UAbilitySystemComponent* ASC);
 	UPROPERTY(EditDefaultsOnly, Category = Gameplay)
-	TArray<TSubclassOf<UGameplayAbility>> StartingAbilities;
+	TArray<TObjectPtr<UPDA_GameplayAbility>> StartingAbilities;
+	UPROPERTY(EditDefaultsOnly, Category = Gameplay)
+	TArray<TSubclassOf<UGameplayEffect>> StartingGameplayEffects;
   UPROPERTY(EditDefaultsOnly, Category = Gameplay)
   TArray<FAttributeDefaults> DefaultStartingData;
 };

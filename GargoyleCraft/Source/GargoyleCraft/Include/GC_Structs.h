@@ -4,6 +4,9 @@
 #include "GargoyleCraft/Golems/Data/PDA_GolemArmy.h"
 #include "GC_Structs.generated.h"
 
+class UGC_GameplayAbility;
+class UPDA_GameplayAbility;
+
 USTRUCT(BlueprintType, Blueprintable)
 struct FHeroData
 {
@@ -43,4 +46,20 @@ struct FPlayerData
   FHeroData HeroData;
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
   FArmyData ArmyData;
+};
+
+
+USTRUCT(BlueprintType, Blueprintable)
+struct FAbilityData
+{
+	GENERATED_BODY()
+	FGameplayAbilitySpecHandle AbilityHandle;
+	UPROPERTY(EditAnywhere)
+	float Range = 100;
+	UPROPERTY(EditAnywhere)
+	float Damage = 0;
+	UPROPERTY(EditAnywhere)
+	float Duration;
+	UPROPERTY(EditAnywhere)
+	float Cooldown;
 };

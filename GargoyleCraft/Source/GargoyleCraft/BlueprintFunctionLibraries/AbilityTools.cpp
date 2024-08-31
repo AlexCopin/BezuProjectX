@@ -4,7 +4,10 @@
 #include "AbilityTools.h"
 
 #include "GargoyleCraft/GameFramework/RTS/GC_GS_RTS.h"
+#include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
+#include "GargoyleCraft/GameplayAbilitySystem/GameplayEffects/GE_Damage.h"
 #include "GargoyleCraft/Golems/Golem.h"
+#include "GargoyleCraft/Include/GC_Macros.h"
 
 AGolem* UAbilityTools::FindNearestGolem(const UObject* WorldContextObject, const AActor* From,
                                         TArray<TEnumAsByte<EGolemAllegiance>> AllegiancesToSearch, float Range)
@@ -36,13 +39,18 @@ AGolem* UAbilityTools::FindNearestGolem(const UObject* WorldContextObject, const
 			returnGolem = golem;
 		}
 	}
-	if(returnGolem)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("FindNearestGolem %s"), *returnGolem->GetName());
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("FindNearestGolem nullptr"));
-	}
 	return returnGolem;
+}
+
+void UAbilityTools::ApplyDamage(UAbilitySystemComponent* Source, UAbilitySystemComponent* Target, float Value)
+{
+	auto context = Source->MakeEffectContext();
+	auto spec = Source->MakeOutgoingSpec(UGE_Damage::StaticClass(), 1, context);
+	FGameplayEffectAttributeCaptureDefinition captDef;
+	captDef.AttributeSource = EGameplayEffectAttributeCaptureSource::Target;
+	captDef.AttributeToCapture = UAttributeSet_Character::GetMetaDamageAttribute();
+	spec.Data->CapturedRelevantAttributes.AddCaptureDefinition(captDef);
+	spec.Data->SetSetByCallerMagnitude(MAKE_TAG("MetaDamage.Value"), Value);
+	Source->ApplyGameplayEffectSpecToTarget(*spec.Data, Target);
+
 }

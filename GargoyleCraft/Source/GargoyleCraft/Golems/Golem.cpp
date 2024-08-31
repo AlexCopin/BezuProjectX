@@ -6,9 +6,12 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GargoyleCraft/GameFramework/RTS/GC_PC_RTS.h"
 #include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
+#include "GargoyleCraft/GameplayAbilitySystem/GameplayAbilities/GC_GameplayAbility_Character.h"
+#include "GargoyleCraft/GameplayAbilitySystem/GameplayEffects/GE_ActivateAbility.h"
 #include "GargoyleCraft/GameplayAbilitySystem/GameplayEffects/GE_MoveForced.h"
 #include "GargoyleCraft/GameplayAbilitySystem/GameplayEffects/GE_Target.h"
 #include "GargoyleCraft/Include/GC_Macros.h"
+#include "GargoyleCraft/Include/GC_Structs.h"
 
 AGolem::AGolem()
 {
@@ -35,14 +38,12 @@ void AGolem::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 	DrawDebugCircle(GetWorld(), GetActorLocation(), AbilitySystemComponent->GetSet<UAttributeSet_Character>()->GetAggroRange(), 50, FColor::Red, false, -1, 0, 0, FVector(0,1,0), FVector(1,0,0), false);
 
-	if(AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Moving.Forced")))
-	{
-		GEngine->AddOnScreenDebugMessage(INDEX_NONE, 0.1f, FColor::Red, "Moving Forced");
-	}else
+	if(!AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Moving.Forced")))
 	{
 		if(Target)
 		{
-			if(AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Targeting")))
+			if(AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Targeting")) 
+				&& !AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Ability.Ongoing")))
 			{
 				auto controller = Cast<AAIController>(GetController());
 				if (ensure(controller))
@@ -56,20 +57,27 @@ void AGolem::Tick(float DeltaSeconds)
 
 void AGolem::OnFinishedCreated()
 {
-	if(ensure(DataAsset))
+	if (ensure(AbilitySystemComponent))
+	{
+		const UAttributeSet_Character* set = AbilitySystemComponent->GetSet<UAttributeSet_Character>();
+		if(PoolComponent->GolemAllegiance == Ally)
+		{
+			AbilitySystemComponent->InitAbilityActorInfo(GetWorld()->GetFirstPlayerController()->GetPawn(), this);
+		}
+		AbilitySystemComponent->ApplyDefaultValues();
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UAttributeSet_Character::GetMovementSpeedAttribute()).AddUObject(this, &AGolem::OnSpeedChanged);
+		GetCharacterMovement()->MaxWalkSpeed = set->GetMovementSpeed();
+		GetCharacterMovement()->MaxAcceleration = set->GetMovementSpeed();
+
+		//TIMER TRY ACTIVATE ABILITY (AVOID FRAMERATE TICKING)
+		GetWorld()->GetTimerManager().SetTimer(TimerTryActivateAbility, this, &AGolem::TryActivateAbility, 0.15f, true);
+	}
+	if (ensure(DataAsset))
 	{
 		UpdateTargetLocation(CurrentTargetLocation);
 		DataAsset->Apply(GetAbilitySystemComponent());
 	}
 
-	if (ensure(AbilitySystemComponent))
-	{
-		const UAttributeSet_Character* set = AbilitySystemComponent->GetSet<UAttributeSet_Character>();
-		AbilitySystemComponent->ApplyDefaultValues();
-		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UAttributeSet_Character::GetMovementSpeedAttribute()).AddUObject(this, &AGolem::OnSpeedChanged);
-		GetCharacterMovement()->MaxWalkSpeed = set->GetMovementSpeed();
-		GetCharacterMovement()->MaxAcceleration = set->GetMovementSpeed();
-	}
 }
 
 void AGolem::UpdateTargetLocation(FVector NewTargetLocation)
@@ -151,4 +159,30 @@ void AGolem::SetTarget(AActor* _Target)
 		GetAbilitySystemComponent()->RemoveActiveGameplayEffect(TargetEffect);
 	}
 
+}
+
+void AGolem::TryActivateAbility()
+{
+	if (Target)
+	{
+		if (AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Targeting")) 
+			&& !AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Ability.Ongoing")))
+		{
+			for(auto abilityData : AbilitySystemComponent->Abilities)
+			{
+				if(abilityData.Range >= FVector::Distance(GetActorLocation(), Target->GetActorLocation()))
+				{
+					if(AbilitySystemComponent->TryActivateAbility(abilityData.AbilityHandle))
+					{
+						auto controller = Cast<AAIController>(GetController());
+						if (ensure(controller))
+						{
+							controller->StopMovement();
+						}
+					}
+					break;
+				}
+			}
+		}
+	}
 }

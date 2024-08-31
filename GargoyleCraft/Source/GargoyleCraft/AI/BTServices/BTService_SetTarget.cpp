@@ -14,6 +14,7 @@
 
 UBTService_SetTarget::UBTService_SetTarget()
 {
+	NodeName = "SetTarget";
 	Interval = 0.3f;
 }
 

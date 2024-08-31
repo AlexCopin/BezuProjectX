@@ -3,6 +3,11 @@
 
 #include "GC_GameplayAbility.h"
 
+#include "AbilitySystemComponent.h"
+#include "GargoyleCraft/GameplayAbilitySystem/GameplayAbilities/GE_Cooldown_BasicMelee.h"
+#include "GargoyleCraft/GameplayAbilitySystem/Data/PDA_GameplayAbility.h"
+#include "GargoyleCraft/GameplayAbilitySystem/GameplayEffects/GE_ActivateAbility.h"
+
 void UGC_GameplayAbility::OnGiveAbility(const FGameplayAbilityActorInfo* _ActorInfo, const FGameplayAbilitySpec& _Spec)
 {
   Super::OnGiveAbility(_ActorInfo, _Spec);
@@ -13,14 +18,27 @@ void UGC_GameplayAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handl
 	const FGameplayEventData* TriggerEventData)
 {
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
-	GetWorld()->GetTimerManager().SetTimer(DurationHandle, this, &UGC_GameplayAbility::DurationEnded, Duration);
+
+	GCAbilitySystemComponent = Cast<UGC_AbilitySystemComponent>(ActorInfo->AbilitySystemComponent.Get());
+	//Effect du cul
+	CommitAbilityCooldown(Handle, ActorInfo, ActivationInfo, true);
+	AbilityData = GCAbilitySystemComponent->GetAbilityDataFromSpecHandle(GetCurrentAbilitySpecHandle());
+	float duration = AbilityData->AbilityData.Duration;
+	GetWorld()->GetTimerManager().SetTimer(DurationHandle, this, &UGC_GameplayAbility::DurationEnded, duration);
 }
 
-void UGC_GameplayAbility::EndAbility(const FGameplayAbilitySpecHandle Handle,
-	const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo,
-	bool bReplicateEndAbility, bool bWasCancelled)
+void UGC_GameplayAbility::ApplyCooldown(const FGameplayAbilitySpecHandle Handle,
+	const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) const
 {
-	Super::EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled);
+	UGameplayEffect* CooldownGE = GetCooldownGameplayEffect();
+	if (CooldownGE)
+	{
+		auto context = MakeEffectContext(Handle, ActorInfo);
+		auto spec = GCAbilitySystemComponent->MakeOutgoingSpec(CooldownGE->GetClass(), 1, context);
+		float cooldown = GCAbilitySystemComponent->GetAbilityDataFromSpecHandle(GetCurrentAbilitySpecHandle())->AbilityData.Cooldown;
+		spec.Data->SetSetByCallerMagnitude("Abilities.BasicMelee.Cooldown", cooldown);
+		ApplyGameplayEffectSpecToOwner(Handle, ActorInfo, ActivationInfo, spec);
+	}
 }
 
 void UGC_GameplayAbility::DurationEnded()

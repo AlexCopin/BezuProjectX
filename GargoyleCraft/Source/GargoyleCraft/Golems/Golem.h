@@ -54,6 +54,8 @@ public:
 
 	void SetTarget(AActor* _Target);
 	TObjectPtr<AActor> GetTarget() { return Target; };
+
+	void TryActivateAbility();
 private:
 
 	TObjectPtr<AActor> Target = nullptr;
@@ -67,4 +69,5 @@ private:
 	FActiveGameplayEffectHandle TargetEffect;
 
 	FTimerHandle TimerReachLocation;
+	FTimerHandle TimerTryActivateAbility;
 };
