@@ -7,10 +7,12 @@
 
 void UGC_AbilitySystemComponent::Init()
 {
+	GetGameplayAttributeValueChangeDelegate(UAttributeSet_Character::GetHPAttribute()).AddUObject(this, &UGC_AbilitySystemComponent::OnHealthChanged);
 }
 
 void UGC_AbilitySystemComponent::ApplyDefaultValues()
-{	
+{
+	Init();
   for (int32 i = 0; i < DefaultStartingData.Num(); ++i)
   {
     if (DefaultStartingData[i].Attributes && DefaultStartingData[i].DefaultStartingTable)
@@ -33,4 +35,13 @@ void UGC_AbilitySystemComponent::AddGameplayAbility(UPDA_GameplayAbility* Abilit
 UPDA_GameplayAbility* UGC_AbilitySystemComponent::GetAbilityDataFromSpecHandle(FGameplayAbilitySpecHandle Handle)
 {
 	return AbilitiesData[Handle];
+}
+
+void UGC_AbilitySystemComponent::OnHealthChanged(const FOnAttributeChangeData& Values)
+{
+	ASC_OnHealthChanged.Broadcast(Values.OldValue, Values.NewValue);
+	if(Values.NewValue <= 0)
+	{
+		ASC_OnDeath.Broadcast();
+	}
 }

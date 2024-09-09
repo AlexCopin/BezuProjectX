@@ -17,6 +17,10 @@ class GARGOYLECRAFT_API UPDA_Golem : public UPDA_DefaultActorData
 {
 	GENERATED_BODY()
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Required)
+	FGameplayTagContainer RequirementsTags;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Required)
+	FGameplayTagContainer GolemTags;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Flavor)
     FText Name;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category=Flavor)

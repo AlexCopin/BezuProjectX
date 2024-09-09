@@ -56,6 +56,12 @@ public:
 	TObjectPtr<AActor> GetTarget() { return Target; };
 
 	void TryActivateAbility();
+
+	//---Events Attributes
+	UFUNCTION(BlueprintNativeEvent)
+	void OnDeath();
+
+	//---
 private:
 
 	TObjectPtr<AActor> Target = nullptr;

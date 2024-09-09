@@ -8,6 +8,9 @@
 struct FAbilityData;
 class UPDA_GameplayAbility;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDeath);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHealthChanged, float, oldValue, float, newValue);
+
 UCLASS()
 class GARGOYLECRAFT_API UGC_AbilitySystemComponent : public UAbilitySystemComponent
 {
@@ -23,4 +26,13 @@ public:
 	UPDA_GameplayAbility* GetAbilityDataFromSpecHandle(FGameplayAbilitySpecHandle Handle);
 	TMap<FGameplayAbilitySpecHandle, UPDA_GameplayAbility*> AbilitiesData;
 	TArray<FAbilityData> Abilities;
+
+#pragma region Attributes Listeners
+	UPROPERTY(BlueprintAssignable)
+		FOnDeath ASC_OnDeath;
+	UPROPERTY(BlueprintAssignable)
+		FOnHealthChanged ASC_OnHealthChanged;
+
+	void OnHealthChanged(const FOnAttributeChangeData& Values);
+#pragma endregion Attributes Listeners
 };

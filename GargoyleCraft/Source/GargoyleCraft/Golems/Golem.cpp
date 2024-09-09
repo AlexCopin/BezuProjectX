@@ -4,6 +4,7 @@
 #include "AIController.h"
 #include "Data/PDA_Golem.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "GameFramework/PlayerState.h"
 #include "GargoyleCraft/GameFramework/RTS/GC_PC_RTS.h"
 #include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
 #include "GargoyleCraft/GameplayAbilitySystem/GameplayAbilities/GC_GameplayAbility_Character.h"
@@ -71,6 +72,9 @@ void AGolem::OnFinishedCreated()
 
 		//TIMER TRY ACTIVATE ABILITY (AVOID FRAMERATE TICKING)
 		GetWorld()->GetTimerManager().SetTimer(TimerTryActivateAbility, this, &AGolem::TryActivateAbility, 0.15f, true);
+
+		//Events Attributes
+		AbilitySystemComponent->ASC_OnDeath.AddDynamic(this, &AGolem::AGolem::OnDeath);
 	}
 	if (ensure(DataAsset))
 	{
@@ -185,4 +189,10 @@ void AGolem::TryActivateAbility()
 			}
 		}
 	}
+}
+
+void AGolem::OnDeath_Implementation()
+{
+	Execute_Unselected(this, Cast<AGC_PC_RTS>(GetWorld()->GetFirstPlayerController()));
+	Destroy();
 }

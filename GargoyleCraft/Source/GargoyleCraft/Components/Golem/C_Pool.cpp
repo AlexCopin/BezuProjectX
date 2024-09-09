@@ -9,6 +9,12 @@ void UC_Pool::BeginPlay()
   AddToPool();
 }
 
+void UC_Pool::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+	RemoveFromPool();
+}
+
 void UC_Pool::AddToPool()
 {
   GET_GS_RTS()->AddToPool(GolemAllegiance, Cast<AGolem>(GetOwner()));

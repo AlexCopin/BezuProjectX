@@ -17,14 +17,6 @@ struct FHeroData
 };
 
 USTRUCT(BlueprintType, Blueprintable)
-struct FGolemData
-{
-  GENERATED_BODY()
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    TObjectPtr<UPDA_Golem> PDA_Golem;
-};
-USTRUCT(BlueprintType, Blueprintable)
 struct FArmyData
 {
   GENERATED_BODY()
@@ -33,8 +25,12 @@ struct FArmyData
     FText Name;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category = Flavor)
     FText Description;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	int NbAvailableSlots = 1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Required)
+	FGameplayTagContainer TagsUnlocked;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-    TArray<FGolemData> GolemTypesInArmy;
+    TArray<TObjectPtr<UPDA_Golem>> GolemTypesInArmy;
 };
 
 USTRUCT(BlueprintType, Blueprintable)
