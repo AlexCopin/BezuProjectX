@@ -50,12 +50,25 @@ struct FAbilityData
 {
 	GENERATED_BODY()
 	FGameplayAbilitySpecHandle AbilityHandle;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Range = 100;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Damage = 0;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Duration;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Cooldown;
+};
+
+USTRUCT(BlueprintType, Blueprintable)
+struct FTooltipData
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FText Title;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FText Description;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FText Flavor;
+
 };
