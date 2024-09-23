@@ -16,3 +16,23 @@ TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetAvailableGolemsFromPlayerData(FP
 	}
 	return returnValue;
 }
+
+bool UGC_PlayerDataSubsystem::TryAddGolemInArmy(UPDA_Golem* GolemData)
+{
+	if (PlayerData.ArmyData.GolemTypesInArmy.Num() >= PlayerData.ArmyData.NbAvailableSlots)
+		return false;
+
+	PlayerData.ArmyData.GolemTypesInArmy.Add(GolemData);
+	return true;
+}
+
+bool UGC_PlayerDataSubsystem::RemoveGolemFromArmy(UPDA_Golem* GolemData)
+{
+	if(PlayerData.ArmyData.GolemTypesInArmy.Remove(GolemData))
+	{
+		return true;
+	}else
+	{
+		return false;
+	}
+}
