@@ -5,14 +5,28 @@
 
 #include "GargoyleCraft/GameData/PDA_GameData.h"
 
-TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetAvailableGolemsFromPlayerData(FPlayerData dataPlayer)
+void UGC_PlayerDataSubsystem::SetGameData(UPDA_GameData* InGameData)
+{
+	//if no saves
+	if(ensure(InGameData))
+	{
+		GameData = InGameData;
+		PlayerData = GameData->DefaultStartingData;
+		OnDataInitialized.Broadcast(PlayerData);
+	}
+}
+
+TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetAvailableGolemsFromPlayerData()
 {
 
-	TArray<UPDA_Golem*> returnValue;
-	for(auto golemType : GameData->AvailableGolemTypes)
+	TArray<UPDA_Golem*> returnValue = {};
+	if(ensure(GameData))
 	{
-		if (dataPlayer.ArmyData.TagsUnlocked.HasAllExact(golemType->RequirementsTags))
-			returnValue.Add(golemType);
+		for (auto golemType : GameData->AvailableGolemTypes)
+		{
+			if (PlayerData.ArmyData.TagsUnlocked.HasAllExact(golemType->RequirementsTags))
+				returnValue.Add(golemType);
+		}
 	}
 	return returnValue;
 }

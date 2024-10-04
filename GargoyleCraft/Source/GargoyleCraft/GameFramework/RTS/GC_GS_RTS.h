@@ -9,15 +9,20 @@
 
 
 #define GET_GS_RTS() (GetWorld() ? GetWorld()->GetGameState<AGC_GS_RTS>() : nullptr)
+class UPDA_GameData;
 class AGolem;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPoolUpdated, AGC_GS_RTS*, GameState);
 
 UCLASS()
-class GARGOYLECRAFT_API AGC_GS_RTS : public AGameState
+class GARGOYLECRAFT_API AGC_GS_RTS : public AGameStateBase
 {
 	GENERATED_BODY()
 public:
+	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<UPDA_GameData> DefaultGameData;
   UFUNCTION(BlueprintCallable)
   void AddToPool(EGolemAllegiance Allegiance, AGolem* Golem);
   UFUNCTION(BlueprintCallable)

@@ -3,6 +3,15 @@
 
 #include "GC_GS_RTS.h"
 
+#include "GargoyleCraft/GameInstance/GC_PlayerDataSubsystem.h"
+
+
+void AGC_GS_RTS::BeginPlay()
+{
+	Super::BeginPlay();
+
+	GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->SetGameData(DefaultGameData);
+}
 
 void AGC_GS_RTS::AddToPool(EGolemAllegiance Allegiance, AGolem* Golem)
 {

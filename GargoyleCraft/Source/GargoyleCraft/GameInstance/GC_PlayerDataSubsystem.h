@@ -8,6 +8,7 @@
 #include "GC_PlayerDataSubsystem.generated.h"
 
 class UPDA_GameData;
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDataInitialized, FPlayerData, DataSent);
 /**
  * 
  */
@@ -17,13 +18,19 @@ class GARGOYLECRAFT_API UGC_PlayerDataSubsystem : public UGameInstanceSubsystem
 	GENERATED_BODY()
 
 public:
+	//Set from saves (WIP) if here, or Param if not there
+	UFUNCTION()
+	void SetGameData(UPDA_GameData* InGameData);
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FOnDataInitialized OnDataInitialized;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<UPDA_GameData> GameData;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FPlayerData PlayerData;
 
 	UFUNCTION(BlueprintCallable)
-	TArray<UPDA_Golem*> GetAvailableGolemsFromPlayerData(FPlayerData dataPlayer);
+	TArray<UPDA_Golem*> GetAvailableGolemsFromPlayerData();
 	UFUNCTION(BlueprintCallable)
 	bool TryAddGolemInArmy(UPDA_Golem* GolemData);
 	UFUNCTION(BlueprintCallable)

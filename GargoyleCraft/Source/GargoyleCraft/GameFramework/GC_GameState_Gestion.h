@@ -7,13 +7,7 @@
 class UPDA_GameData;
 
 UCLASS()
-class GARGOYLECRAFT_API AGC_GameState_Gestion : public AGameState
+class GARGOYLECRAFT_API AGC_GameState_Gestion : public AGameStateBase
 {
   GENERATED_BODY()
-public:
-
-  virtual void BeginPlay() override;
-
-  UPROPERTY(EditAnywhere,BlueprintReadWrite)
-  TObjectPtr<UPDA_GameData> DefaultGameData;
 };
