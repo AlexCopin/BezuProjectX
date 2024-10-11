@@ -30,6 +30,8 @@ public:
 	FPlayerData PlayerData;
 
 	UFUNCTION(BlueprintCallable)
+	TArray<UPDA_Golem*> GetAvailableGolemsFromGameData();
+	UFUNCTION(BlueprintCallable)
 	TArray<UPDA_Golem*> GetAvailableGolemsFromPlayerData();
 	UFUNCTION(BlueprintCallable)
 	bool TryAddGolemInArmy(UPDA_Golem* GolemData);

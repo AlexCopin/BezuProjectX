@@ -12,20 +12,45 @@ void UGC_PlayerDataSubsystem::SetGameData(UPDA_GameData* InGameData)
 	{
 		GameData = InGameData;
 		PlayerData = GameData->DefaultStartingData;
+		PlayerData.ArmyData.GolemTypesInArmy = GetAvailableGolemsFromPlayerData();
 		OnDataInitialized.Broadcast(PlayerData);
 	}
 }
 
+TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetAvailableGolemsFromGameData()
+{
+	TArray<UPDA_Golem*> returnValue = {};
+	if (ensure(GameData))
+	{
+		TArray<FGolemBaseData*> GolemBaseDatas;
+		GameData->AvailableGolemTypes->GetAllRows(FString("AllRows"), GolemBaseDatas);
+		for (auto golemBaseData : GolemBaseDatas)
+		{
+			if (!golemBaseData->IsAvailable)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Golem not available"));
+				continue;
+			}
+			returnValue.Add(golemBaseData->GolemData);
+		}
+	}
+	return returnValue;
+}
+
 TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetAvailableGolemsFromPlayerData()
 {
-
 	TArray<UPDA_Golem*> returnValue = {};
 	if(ensure(GameData))
 	{
-		for (auto golemType : GameData->AvailableGolemTypes)
+		for(auto tag : PlayerData.ArmyData.TagsUnlocked)
 		{
-			if (PlayerData.ArmyData.TagsUnlocked.HasAllExact(golemType->RequirementsTags))
-				returnValue.Add(golemType);
+			auto golemData = GameData->AvailableGolemTypes->FindRow<FGolemBaseData>(tag.GetTagName(), "Context");
+			if (!golemData->IsAvailable)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Golem not available"));
+				continue;
+			}
+			returnValue.Add(golemData->GolemData);
 		}
 	}
 	return returnValue;

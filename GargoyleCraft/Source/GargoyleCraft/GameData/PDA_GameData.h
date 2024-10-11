@@ -10,6 +10,7 @@
 /**
  * 
  */
+
 UCLASS()
 class GARGOYLECRAFT_API UPDA_GameData : public UPrimaryDataAsset
 {
@@ -19,5 +20,5 @@ public:
     FPlayerData DefaultStartingData;
 
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    TArray<TObjectPtr<UPDA_Golem>> AvailableGolemTypes;
+    TObjectPtr<UDataTable> AvailableGolemTypes;
 };

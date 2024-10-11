@@ -29,7 +29,7 @@ struct FArmyData
 	int NbAvailableSlots = 1;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Required)
 	FGameplayTagContainer TagsUnlocked;
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+    UPROPERTY(BlueprintReadOnly)
     TArray<TObjectPtr<UPDA_Golem>> GolemTypesInArmy;
 };
 
@@ -71,4 +71,17 @@ struct FTooltipData
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FText Flavor;
 
+};
+
+
+USTRUCT(BlueprintType)
+struct FGolemBaseData : public FTableRowBase
+{
+	GENERATED_BODY()
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FGameplayTag GolemTag;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TObjectPtr<UPDA_Golem> GolemData;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	bool IsAvailable;
 };
