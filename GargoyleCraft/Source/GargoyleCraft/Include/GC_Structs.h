@@ -85,3 +85,15 @@ struct FGolemBaseData : public FTableRowBase
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	bool IsAvailable;
 };
+
+USTRUCT(BlueprintType)
+struct FSpawnData
+{
+	GENERATED_BODY()
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "SpawnSettings")
+	TSubclassOf<AActor> SpawnedActor;
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "SpawnSettings")
+	float Delay = 2.0f;
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "SpawnSettings")
+	TObjectPtr<AActor> SpawnPoint;
+};

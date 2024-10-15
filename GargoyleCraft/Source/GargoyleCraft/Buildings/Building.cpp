@@ -1,5 +1,6 @@
 #include "Building.h"
 #include "Components/ArrowComponent.h"
+#include "GargoyleCraft/GameInstance/GC_PlayerDataSubsystem.h"
 #include "Kismet/GameplayStatics.h"
 
 ABuilding::ABuilding()
@@ -11,6 +12,12 @@ ABuilding::ABuilding()
 	GolemSpawnPoint->AttachToComponent(Root, attachmentRules);
 	GolemSpawnFlag = CreateDefaultSubobject<UArrowComponent>("GolemSpawnFlag");
 	GolemSpawnFlag->AttachToComponent(Root, attachmentRules);
+}
+
+void ABuilding::BeginPlay()
+{
+	Super::BeginPlay();
+	GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->OnDataInitialized.AddDynamic(this, &ABuilding::Initialize);
 }
 
 void ABuilding::RequestGolemCreation(TSoftObjectPtr<UPDA_Golem> Data)
@@ -29,4 +36,13 @@ AActor* ABuilding::Selected_Implementation(AGC_PC_RTS* PlayerController)
 AActor* ABuilding::Unselected_Implementation(AGC_PC_RTS* PlayerController)
 {
 	return this;
+}
+
+void ABuilding::Initialize_Implementation(FPlayerData DataSent)
+{
+	if (Initialized)
+		return;
+	IInitializable::Initialize_Implementation(DataSent);
+	Initialized = true;
+	GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->OnDataInitialized.RemoveDynamic(this, &ABuilding::Initialize);
 }
