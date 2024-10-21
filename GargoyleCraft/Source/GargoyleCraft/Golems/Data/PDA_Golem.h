@@ -20,6 +20,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Required)
 	FGameplayTagContainer RequirementsTags;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Required)
+	FGameplayTag GolemTypeTag;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Required)
 	FGameplayTagContainer GolemTags;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Flavor)
     FText Name;

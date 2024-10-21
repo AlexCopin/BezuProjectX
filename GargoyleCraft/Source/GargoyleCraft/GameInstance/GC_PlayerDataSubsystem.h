@@ -9,6 +9,7 @@
 
 class UPDA_GameData;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDataInitialized, FPlayerData, DataSent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnArmyUpdated, UPDA_Golem*, GolemConcerned, bool, bAdded, FArmyData, ArmyData);
 /**
  * 
  */
@@ -23,16 +24,22 @@ public:
 	void SetGameData(UPDA_GameData* InGameData);
 	UPROPERTY(EditAnywhere, BlueprintAssignable)
 	FOnDataInitialized OnDataInitialized;
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FOnArmyUpdated OnArmyUpdated;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<UPDA_GameData> GameData;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FPlayerData PlayerData;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<UPDA_Golem*> GetAvailableGolemsFromGameData();
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<UPDA_Golem*> GetAvailableGolemsFromPlayerData();
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	TArray<UPDA_Golem*> GetGolemsFromPlayerArmy();
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	bool IsGolemInPlayerArmy(UPDA_Golem* DAGolem);
 	UFUNCTION(BlueprintCallable)
 	bool TryAddGolemInArmy(UPDA_Golem* GolemData);
 	UFUNCTION(BlueprintCallable)

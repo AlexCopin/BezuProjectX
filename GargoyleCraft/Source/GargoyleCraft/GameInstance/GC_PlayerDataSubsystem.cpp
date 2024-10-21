@@ -12,7 +12,8 @@ void UGC_PlayerDataSubsystem::SetGameData(UPDA_GameData* InGameData)
 	{
 		GameData = InGameData;
 		PlayerData = GameData->DefaultStartingData;
-		PlayerData.ArmyData.GolemTypesInArmy = GetAvailableGolemsFromPlayerData();
+		PlayerData.ArmyData.GolemTypesInArmy.Empty();
+		//PlayerData.ArmyData.GolemTypesInArmy = GetAvailableGolemsFromPlayerData();
 		OnDataInitialized.Broadcast(PlayerData);
 	}
 }
@@ -55,13 +56,47 @@ TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetAvailableGolemsFromPlayerData()
 	}
 	return returnValue;
 }
+TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetGolemsFromPlayerArmy() 
+{
+	return PlayerData.ArmyData.GolemTypesInArmy;
+}
+
+bool UGC_PlayerDataSubsystem::IsGolemInPlayerArmy(UPDA_Golem* DAGolem)
+{
+	if (ensure(DAGolem)) 
+	{
+		if (PlayerData.ArmyData.GolemTypesInArmy.Contains(DAGolem))
+			return true;
+	}
+	return false;
+}
 
 bool UGC_PlayerDataSubsystem::TryAddGolemInArmy(UPDA_Golem* GolemData)
 {
+	if (ensure(!GolemData))
+		return false;
+
 	if (PlayerData.ArmyData.GolemTypesInArmy.Num() >= PlayerData.ArmyData.NbAvailableSlots)
 		return false;
 
+	if (PlayerData.ArmyData.TagsUnlocked.HasAllExact(GolemData->RequirementsTags)) 
+	{
+		if (ensure(GameData))
+		{
+			auto golemRow = GameData->AvailableGolemTypes->FindRow<FGolemBaseData>(GolemData->GolemTypeTag.GetTagName(), "Context");
+			if(!golemRow)
+				return false;
+
+			if (!golemRow->IsAvailable)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Golem not available"));
+				return false;
+			}
+
+		}
+	}
 	PlayerData.ArmyData.GolemTypesInArmy.Add(GolemData);
+	OnArmyUpdated.Broadcast(GolemData, true, PlayerData.ArmyData);
 	return true;
 }
 
@@ -69,6 +104,7 @@ bool UGC_PlayerDataSubsystem::RemoveGolemFromArmy(UPDA_Golem* GolemData)
 {
 	if(PlayerData.ArmyData.GolemTypesInArmy.Remove(GolemData))
 	{
+		OnArmyUpdated.Broadcast(GolemData, false, PlayerData.ArmyData);
 		return true;
 	}else
 	{

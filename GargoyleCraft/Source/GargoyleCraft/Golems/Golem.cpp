@@ -44,8 +44,13 @@ void AGolem::Tick(float DeltaSeconds)
 		if(Target)
 		{
 			if(AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Targeting")) 
-				&& !AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Ability.Ongoing")))
+				&& !AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Ability.Ongoing"))
+				&& !AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Ability.InRange")))
 			{
+				if (PoolComponent->GolemAllegiance == EGolemAllegiance::Ally)
+				{
+					UE_LOG(LogTemp, Warning, TEXT("MoveToLocation"));
+				}
 				auto controller = Cast<AAIController>(GetController());
 				if (ensure(controller))
 				{
@@ -176,6 +181,7 @@ void AGolem::TryActivateAbility()
 			{
 				if(abilityData.Range >= FVector::Distance(GetActorLocation(), Target->GetActorLocation()))
 				{
+					AbilitySystemComponent->AddLooseGameplayTag(MAKE_TAG("State.Ability.InRange"));
 					if(AbilitySystemComponent->TryActivateAbility(abilityData.AbilityHandle))
 					{
 						auto controller = Cast<AAIController>(GetController());
@@ -185,6 +191,14 @@ void AGolem::TryActivateAbility()
 						}
 					}
 					break;
+				}
+				else 
+				{
+					if (PoolComponent->GolemAllegiance == EGolemAllegiance::Ally) 
+					{
+						UE_LOG(LogTemp, Warning, TEXT("Remove InRange Tag"));
+					}
+					AbilitySystemComponent->RemoveLooseGameplayTag(MAKE_TAG("State.Ability.InRange"));
 				}
 			}
 		}
