@@ -23,6 +23,10 @@ public:
   void AddToSelectedGolems(AGolem* Golem);
   UFUNCTION(BlueprintCallable)
   void RemoveFromSelectedGolems(AGolem* Golem);
+  UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+  void TryToSelectGolemArray(const TArray<AActor*>& Golems, bool bAdditive);
+  UFUNCTION()
+  void SelectGolemArray(TArray<AActor*> Golems, bool bAdditive);
 
   UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TArray<AGolem*> SelectedGolems;

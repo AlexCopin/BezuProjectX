@@ -12,6 +12,7 @@ struct FHeroData
 {
   GENERATED_BODY()
 
+public:
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TObjectPtr<UPDA_Golem> PDA_Hero;
 };
@@ -21,6 +22,7 @@ struct FArmyData
 {
   GENERATED_BODY()
 
+public:
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Flavor)
     FText Name;
   UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category = Flavor)
@@ -29,6 +31,8 @@ struct FArmyData
 	int NbAvailableSlots = 1;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Required)
 	FGameplayTagContainer TagsUnlocked;
+	UPROPERTY(BlueprintReadOnly)
+	FGameplayTagContainer GolemTagsInArmy;
     UPROPERTY(BlueprintReadOnly)
     TArray<TObjectPtr<UPDA_Golem>> GolemTypesInArmy;
 };
@@ -37,7 +41,7 @@ USTRUCT(BlueprintType, Blueprintable)
 struct FPlayerData
 {
   GENERATED_BODY()
-
+public:
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
   FHeroData HeroData;
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -49,6 +53,7 @@ USTRUCT(BlueprintType, Blueprintable)
 struct FAbilityData
 {
 	GENERATED_BODY()
+public:
 	FGameplayAbilitySpecHandle AbilityHandle;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Range = 100;
@@ -64,6 +69,7 @@ USTRUCT(BlueprintType, Blueprintable)
 struct FTooltipData
 {
 	GENERATED_BODY()
+public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FText Title;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -78,6 +84,7 @@ USTRUCT(BlueprintType)
 struct FGolemBaseData : public FTableRowBase
 {
 	GENERATED_BODY()
+public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FGameplayTag GolemTag;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
@@ -90,6 +97,7 @@ USTRUCT(BlueprintType)
 struct FSpawnData
 {
 	GENERATED_BODY()
+public:
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "SpawnSettings")
 	TSubclassOf<AActor> SpawnedActor;
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "SpawnSettings")

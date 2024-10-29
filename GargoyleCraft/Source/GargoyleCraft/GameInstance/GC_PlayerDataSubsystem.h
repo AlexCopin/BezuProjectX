@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GargoyleCraft/Include/GC_Structs.h"
+#include "GC_GameInstance.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "GC_PlayerDataSubsystem.generated.h"
 
@@ -19,25 +20,31 @@ class GARGOYLECRAFT_API UGC_PlayerDataSubsystem : public UGameInstanceSubsystem
 	GENERATED_BODY()
 
 public:
+
+	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	//Set from saves (WIP) if here, or Param if not there
 	UFUNCTION()
 	void SetGameData(UPDA_GameData* InGameData);
-	UPROPERTY(EditAnywhere, BlueprintAssignable)
-	FOnDataInitialized OnDataInitialized;
-	UPROPERTY(EditAnywhere, BlueprintAssignable)
-	FOnArmyUpdated OnArmyUpdated;
+
+	bool IsInitialized = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<UPDA_GameData> GameData;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FPlayerData PlayerData;
+	UPROPERTY(BlueprintReadOnly)
+	UGC_GameInstance* GCGameInstance;
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FOnDataInitialized OnDataInitialized;
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FOnArmyUpdated OnArmyUpdated;
 
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<UPDA_Golem*> GetAvailableGolemsFromGameData();
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<UPDA_Golem*> GetAvailableGolemsFromPlayerData();
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	TArray<UPDA_Golem*> GetGolemsFromPlayerArmy();
+	TArray<UPDA_Golem*> GetChosenGolemsFromPlayerArmy();
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	bool IsGolemInPlayerArmy(UPDA_Golem* DAGolem);
 	UFUNCTION(BlueprintCallable)

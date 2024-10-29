@@ -5,16 +5,26 @@
 
 #include "GargoyleCraft/GameData/PDA_GameData.h"
 
+void UGC_PlayerDataSubsystem::Initialize(FSubsystemCollectionBase& Collection) 
+{
+	Super::Initialize(Collection);
+	UE_LOG(LogTemp, Warning, TEXT("PlayerDataSubsystem : Initialize"));
+	GCGameInstance = Cast<UGC_GameInstance>(GetGameInstance());
+}
+
 void UGC_PlayerDataSubsystem::SetGameData(UPDA_GameData* InGameData)
 {
 	//if no saves
 	if(ensure(InGameData))
 	{
 		GameData = InGameData;
-		PlayerData = GameData->DefaultStartingData;
-		PlayerData.ArmyData.GolemTypesInArmy.Empty();
-		//PlayerData.ArmyData.GolemTypesInArmy = GetAvailableGolemsFromPlayerData();
+		if (!IsInitialized)
+		{
+			PlayerData = GameData->DefaultStartingData;
+			PlayerData.ArmyData.GolemTypesInArmy.Empty();
+		}
 		OnDataInitialized.Broadcast(PlayerData);
+		IsInitialized = true;
 	}
 }
 
@@ -56,7 +66,7 @@ TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetAvailableGolemsFromPlayerData()
 	}
 	return returnValue;
 }
-TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetGolemsFromPlayerArmy() 
+TArray<UPDA_Golem*> UGC_PlayerDataSubsystem::GetChosenGolemsFromPlayerArmy() 
 {
 	return PlayerData.ArmyData.GolemTypesInArmy;
 }
@@ -79,7 +89,7 @@ bool UGC_PlayerDataSubsystem::TryAddGolemInArmy(UPDA_Golem* GolemData)
 	if (PlayerData.ArmyData.GolemTypesInArmy.Num() >= PlayerData.ArmyData.NbAvailableSlots)
 		return false;
 
-	if (PlayerData.ArmyData.TagsUnlocked.HasAllExact(GolemData->RequirementsTags)) 
+	if (PlayerData.ArmyData.TagsUnlocked.HasAllExact(GolemData->RequirementsTags))
 	{
 		if (ensure(GameData))
 		{
@@ -95,6 +105,7 @@ bool UGC_PlayerDataSubsystem::TryAddGolemInArmy(UPDA_Golem* GolemData)
 
 		}
 	}
+	PlayerData.ArmyData.GolemTagsInArmy.AddTag(GolemData->GolemTypeTag);
 	PlayerData.ArmyData.GolemTypesInArmy.Add(GolemData);
 	OnArmyUpdated.Broadcast(GolemData, true, PlayerData.ArmyData);
 	return true;
@@ -104,6 +115,7 @@ bool UGC_PlayerDataSubsystem::RemoveGolemFromArmy(UPDA_Golem* GolemData)
 {
 	if(PlayerData.ArmyData.GolemTypesInArmy.Remove(GolemData))
 	{
+		PlayerData.ArmyData.GolemTagsInArmy.RemoveTag(GolemData->GolemTypeTag);
 		OnArmyUpdated.Broadcast(GolemData, false, PlayerData.ArmyData);
 		return true;
 	}else

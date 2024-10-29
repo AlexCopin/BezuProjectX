@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GargoyleCraft/Include/GC_Structs.h"
+#include "GargoyleCraft/GameData/PDA_GameData.h"
 #include "GC_GameInstance.generated.h"
 
 #define GET_GAMEINSTANCE_GC() (GetGameInstance<UGC_GameInstance>())
