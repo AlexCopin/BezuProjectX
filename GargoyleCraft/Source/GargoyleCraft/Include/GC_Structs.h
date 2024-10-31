@@ -6,7 +6,20 @@
 
 class UGC_GameplayAbility;
 class UPDA_GameplayAbility;
+class UPDA_Resource;
 
+USTRUCT(BlueprintType, Blueprintable)
+struct FResourceData
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	int Quantity = 0;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TObjectPtr<UPDA_Resource> PDA_Resource;
+};
 USTRUCT(BlueprintType, Blueprintable)
 struct FHeroData
 {
@@ -37,17 +50,19 @@ public:
     TArray<TObjectPtr<UPDA_Golem>> GolemTypesInArmy;
 };
 
+
 USTRUCT(BlueprintType, Blueprintable)
 struct FPlayerData
 {
-  GENERATED_BODY()
+	GENERATED_BODY()
 public:
-  UPROPERTY(EditAnywhere, BlueprintReadWrite)
-  FHeroData HeroData;
-  UPROPERTY(EditAnywhere, BlueprintReadWrite)
-  FArmyData ArmyData;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
+	FHeroData HeroData;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
+	FArmyData ArmyData;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Resources")
+	TMap<FGameplayTag, FResourceData> ResourcesData;
 };
-
 
 USTRUCT(BlueprintType, Blueprintable)
 struct FAbilityData
@@ -63,20 +78,6 @@ public:
 	float Duration;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Cooldown;
-};
-
-USTRUCT(BlueprintType, Blueprintable)
-struct FTooltipData
-{
-	GENERATED_BODY()
-public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FText Title;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FText Description;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FText Flavor;
-
 };
 
 

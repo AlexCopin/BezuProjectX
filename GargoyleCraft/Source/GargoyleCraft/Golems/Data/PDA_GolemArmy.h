@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
-#include "PDA_Golem.h"
 #include "PDA_GolemArmy.generated.h"
 
 /**

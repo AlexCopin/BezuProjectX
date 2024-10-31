@@ -11,6 +11,7 @@
 class UPDA_GameData;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDataInitialized, FPlayerData, DataSent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnArmyUpdated, UPDA_Golem*, GolemConcerned, bool, bAdded, FArmyData, ArmyData);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnResourceUpdated, FGameplayTag, ResourceTag, int, Value);
 /**
  * 
  */
@@ -39,6 +40,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintAssignable)
 	FOnArmyUpdated OnArmyUpdated;
 
+	//----------GOLEMS DATA / UNLOCKS
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<UPDA_Golem*> GetAvailableGolemsFromGameData();
 	UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -51,4 +53,14 @@ public:
 	bool TryAddGolemInArmy(UPDA_Golem* GolemData);
 	UFUNCTION(BlueprintCallable)
 	bool RemoveGolemFromArmy(UPDA_Golem* GolemData);
+	//-------------------
+
+	//-------------------Resources
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FResourceData GetResourceData(FGameplayTag ResourceTag) { return *PlayerData.ResourcesData.Find(ResourceTag); }
+
+	UFUNCTION(BlueprintCallable)
+	void AddToResource(FGameplayTag ResourceTag, int Value);
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FOnResourceUpdated OnResourceUpdated;
 };

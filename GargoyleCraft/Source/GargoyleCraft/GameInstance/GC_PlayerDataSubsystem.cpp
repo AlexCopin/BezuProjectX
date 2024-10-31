@@ -4,6 +4,7 @@
 #include "GC_PlayerDataSubsystem.h"
 
 #include "GargoyleCraft/GameData/PDA_GameData.h"
+#include "GargoyleCraft/Resources/PDA_Resource.h"
 
 void UGC_PlayerDataSubsystem::Initialize(FSubsystemCollectionBase& Collection) 
 {
@@ -122,4 +123,11 @@ bool UGC_PlayerDataSubsystem::RemoveGolemFromArmy(UPDA_Golem* GolemData)
 	{
 		return false;
 	}
+}
+
+void UGC_PlayerDataSubsystem::AddToResource(FGameplayTag ResourceTag, int Value)
+{
+	FResourceData* resourceData = PlayerData.ResourcesData.Find(ResourceTag);
+	resourceData->Quantity = FMath::Clamp(resourceData->Quantity + Value, 0, resourceData->PDA_Resource->Max);
+	OnResourceUpdated.Broadcast(ResourceTag, resourceData->Quantity);
 }

@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
 #include "GargoyleCraft/Golems/Golem.h"
 #include "Engine/Texture2D.h"
 #include "GargoyleCraft/DataAssets/PDA_DefaultActorData.h"
 #include "PDA_Golem.generated.h"
+
 
 /**
  * 
@@ -23,14 +23,6 @@ public:
 	FGameplayTag GolemTypeTag;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Required)
 	FGameplayTagContainer GolemTags;
-  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Flavor)
-    FText Name;
-  UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category=Flavor)
-    FText Description;
-  UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category = Flavor)
-    FText FlavorComment;
-  UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true), Category = Flavor)
-    TSoftObjectPtr<UTexture2D> Icon;
 
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
     TSubclassOf<AGolem> GolemClass;

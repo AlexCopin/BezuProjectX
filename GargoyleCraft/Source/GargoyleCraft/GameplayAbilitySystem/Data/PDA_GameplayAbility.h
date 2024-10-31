@@ -5,12 +5,13 @@
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
 #include "GargoyleCraft/Include/GC_Structs.h"
+#include "GargoyleCraft/DataAssets/PDA_Generic.h"
 #include "PDA_GameplayAbility.generated.h"
 
-class UGC_GameplayAbility;
+class UGameplayAbility;
 
 UCLASS()
-class GARGOYLECRAFT_API UPDA_GameplayAbility : public UPrimaryDataAsset
+class GARGOYLECRAFT_API UPDA_GameplayAbility : public UPDA_Generic
 {
 	GENERATED_BODY()
 public:

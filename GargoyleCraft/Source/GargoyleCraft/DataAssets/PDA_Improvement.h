@@ -1,5 +1,6 @@
 #pragma once
 
+#include "PDA_Generic.h"
 #include "PDA_Improvement.generated.h"
 
 class UGameplayEffect;
@@ -8,7 +9,7 @@ struct FAttributeDefaults;
 class UGC_GameplayAbility;
 
 UCLASS()
-class GARGOYLECRAFT_API UPDA_Improvement : public UPrimaryDataAsset
+class GARGOYLECRAFT_API UPDA_Improvement : public UPDA_Generic
 {
 	GENERATED_BODY()
 public:
