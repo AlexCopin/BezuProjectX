@@ -61,6 +61,8 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void AddToResource(FGameplayTag ResourceTag, int Value);
+	UFUNCTION(BlueprintCallable)
+	bool PayResource(FGameplayTag ResourceTag, int Value);
 	UPROPERTY(EditAnywhere, BlueprintAssignable)
 	FOnResourceUpdated OnResourceUpdated;
 };

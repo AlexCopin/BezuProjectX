@@ -131,3 +131,14 @@ void UGC_PlayerDataSubsystem::AddToResource(FGameplayTag ResourceTag, int Value)
 	resourceData->Quantity = FMath::Clamp(resourceData->Quantity + Value, 0, resourceData->PDA_Resource->Max);
 	OnResourceUpdated.Broadcast(ResourceTag, resourceData->Quantity);
 }
+
+bool UGC_PlayerDataSubsystem::PayResource(FGameplayTag ResourceTag, int Value)
+{
+	FResourceData* resourceData = PlayerData.ResourcesData.Find(ResourceTag);
+	if (resourceData->Quantity - Value < 0)
+		return false;
+
+	resourceData->Quantity -= Value;
+	OnResourceUpdated.Broadcast(ResourceTag, resourceData->Quantity);
+	return true;
+}
