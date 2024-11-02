@@ -6,6 +6,9 @@
 #include "GameplayTagContainer.h"
 #include "ResourceGatherer.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConstructionStarted, float, Duration);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGatheringStarted, float, Duration);
+
 UCLASS()
 class AResourceGatherer : public AActor, public ISelectable
 {
@@ -33,6 +36,11 @@ public:
 	TSubclassOf<UGC_Widget> WidgetClass;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Gathering")
 	float ConstructionDuration;
+
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FConstructionStarted OnConstructionStarted;
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FGatheringStarted OnGatheringStarted;
 
 	UFUNCTION(BlueprintCallable)
 	void BeginConstruct();

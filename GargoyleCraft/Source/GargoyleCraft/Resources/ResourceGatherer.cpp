@@ -9,6 +9,7 @@ void AResourceGatherer::BeginPlay()
 void AResourceGatherer::BeginConstruct()
 {
 	GetWorld()->GetTimerManager().SetTimer(TimerConstruction, this, &AResourceGatherer::FinishConstruct, ConstructionDuration, false);
+	OnConstructionStarted.Broadcast(ConstructionDuration);
 }
 
 void AResourceGatherer::FinishConstruct()
@@ -19,6 +20,7 @@ void AResourceGatherer::FinishConstruct()
 
 void AResourceGatherer::Gather()
 {
+	OnGatheringStarted.Broadcast(DelayBetweenGathering);
 	GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->AddToResource(ResourceTag, QuantityResource);
 	Counter++;
 	if (Counter >= Uses) 
