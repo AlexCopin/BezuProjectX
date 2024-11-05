@@ -6,6 +6,7 @@
 
 void AGC_RTS_Hud::BeginPlay()
 {
+	Super::BeginPlay();
 	auto playerDataSS = GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>();
 	if (!playerDataSS->IsInitialized)
 	{

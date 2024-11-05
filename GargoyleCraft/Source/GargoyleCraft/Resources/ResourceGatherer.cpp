@@ -23,6 +23,7 @@ void AResourceGatherer::Gather()
 {
 	OnGatheringStarted.Broadcast(DelayBetweenGathering);
 	GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->AddToResource(ResourceTag, QuantityResource);
+	OnGathered.Broadcast(QuantityResource);
 	Counter++;
 	if (Counter >= Uses) 
 	{

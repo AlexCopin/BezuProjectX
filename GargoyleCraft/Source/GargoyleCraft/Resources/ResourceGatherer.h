@@ -8,6 +8,7 @@
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConstructionStarted, float, Duration);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGatheringStarted, float, Duration);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGathered, int, Value);
 
 UCLASS()
 class AResourceGatherer : public AActor, public ISelectable
@@ -41,6 +42,8 @@ public:
 	FConstructionStarted OnConstructionStarted;
 	UPROPERTY(EditAnywhere, BlueprintAssignable)
 	FGatheringStarted OnGatheringStarted;
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FGathered OnGathered;
 
 	UFUNCTION(BlueprintCallable)
 	void BeginConstruct();

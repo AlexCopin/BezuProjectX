@@ -11,7 +11,7 @@
 class UPDA_GameData;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDataInitialized, FPlayerData, DataSent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnArmyUpdated, UPDA_Golem*, GolemConcerned, bool, bAdded, FArmyData, ArmyData);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnResourceUpdated, FGameplayTag, ResourceTag, int, Value);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnResourceUpdated, FGameplayTag, ResourceTag, int, NewValue, int, ChangeValue);
 /**
  * 
  */
