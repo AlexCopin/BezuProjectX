@@ -16,6 +16,7 @@ void AResourceGatherer::FinishConstruct()
 {
 	GetWorld()->GetTimerManager().ClearTimer(TimerConstruction);
 	GetWorld()->GetTimerManager().SetTimer(TimerGathering, this, &AResourceGatherer::Gather, DelayBetweenGathering, true);
+	OnGatheringStarted.Broadcast(DelayBetweenGathering);
 }
 
 void AResourceGatherer::Gather()
