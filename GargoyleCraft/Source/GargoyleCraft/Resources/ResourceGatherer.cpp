@@ -33,4 +33,5 @@ void AResourceGatherer::Gather_Implementation()
 }
 void AResourceGatherer::Terminate_Implementation()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Terminate Resource Gatherer (Empty)"));
 }
