@@ -19,7 +19,7 @@ void AResourceGatherer::FinishConstruct()
 	OnGatheringStarted.Broadcast(DelayBetweenGathering);
 }
 
-void AResourceGatherer::Gather()
+void AResourceGatherer::Gather_Implementation()
 {
 	OnGatheringStarted.Broadcast(DelayBetweenGathering);
 	GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->AddToResource(ResourceTag, QuantityResource);

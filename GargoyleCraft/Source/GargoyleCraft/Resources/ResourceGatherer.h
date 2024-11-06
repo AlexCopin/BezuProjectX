@@ -49,8 +49,9 @@ public:
 	void BeginConstruct();
 	UFUNCTION()
 	void FinishConstruct();
-	UFUNCTION()
+	UFUNCTION(BlueprintNativeEvent)
 	void Gather();
+	void Gather_Implementation();
 	UFUNCTION(BlueprintNativeEvent)
 	void Terminate();
 	void Terminate_Implementation();
