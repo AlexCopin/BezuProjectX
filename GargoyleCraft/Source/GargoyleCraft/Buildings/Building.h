@@ -27,7 +27,7 @@ public:
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TArray<TObjectPtr<UPDA_Golem>> GolemPool;
   UFUNCTION(BlueprintCallable)
-    void RequestGolemCreation(TSoftObjectPtr<UPDA_Golem> Data);
+    bool RequestGolemCreation(TSoftObjectPtr<UPDA_Golem> Data);
 
 	//SelectableInterface
 	virtual AActor* Selected_Implementation(AGC_PC_RTS* PlayerController) override;
@@ -36,4 +36,8 @@ public:
 	//Initializable
 	virtual void Initialize_Implementation(FPlayerData DataSent) override;
 	bool Initialized = false;
+
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Creation")
+	FGameplayTag ResourceTag;
 };

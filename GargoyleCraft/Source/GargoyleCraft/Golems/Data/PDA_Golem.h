@@ -26,4 +26,11 @@ public:
 
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
     TSubclassOf<AGolem> GolemClass;
+
+	UFUNCTION(BlueprintPure)
+	int32 GetCost();
+
+protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Gameplay)
+	int32 BaseCost = 30;
 };

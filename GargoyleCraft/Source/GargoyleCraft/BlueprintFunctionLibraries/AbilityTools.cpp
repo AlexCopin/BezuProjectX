@@ -59,8 +59,8 @@ void UAbilityTools::ApplyDamage(UAbilitySystemComponent* Source, UAbilitySystemC
 TArray<FVector> UAbilityTools::CalculateRectanglePoints(FVector StartingPoint, FVector Center, float Width, float Height, int NumColumns, int NumRows)
 {
 	TArray<FVector> Locations;
-	float rowOffset = Width / (NumRows - 1);
-	float columnsOffset = Height / (NumColumns - 1);
+	float rowOffset = (NumRows - 1) == 0 ? 0 : Width / (NumRows - 1);
+	float columnsOffset = (NumColumns - 1) == 0 ? 0 : Height / (NumColumns - 1);
 
 	float startingX = Center.X - (Height / 2) - (Width / 2);
 	float startingY = Center.Y - (Width / 2) - (Height / 2);
@@ -77,7 +77,7 @@ TArray<FVector> UAbilityTools::CalculateRectanglePoints(FVector StartingPoint, F
 		for(int j = 0; j  < NumColumns; j++)
 		{
 			// Local space point in the rectangle centered around the origin
-			FVector localPoint = FVector(i * columnsOffset - localCenter.X, j * rowOffset - localCenter.Y, 0);
+			FVector localPoint = FVector(i * columnsOffset + localCenter.X, j * rowOffset + localCenter.Y, 0);
 			// Rotate point to align the rectangle along the direction
 			FVector rotatedPoint = Rotation.RotateVector(localPoint);
 			// Translate rotated point to the rectangle center

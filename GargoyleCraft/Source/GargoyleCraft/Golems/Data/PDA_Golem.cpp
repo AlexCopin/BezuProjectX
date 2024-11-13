@@ -3,3 +3,7 @@
 
 #include "PDA_Golem.h"
 
+int32 UPDA_Golem::GetCost()
+{
+    return BaseCost;
+}

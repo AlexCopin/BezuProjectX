@@ -20,12 +20,18 @@ void ABuilding::BeginPlay()
 	GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->OnDataInitialized.AddDynamic(this, &ABuilding::Initialize);
 }
 
-void ABuilding::RequestGolemCreation(TSoftObjectPtr<UPDA_Golem> Data)
+bool ABuilding::RequestGolemCreation(TSoftObjectPtr<UPDA_Golem> Data)
 {
   //Golem automatically added in pool via its component UC_Pool
+	auto subsysystem = GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>();
+	if (!subsysystem->PayResource(ResourceTag, Data->GetCost())) 
+	{
+		return false;
+	}
 	auto tempGolem = GetWorld()->SpawnActorDeferred<AGolem>(Data->GolemClass, GolemSpawnPoint->GetComponentTransform());
 	tempGolem->Init(Data.LoadSynchronous(), GolemSpawnFlag->GetComponentLocation());
 	UGameplayStatics::FinishSpawningActor(tempGolem, GolemSpawnPoint->GetComponentTransform());
+	return true;
 }
 
 AActor* ABuilding::Selected_Implementation(AGC_PC_RTS* PlayerController)
