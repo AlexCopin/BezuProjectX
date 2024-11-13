@@ -6,6 +6,7 @@
 #include "GameplayTagContainer.h"
 #include "ResourceGatherer.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGolemScanned, bool, isScanned);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConstructionStarted, float, Duration);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGatheringStarted, float, Duration);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGathered, int, Value);
@@ -29,12 +30,16 @@ public:
 	FGameplayTag ResourceTag;
 
 	UPROPERTY()
+	FTimerHandle TimerScan;
+	UPROPERTY()
 	FTimerHandle TimerGathering;
 	UPROPERTY()
 	FTimerHandle TimerConstruction;
+	UPROPERTY(EditAnywhere, Category = "Settings")
+	float ScanDelay = 0.2f;
+	UPROPERTY(EditAnywhere, Category = "Settings")
+	float RangeScan;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Gathering")
-	TSubclassOf<UGC_Widget> WidgetClass;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Gathering")
 	float ConstructionDuration;
 
@@ -44,6 +49,8 @@ public:
 	FGatheringStarted OnGatheringStarted;
 	UPROPERTY(EditAnywhere, BlueprintAssignable)
 	FGathered OnGathered;
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FGolemScanned OnGolemScanned;
 
 	UFUNCTION(BlueprintCallable)
 	void BeginConstruct();
@@ -55,4 +62,8 @@ public:
 	UFUNCTION(BlueprintNativeEvent)
 	void Terminate();
 	void Terminate_Implementation();
+
+	UFUNCTION(BlueprintNativeEvent)
+	void Scan();
+	void Scan_Implementation();
 };

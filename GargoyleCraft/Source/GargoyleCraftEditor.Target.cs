@@ -11,5 +11,11 @@ public class GargoyleCraftEditorTarget : TargetRules
 		DefaultBuildSettings = BuildSettingsVersion.V4;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 		ExtraModuleNames.Add("GargoyleCraft");
-	}
+        // Game editor
+        ExtraModuleNames.AddRange(
+            new string[]
+            {
+                "GargoyleCraftEditor"
+            });
+    }
 }

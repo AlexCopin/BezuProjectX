@@ -32,4 +32,10 @@ public:
 	TArray<AGolem*> SelectedGolems;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TArray<AGolem*> ControlableGolems;
+
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	bool TryMoveGolemsToLocation(FVector Location);
+	bool TryMoveGolemsToLocation_Implementation(FVector Location);
+
 };

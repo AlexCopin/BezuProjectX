@@ -2,6 +2,7 @@
 	"BuildId": "33043543",
 	"Modules": 
 	{
-		"GargoyleCraft": "UnrealEditor-GargoyleCraft.dll"
+		"GargoyleCraft": "UnrealEditor-GargoyleCraft.dll",
+		"GargoyleCraftEditor": "UnrealEditor-GargoyleCraftEditor.dll"
 	}
 }

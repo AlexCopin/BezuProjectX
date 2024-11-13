@@ -14,6 +14,11 @@
 				"GameplayAbilities",
 				"UMG"
 			]
+		},
+		{
+			"Name": "GargoyleCraftEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
 		}
 	],
 	"Plugins": [

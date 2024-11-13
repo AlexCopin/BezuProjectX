@@ -55,3 +55,37 @@ void UAbilityTools::ApplyDamage(UAbilitySystemComponent* Source, UAbilitySystemC
 	Source->ApplyGameplayEffectSpecToTarget(*spec.Data, Target);
 
 }
+
+TArray<FVector> UAbilityTools::CalculateRectanglePoints(FVector StartingPoint, FVector Center, float Width, float Height, int NumColumns, int NumRows)
+{
+	TArray<FVector> Locations;
+	float rowOffset = Width / (NumRows - 1);
+	float columnsOffset = Height / (NumColumns - 1);
+
+	float startingX = Center.X - (Height / 2) - (Width / 2);
+	float startingY = Center.Y - (Width / 2) - (Height / 2);
+
+	// Calculate half-width and half-height offsets to center the rectangle
+	FVector localCenter = FVector(Width / 2, Height / 2, Center.Z);
+
+	FVector direction = Center - StartingPoint;
+	// Calculate the rotation required to align rectangle to the direction vector
+	FRotator Rotation = direction.Rotation();
+
+	for (int i = 0; i < NumRows; i++) 
+	{
+		for(int j = 0; j  < NumColumns; j++)
+		{
+			// Local space point in the rectangle centered around the origin
+			FVector localPoint = FVector(i * columnsOffset - localCenter.X, j * rowOffset - localCenter.Y, 0);
+			// Rotate point to align the rectangle along the direction
+			FVector rotatedPoint = Rotation.RotateVector(localPoint);
+			// Translate rotated point to the rectangle center
+			FVector finalPoint = Center + rotatedPoint;
+
+			Locations.Add(finalPoint);
+		}
+	}
+
+	return Locations;
+}

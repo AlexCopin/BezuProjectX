@@ -23,4 +23,7 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
 	static void ApplyDamage(UAbilitySystemComponent* Source, UAbilitySystemComponent* Target, float Value);
 
+
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
+	static	TArray<FVector> CalculateRectanglePoints(FVector StartingPoint, FVector Center, float Width, float Height, int NumColumns, int NumRows);
 };

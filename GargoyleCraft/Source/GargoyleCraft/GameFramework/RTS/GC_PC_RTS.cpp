@@ -1,6 +1,7 @@
 #include "GC_PC_RTS.h"
 
 #include "GargoyleCraft/Golems/Golem.h"
+#include <GargoyleCraft/BlueprintFunctionLibraries/AbilityTools.h>
 
 void AGC_PC_RTS::AddToSelectedGolems(AGolem* Golem)
 {
@@ -56,4 +57,28 @@ void AGC_PC_RTS::SelectGolemArray(TArray<AActor*> Golems, bool bAdditive)
 	{
 		ISelectable::Execute_Selected(golem, this);
 	}
+}
+
+
+bool AGC_PC_RTS::TryMoveGolemsToLocation_Implementation(FVector Location)
+{
+	//Change formation with selected formation later
+	//Voir pour faire un delay entre le repositionnement en formation et aller vers la destination
+	if (SelectedGolems.IsEmpty())
+		return false;
+
+	int numGolems = SelectedGolems.Num();
+	FVector averagePos = FVector::ZeroVector;
+	for (auto golem : SelectedGolems) {
+		averagePos += golem->GetActorLocation();
+	}
+	averagePos /= SelectedGolems.Num();
+	TArray<FVector> Positions;
+	
+	Positions = UAbilityTools::CalculateRectanglePoints(averagePos, Location, numGolems * 65, numGolems * 55, numGolems / 2, numGolems / 2);
+	for (int i = 0; i < SelectedGolems.Num(); i++) 
+	{
+		SelectedGolems[i]->UpdateTargetLocation(Positions[i]);
+	}
+	return true;
 }
