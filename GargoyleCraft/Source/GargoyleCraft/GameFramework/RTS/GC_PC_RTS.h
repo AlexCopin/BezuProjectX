@@ -8,6 +8,8 @@ class AGolem;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnGolemSelection, AGolem*, Golem);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnTargetsUpdated, AGC_PC_RTS*, PlayerController);
 
+const int MAX_NUM_COL = 5;
+
 UCLASS()
 class GARGOYLECRAFT_API AGC_PC_RTS : public APlayerController
 {

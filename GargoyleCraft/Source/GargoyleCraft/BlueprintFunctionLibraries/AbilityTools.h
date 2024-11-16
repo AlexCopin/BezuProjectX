@@ -25,5 +25,5 @@ public:
 
 
 	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
-	static	TArray<FVector> CalculateRectanglePoints(FVector StartingPoint, FVector Center, float Width, float Height, int NumColumns, int NumRows);
+	static	TArray<FVector> CalculateRectanglePoints(FVector StartingPoint, FVector Center, int NumPoints, float Width, float Height, int NumColumns, int NumRows);
 };

@@ -56,36 +56,75 @@ void UAbilityTools::ApplyDamage(UAbilitySystemComponent* Source, UAbilitySystemC
 
 }
 
-TArray<FVector> UAbilityTools::CalculateRectanglePoints(FVector StartingPoint, FVector Center, float Width, float Height, int NumColumns, int NumRows)
+TArray<FVector> UAbilityTools::CalculateRectanglePoints(FVector StartingPoint, FVector Center, int NumPoints, float Width, float Height, int NumColumns, int NumRows)
 {
 	TArray<FVector> Locations;
-	float rowOffset = (NumRows - 1) == 0 ? 0 : Width / (NumRows - 1);
-	float columnsOffset = (NumColumns - 1) == 0 ? 0 : Height / (NumColumns - 1);
-
-	float startingX = Center.X - (Height / 2) - (Width / 2);
-	float startingY = Center.Y - (Width / 2) - (Height / 2);
+	float rowOffset = (NumRows - 1) == 0 ? 0 : Height / (NumRows - 1);
+	float columnsOffset = (NumColumns - 1) == 0 ? 0 : Width / (NumColumns - 1);
 
 	// Calculate half-width and half-height offsets to center the rectangle
-	FVector localCenter = FVector(Width / 2, Height / 2, Center.Z);
+	FVector localCenter = FVector(Height / 2, Width / 2, Center.Z);
 
 	FVector direction = Center - StartingPoint;
 	// Calculate the rotation required to align rectangle to the direction vector
 	FRotator Rotation = direction.Rotation();
 
-	for (int i = 0; i < NumRows; i++) 
+	for (int i = 0; i < NumRows; i++)
 	{
-		for(int j = 0; j  < NumColumns; j++)
+		for (int j = 0; j < NumColumns; j++)
 		{
 			// Local space point in the rectangle centered around the origin
-			FVector localPoint = FVector(i * columnsOffset + localCenter.X, j * rowOffset + localCenter.Y, 0);
+			FVector localPoint = FVector(i * rowOffset - localCenter.X, j * columnsOffset - localCenter.Y, Center.Z);
 			// Rotate point to align the rectangle along the direction
 			FVector rotatedPoint = Rotation.RotateVector(localPoint);
 			// Translate rotated point to the rectangle center
 			FVector finalPoint = Center + rotatedPoint;
 
+			// Stop if we’ve generated the required number of points
+			if (Locations.Num() >= NumPoints)
+			{
+				return Locations;
+			}
 			Locations.Add(finalPoint);
 		}
 	}
 
 	return Locations;
 }
+
+
+//TArray<FVector> UAbilityTools::CalculateRectanglePoints(FVector StartingPoint, FVector Center, int NumPoints, float Width, float Height, int NumColumns, int NumRows)
+//{
+//	TArray<FVector> Locations;
+//	float rowOffset = (NumRows - 1) == 0 ? 0 : Height / (NumRows - 1);
+//	float columnsOffset = (NumColumns - 1) == 0 ? 0 : Width / (NumColumns - 1);
+//
+//	// Calculate half-width and half-height offsets to center the rectangle
+//	FVector localCenter = FVector(Width / 2, Height / 2, Center.Z);
+//
+//	FVector direction = Center - StartingPoint;
+//	// Calculate the rotation required to align rectangle to the direction vector
+//	FRotator Rotation = direction.Rotation();
+//
+//	for (int i = 0; i < NumRows; i++)
+//	{
+//		for (int j = 0; j < NumColumns; j++)
+//		{
+//			// Local space point in the rectangle centered around the origin
+//			FVector localPoint = FVector(j * columnsOffset + localCenter.X, i * rowOffset + localCenter.Y, Center.Z);
+//			// Rotate point to align the rectangle along the direction
+//			FVector rotatedPoint = Rotation.RotateVector(localPoint);
+//			// Translate rotated point to the rectangle center
+//			FVector finalPoint = Center + rotatedPoint;
+//			
+//			// Stop if we’ve generated the required number of points
+//			if (Locations.Num() >= NumPoints)
+//			{
+//				return Locations;
+//			}
+//			Locations.Add(finalPoint);
+//		}
+//	}
+//
+//	return Locations;
+//}

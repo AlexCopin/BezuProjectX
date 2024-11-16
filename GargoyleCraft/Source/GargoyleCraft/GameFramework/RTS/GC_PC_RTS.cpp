@@ -76,7 +76,10 @@ bool AGC_PC_RTS::TryMoveGolemsToLocation_Implementation(FVector Location)
 	averagePos /= SelectedGolems.Num();
 	TArray<FVector> Positions;
 	
-	Positions = UAbilityTools::CalculateRectanglePoints(averagePos, Location, numGolems * 65, numGolems * 55, FMath::DivideAndRoundUp(numGolems, 4), FMath::DivideAndRoundUp(numGolems, 2));
+	int numCol = FMath::Min(numGolems, MAX_NUM_COL);
+	int numRows = FMath::DivideAndRoundUp(numGolems, MAX_NUM_COL);
+
+	Positions = UAbilityTools::CalculateRectanglePoints(averagePos, Location, numGolems, numCol * 150, numRows * 80, numCol, numRows);
 	for (int i = 0; i < SelectedGolems.Num(); i++) 
 	{
 		SelectedGolems[i]->UpdateTargetLocation(Positions[i]);
