@@ -1,7 +1,7 @@
 #pragma once
 
-#include "CoreMinimal.h"
 #include "GargoyleCraft/Golems/Interfaces/Selectable.h"
+#include "GargoyleCraft/Actors/GC_Actor.h"
 #include <GargoyleCraft/Widgets/GC_Widget.h>
 #include "GameplayTagContainer.h"
 #include "ResourceGatherer.generated.h"
@@ -12,7 +12,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGatheringStarted, float, Duration);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGathered, int, Value);
 
 UCLASS()
-class AResourceGatherer : public AActor, public ISelectable
+class AResourceGatherer : public AGC_Actor, public ISelectable
 {
 	GENERATED_BODY()
 public:
@@ -30,13 +30,9 @@ public:
 	FGameplayTag ResourceTag;
 
 	UPROPERTY()
-	FTimerHandle TimerScan;
-	UPROPERTY()
 	FTimerHandle TimerGathering;
 	UPROPERTY()
 	FTimerHandle TimerConstruction;
-	UPROPERTY(EditAnywhere, Category = "Settings")
-	float ScanDelay = 0.2f;
 	UPROPERTY(EditAnywhere, Category = "Settings")
 	float RangeScan;
 
@@ -63,7 +59,5 @@ public:
 	void Terminate();
 	void Terminate_Implementation();
 
-	UFUNCTION(BlueprintNativeEvent)
-	void Scan();
-	void Scan_Implementation();
+	virtual void CustomTick_Implementation() override;
 };

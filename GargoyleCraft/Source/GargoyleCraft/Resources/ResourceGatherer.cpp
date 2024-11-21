@@ -5,13 +5,12 @@
 void AResourceGatherer::BeginPlay()
 {
 	Super::BeginPlay();
-	GetWorld()->GetTimerManager().SetTimer(TimerScan, this, &AResourceGatherer::Scan, ScanDelay, true);
 }
 
 void AResourceGatherer::BeginConstruct()
 {
 	GetWorld()->GetTimerManager().SetTimer(TimerConstruction, this, &AResourceGatherer::FinishConstruct, ConstructionDuration, false);
-	GetWorld()->GetTimerManager().ClearTimer(TimerScan);
+	ActivateCustomTick(false);
 	OnConstructionStarted.Broadcast(ConstructionDuration);
 }
 
@@ -39,13 +38,14 @@ void AResourceGatherer::Terminate_Implementation()
 	UE_LOG(LogTemp, Warning, TEXT("Terminate Resource Gatherer (Empty)"));
 }
 
-void AResourceGatherer::Scan_Implementation() 
+void AResourceGatherer::CustomTick_Implementation()
 {
-	if (auto golem = UAbilityTools::FindNearestGolem(this, this, { EGolemAllegiance::Ally }, RangeScan)) 
+	Super::CustomTick_Implementation();
+	if (auto golem = UAbilityTools::FindNearestGolem(this, this, { EGolemAllegiance::Ally }, RangeScan))
 	{
 		OnGolemScanned.Broadcast(true);
 	}
-	else 
+	else
 	{
 		OnGolemScanned.Broadcast(false);
 	}

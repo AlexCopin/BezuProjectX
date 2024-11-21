@@ -17,7 +17,6 @@ ABuilding::ABuilding()
 void ABuilding::BeginPlay()
 {
 	Super::BeginPlay();
-	GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->OnDataInitialized.AddDynamic(this, &ABuilding::Initialize);
 }
 
 bool ABuilding::RequestGolemCreation(TSoftObjectPtr<UPDA_Golem> Data)
@@ -46,9 +45,5 @@ AActor* ABuilding::Unselected_Implementation(AGC_PC_RTS* PlayerController)
 
 void ABuilding::Initialize_Implementation(FPlayerData DataSent)
 {
-	if (Initialized)
-		return;
-	IInitializable::Initialize_Implementation(DataSent);
-	Initialized = true;
-	GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->OnDataInitialized.RemoveDynamic(this, &ABuilding::Initialize);
+	Super::Initialize_Implementation(DataSent);
 }

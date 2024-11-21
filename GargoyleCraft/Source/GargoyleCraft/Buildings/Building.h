@@ -1,6 +1,6 @@
 #pragma once
 #include "GargoyleCraft/Golems/Data/PDA_Golem.h"
-#include "GargoyleCraft/Interfaces/Initializable.h"
+#include "GargoyleCraft/Actors/GC_Actor.h"
 
 #include "Building.generated.h"
 
@@ -9,7 +9,7 @@ class USceneComponent;
 class UArrowComponent;
 
 UCLASS()
-class GARGOYLECRAFT_API ABuilding : public AActor, public ISelectable, public IInitializable
+class GARGOYLECRAFT_API ABuilding : public AGC_Actor, public ISelectable
 {
   GENERATED_BODY()
 public:
@@ -35,7 +35,6 @@ public:
 
 	//Initializable
 	virtual void Initialize_Implementation(FPlayerData DataSent) override;
-	bool Initialized = false;
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Creation")
