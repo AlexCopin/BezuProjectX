@@ -14,6 +14,8 @@
 #include "GargoyleCraft/Include/GC_Macros.h"
 #include "GargoyleCraft/Include/GC_Structs.h"
 
+#include "NavigationSystem.h"
+
 AGolem::AGolem()
 {
   SetRootComponent(GetCapsuleComponent());
@@ -92,6 +94,14 @@ void AGolem::OnFinishedCreated()
 void AGolem::UpdateTargetLocation(FVector NewTargetLocation)
 {
   CurrentTargetLocation = NewTargetLocation;
+  // Get the Navigation System
+  UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(GetWorld());
+  if (!NavSys) return;
+
+  FNavLocation NearestLocation;
+  float SearchRadius = 2000.f;
+  bool bFoundLocation = NavSys->ProjectPointToNavigation(CurrentTargetLocation,NearestLocation, FVector(SearchRadius));
+  CurrentTargetLocation = NearestLocation;
   auto controller = Cast<AAIController>(GetController());
   if(ensure(controller))
   {
