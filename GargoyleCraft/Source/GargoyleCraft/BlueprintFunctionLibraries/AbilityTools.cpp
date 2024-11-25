@@ -58,33 +58,36 @@ void UAbilityTools::ApplyDamage(UAbilitySystemComponent* Source, UAbilitySystemC
 
 TArray<FVector> UAbilityTools::CalculateRectanglePoints(FVector StartingPoint, FVector Center, int NumPoints, float Width, float Height, int NumColumns, int NumRows)
 {
+	/*int maxRows = 5;
+	int32 numRows = FMath::Min(maxRows, FMath::CeilToInt(FMath::Sqrt(static_cast<float>(NumPoints))));
+	float colDivided = (float)NumPoints / (float)numRows;
+	int32 numCol = FMath::CeilToInt(colDivided);*/
+
+	int maxCol = 5;
+	int32 numCol = FMath::Min(maxCol, FMath::CeilToInt(FMath::Sqrt(static_cast<float>(NumPoints))));
+	float rowDivided = (float)NumPoints / (float)numCol;
+	int32 numRows = FMath::CeilToInt(rowDivided);
+
+
 	TArray<FVector> Locations;
-	float rowOffset = (NumRows - 1) == 0 ? 0 : Height / (NumRows - 1);
-	float columnsOffset = (NumColumns - 1) == 0 ? 0 : Width / (NumColumns - 1);
+	float rowOffset = 150;
+	float columnsOffset = 150;
 
 	// Calculate half-width and half-height offsets to center the rectangle
-	FVector localCenter = FVector(Height / 2, Width / 2, Center.Z);
+	FVector localCenter = FVector(rowOffset * (numRows-1) / 2, columnsOffset * (numCol-1) / 2, Center.Z);
 
 	FVector direction = Center - StartingPoint;
 	// Calculate the rotation required to align rectangle to the direction vector
 	FRotator Rotation = direction.Rotation();
 
-	for (int i = 0; i < NumRows; i++)
+	for (int i = 0; i < numRows; i++)
 	{
-		for (int j = 0; j < NumColumns; j++)
-		{
-			// Local space point in the rectangle centered around the origin
+		for (int j = 0; j < numCol; j++)
+		{	
 			FVector localPoint = FVector(i * rowOffset - localCenter.X, j * columnsOffset - localCenter.Y, Center.Z);
-			// Rotate point to align the rectangle along the direction
 			FVector rotatedPoint = Rotation.RotateVector(localPoint);
-			// Translate rotated point to the rectangle center
 			FVector finalPoint = Center + rotatedPoint;
 
-			// Stop if we’ve generated the required number of points
-			if (Locations.Num() >= NumPoints)
-			{
-				return Locations;
-			}
 			Locations.Add(finalPoint);
 		}
 	}
