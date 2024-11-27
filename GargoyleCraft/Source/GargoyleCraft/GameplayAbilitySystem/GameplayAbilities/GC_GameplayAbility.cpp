@@ -23,8 +23,6 @@ void UGC_GameplayAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handl
 	//Effect du cul
 	CommitAbilityCooldown(Handle, ActorInfo, ActivationInfo, true);
 	AbilityData = GCAbilitySystemComponent->GetAbilityDataFromSpecHandle(GetCurrentAbilitySpecHandle());
-	float duration = AbilityData->AbilityData.Duration;
-	GetWorld()->GetTimerManager().SetTimer(DurationHandle, this, &UGC_GameplayAbility::DurationEnded, duration);
 }
 
 void UGC_GameplayAbility::ApplyCooldown(const FGameplayAbilitySpecHandle Handle,
@@ -35,8 +33,8 @@ void UGC_GameplayAbility::ApplyCooldown(const FGameplayAbilitySpecHandle Handle,
 	{
 		auto context = MakeEffectContext(Handle, ActorInfo);
 		auto spec = GCAbilitySystemComponent->MakeOutgoingSpec(CooldownGE->GetClass(), 1, context);
-		float cooldown = GCAbilitySystemComponent->GetAbilityDataFromSpecHandle(GetCurrentAbilitySpecHandle())->AbilityData.Cooldown;
-		spec.Data->SetSetByCallerMagnitude("Abilities.BasicMelee.Cooldown", cooldown);
+		auto abilityData = GCAbilitySystemComponent->GetAbilityDataFromSpecHandle(GetCurrentAbilitySpecHandle())->AbilityData;
+		spec.Data->SetSetByCallerMagnitude(abilityData.CooldownTag, abilityData.Cooldown);
 		ApplyGameplayEffectSpecToOwner(Handle, ActorInfo, ActivationInfo, spec);
 	}
 }
@@ -45,4 +43,10 @@ void UGC_GameplayAbility::DurationEnded()
 {
 	GetWorld()->GetTimerManager().ClearTimer(DurationHandle);
 	EndAbility(GetCurrentAbilitySpecHandle(), GetCurrentActorInfo(), GetCurrentActivationInfo(), false, false);
+}
+
+void UGC_GameplayAbility::SetDuration()
+{
+	float duration = AbilityData->AbilityData.Duration;
+	GetWorld()->GetTimerManager().SetTimer(DurationHandle, this, &UGC_GameplayAbility::DurationEnded, duration);
 }

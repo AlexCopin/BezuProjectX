@@ -192,6 +192,8 @@ void AGolem::TryActivateAbility()
 				if(abilityData.Range >= FVector::Distance(GetActorLocation(), Target->GetActorLocation()))
 				{
 					AbilitySystemComponent->AddLooseGameplayTag(MAKE_TAG("State.Ability.InRange"));
+					if (AbilitySystemComponent->HasMatchingGameplayTag(abilityData.CooldownTag))
+						continue;
 					if(AbilitySystemComponent->TryActivateAbility(abilityData.AbilityHandle))
 					{
 						auto controller = Cast<AAIController>(GetController());

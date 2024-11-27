@@ -78,6 +78,8 @@ public:
 	float Duration;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Cooldown;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	FGameplayTag CooldownTag;
 };
 
 

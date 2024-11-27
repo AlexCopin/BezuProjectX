@@ -23,20 +23,31 @@ void UGA_BaseAttack_Melee::ActivateAbility(const FGameplayAbilitySpecHandle Hand
 		return;
 	}
 
+	UE_LOG(LogTemp, Warning, TEXT("UGA_BaseAttack_Melee::ActivateAbility"));
+}
+
+void UGA_BaseAttack_Melee::OnAnimCompleted()
+{
+	auto target = Cast<AGolem>(CurrentActorInfo->AvatarActor)->GetTarget();
+	if (!target)
+	{
+		CancelAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true);
+		return;
+	}
+	//UAbilityTask_
+	
 	//---FX
 	FGameplayCueParameters params;
 	params.AbilityLevel = GetAbilityLevel();
-	params.Instigator = ActorInfo->AvatarActor;
+	params.Instigator = CurrentActorInfo->AvatarActor;
 	params.Location = target->GetActorLocation();
 	K2_AddGameplayCueWithParams(MAKE_TAG("GameplayCue.BasicMelee"), params);
 	//---
-
 	//---ApplyDamage
-	if(auto IASC = Cast<IAbilitySystemInterface>(target))
+	if (auto IASC = Cast<IAbilitySystemInterface>(target))
 	{
-		UAbilityTools::ApplyDamage(ActorInfo->AbilitySystemComponent.Get(), IASC->GetAbilitySystemComponent(), AbilityData->AbilityData.Damage);
+		UAbilityTools::ApplyDamage(CurrentActorInfo->AbilitySystemComponent.Get(), IASC->GetAbilitySystemComponent(), AbilityData->AbilityData.Damage);
 	}
 	//---
-
-	UE_LOG(LogTemp, Warning, TEXT("UGA_BaseAttack_Melee::ActivateAbility"));
+	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
 }

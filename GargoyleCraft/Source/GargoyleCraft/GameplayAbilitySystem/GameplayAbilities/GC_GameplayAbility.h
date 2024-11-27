@@ -27,5 +27,7 @@ public:
 protected:
 	FTimerHandle DurationHandle;
 	UFUNCTION()
-	void DurationEnded();
+	virtual void DurationEnded();
+
+	virtual void SetDuration();
 };

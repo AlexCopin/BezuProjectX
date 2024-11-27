@@ -82,6 +82,8 @@ bool AGC_PC_RTS::TryMoveGolemsToLocation_Implementation(FVector Location)
 	Positions = UAbilityTools::CalculateRectanglePoints(averagePos, Location, numGolems, numCol * 150, numRows * 80, numCol, numRows);
 	for (int i = 0; i < SelectedGolems.Num(); i++) 
 	{
+		if (SelectedGolems[i]->PoolComponent->GolemAllegiance != EGolemAllegiance::Ally)
+			continue;
 		SelectedGolems[i]->UpdateTargetLocation(Positions[i]);
 	}
 	return true;
