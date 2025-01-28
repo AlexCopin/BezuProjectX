@@ -12,9 +12,9 @@
 	{
 		"MajorVersion": 5,
 		"MinorVersion": 5,
-		"PatchVersion": 0,
-		"Changelist": 37670630,
-		"CompatibleChangelist": 0,
+		"PatchVersion": 1,
+		"Changelist": 38445549,
+		"CompatibleChangelist": 37670630,
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "++UE5+Release-5.5",

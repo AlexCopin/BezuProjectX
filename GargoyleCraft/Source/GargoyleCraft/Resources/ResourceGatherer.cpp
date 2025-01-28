@@ -1,6 +1,7 @@
 #include "ResourceGatherer.h"
 #include <GargoyleCraft/GameInstance/GC_PlayerDataSubsystem.h>
 #include <GargoyleCraft/BlueprintFunctionLibraries/AbilityTools.h>
+#include <GargoyleCraft/GameInstance/GC_EventSubsystem.h>
 
 void AResourceGatherer::BeginPlay()
 {
@@ -12,6 +13,8 @@ void AResourceGatherer::BeginConstruct()
 	GetWorld()->GetTimerManager().SetTimer(TimerConstruction, this, &AResourceGatherer::FinishConstruct, ConstructionDuration, false);
 	ActivateCustomTick(false);
 	OnConstructionStarted.Broadcast(ConstructionDuration);
+
+	GetWorld()->GetGameInstance()->GetSubsystem<UGC_EventSubsystem>()->LaunchMonsterEvent(EventData, GetActorLocation(), ConstructionDuration);
 }
 
 void AResourceGatherer::FinishConstruct()

@@ -72,6 +72,11 @@ void AGolem::OnFinishedCreated()
 		{
 			AbilitySystemComponent->InitAbilityActorInfo(GetWorld()->GetFirstPlayerController()->GetPawn(), this);
 		}
+		if (ensure(DataAsset))
+		{
+			UpdateTargetLocation(CurrentTargetLocation);
+			DataAsset->Apply(GetAbilitySystemComponent());
+		}
 		AbilitySystemComponent->ApplyDefaultValues();
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UAttributeSet_Character::GetMovementSpeedAttribute()).AddUObject(this, &AGolem::OnSpeedChanged);
 		GetCharacterMovement()->MaxWalkSpeed = set->GetMovementSpeed();
@@ -82,11 +87,6 @@ void AGolem::OnFinishedCreated()
 
 		//Events Attributes
 		AbilitySystemComponent->ASC_OnDeath.AddDynamic(this, &AGolem::AGolem::OnDeath);
-	}
-	if (ensure(DataAsset))
-	{
-		UpdateTargetLocation(CurrentTargetLocation);
-		DataAsset->Apply(GetAbilitySystemComponent());
 	}
 
 }

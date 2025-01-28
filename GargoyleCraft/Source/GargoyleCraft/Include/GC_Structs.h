@@ -101,10 +101,35 @@ struct FSpawnData
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "SpawnSettings")
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
 	TSubclassOf<AActor> SpawnedActor;
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "SpawnSettings")
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
 	float Delay = 2.0f;
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "SpawnSettings")
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
 	TObjectPtr<AActor> SpawnPoint;
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
+	FVector SpawnPosition;
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
+	int Number = 1;
+};
+
+
+USTRUCT(BlueprintType)
+struct FMonsterEventData
+{
+	GENERATED_BODY()
+public:
+	//Can be overriden
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
+	float Duration;
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
+	float SpawnOffsetMax = 1.0f;
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
+	int TotalNumberToSpawn;
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
+	FVector2D NumberRange;
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
+	FVector2D SpawnRange = FVector2D(400.0, 600.0);
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
+	TArray<TSubclassOf<AGolem>> SpawnedActors;
 };

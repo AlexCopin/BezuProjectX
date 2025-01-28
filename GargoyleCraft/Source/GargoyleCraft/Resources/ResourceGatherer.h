@@ -4,6 +4,7 @@
 #include "GargoyleCraft/Actors/GC_Actor.h"
 #include <GargoyleCraft/Widgets/GC_Widget.h>
 #include "GameplayTagContainer.h"
+#include "GargoyleCraft/Include/GC_Structs.h"
 #include "ResourceGatherer.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGolemScanned, bool, isScanned);
@@ -47,6 +48,9 @@ public:
 	FGathered OnGathered;
 	UPROPERTY(EditAnywhere, BlueprintAssignable)
 	FGolemScanned OnGolemScanned;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Event")
+	FMonsterEventData EventData;
 
 	UFUNCTION(BlueprintCallable)
 	void BeginConstruct();

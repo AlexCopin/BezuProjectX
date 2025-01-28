@@ -1,0 +1,75 @@
+#include "GC_EventActor.h"
+#include <GargoyleCraft/GameInstance/GC_PlayerDataSubsystem.h>
+#include <GargoyleCraft/BlueprintFunctionLibraries/AbilityTools.h>
+
+
+void AGC_EventActor::Init(const FMonsterEventData& Data)
+{
+	EventData = Data;
+	int i = 0;
+	while(i < EventData.TotalNumberToSpawn)
+	{
+		float delay = EventData.Duration / EventData.TotalNumberToSpawn;
+		float delayOffset = FMath::FRandRange(0.f, EventData.SpawnOffsetMax);
+		delay += delayOffset;
+		FSpawnData tempData;
+		tempData.Delay = delay;
+		tempData.SpawnedActor = EventData.SpawnedActors[FMath::RandRange(0, EventData.SpawnedActors.Num() - 1)];
+		tempData.Number = FMath::FRandRange(EventData.NumberRange.X, EventData.NumberRange.Y);
+		float randomMagnitude = FMath::FRandRange(EventData.SpawnRange.X, EventData.SpawnRange.Y);
+		FVector randomDirection = GetActorLocation().RotateAngleAxis(FMath::FRandRange(0.f, 360.f), FVector::XAxisVector);
+		randomDirection.Normalize();
+		FVector randomPosition = randomDirection * randomMagnitude;
+		tempData.SpawnPosition = randomPosition;
+		SpawnDatas.Add(tempData);
+		i += tempData.Number;
+	}
+	GetWorld()->GetTimerManager().SetTimer(SpawnTimer, this, &AGC_EventActor::SpawnActor, SpawnDatas[0].Delay, false, SpawnDatas[0].Delay);
+}
+
+void AGC_EventActor::BeginPlay()
+{
+	Super::BeginPlay();
+	SetActorTickEnabled(false);
+	GetWorld()->GetTimerManager().SetTimer(TimerCustomTick, this, &AGC_EventActor::CustomTick, CustomTickDelay, true);
+}
+void AGC_EventActor::CustomTick_Implementation()
+{
+		
+}
+
+void AGC_EventActor::ActivateCustomTick(bool Activate)
+{
+	bActivateCustomTick = Activate;
+	if (Activate)
+	{
+		GetWorld()->GetTimerManager().SetTimer(TimerCustomTick, this, &AGC_EventActor::CustomTick, CustomTickDelay, true);
+	}
+	else {
+		GetWorld()->GetTimerManager().ClearTimer(TimerCustomTick);
+	}
+}
+
+void AGC_EventActor::SpawnActor()
+{
+	if (SpawnDatas.IsValidIndex(CurrentSpawnData)) 
+	{
+		auto spawnData = SpawnDatas[CurrentSpawnData];
+		for(int i = 0; i < spawnData.Number; i++)
+		{
+			auto Golem = GetWorld()->SpawnActor<AGolem>(spawnData.SpawnedActor, spawnData.SpawnPosition, FRotator::ZeroRotator);
+			Golem->UpdateTargetLocation(GetActorLocation());
+		}
+		CurrentSpawnData++;
+		if (SpawnDatas.IsValidIndex(CurrentSpawnData))
+			GetWorld()->GetTimerManager().SetTimer(SpawnTimer, this, &AGC_EventActor::SpawnActor, SpawnDatas[CurrentSpawnData].Delay, false, SpawnDatas[CurrentSpawnData].Delay);
+		else
+			EndEvent();
+	}
+}
+
+void AGC_EventActor::EndEvent()
+{
+	ActivateCustomTick(false);
+	Destroy();
+}

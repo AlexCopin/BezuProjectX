@@ -8,6 +8,7 @@ void UPDA_DefaultActorData::Apply(UAbilitySystemComponent* ASC)
 {
     if(ASC)
     {
+		ASC->DefaultStartingData = DefaultStartingData;
 		for(auto abilityPda : StartingAbilities)
 		{
 			if(ensure(abilityPda))
