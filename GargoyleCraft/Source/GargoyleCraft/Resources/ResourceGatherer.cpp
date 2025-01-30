@@ -11,7 +11,7 @@ void AResourceGatherer::BeginPlay()
 void AResourceGatherer::BeginConstruct()
 {
 	GetWorld()->GetTimerManager().SetTimer(TimerConstruction, this, &AResourceGatherer::FinishConstruct, ConstructionDuration, false);
-	ActivateCustomTick(false);
+	ActivateCustomTick(true);
 	OnConstructionStarted.Broadcast(ConstructionDuration);
 
 	GetWorld()->GetGameInstance()->GetSubsystem<UGC_EventSubsystem>()->LaunchMonsterEvent(EventData, GetActorLocation(), ConstructionDuration);
@@ -44,12 +44,21 @@ void AResourceGatherer::Terminate_Implementation()
 void AResourceGatherer::CustomTick_Implementation()
 {
 	Super::CustomTick_Implementation();
-	if (auto golem = UAbilityTools::FindNearestGolem(this, this, { EGolemAllegiance::Ally }, RangeScan))
+	bool allyGolemInRange = false;
+	if (UAbilityTools::FindNearestGolem(this, this, { EGolemAllegiance::Ally }, RangeScan))
 	{
 		OnGolemScanned.Broadcast(true);
+		allyGolemInRange = true;
 	}
 	else
 	{
+		allyGolemInRange = false;
 		OnGolemScanned.Broadcast(false);
+	}
+	if (UAbilityTools::FindNearestGolem(this, this, { EGolemAllegiance::Enemy }, RangeScan) && !allyGolemInRange)
+	{
+		GetWorld()->GetTimerManager().ClearTimer(TimerGathering);
+		OnGolemScanned.Broadcast(false);
+		OnProcessHalted.Broadcast();
 	}
 }

@@ -13,5 +13,8 @@ UCLASS()
 class GARGOYLECRAFT_API UGenericFunctions : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
+public:
 
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
+	static FVector CalculateRandomNormalizedDirectionFromLocation(const UObject* WorldContextObject, const FVector& Location, bool IsGround = true);
 };

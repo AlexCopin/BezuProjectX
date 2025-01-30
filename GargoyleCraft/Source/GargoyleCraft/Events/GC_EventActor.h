@@ -7,6 +7,8 @@
 #include "GameFramework/Actor.h"
 #include "GC_EventActor.generated.h"
 
+class USceneComponent;
+
 UCLASS()
 class AGC_EventActor : public AActor
 {
@@ -38,6 +40,11 @@ protected:
 	UPROPERTY()
 	TArray<FSpawnData> SpawnDatas;
 public:
+	AGC_EventActor();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	TObjectPtr<USceneComponent> Root;
+
 
 	void Init(const FMonsterEventData& Data);
 

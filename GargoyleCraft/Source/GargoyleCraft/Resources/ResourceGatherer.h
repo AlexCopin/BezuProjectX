@@ -11,6 +11,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGolemScanned, bool, isScanned);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConstructionStarted, float, Duration);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGatheringStarted, float, Duration);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGathered, int, Value);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FProcessHalted);
 
 UCLASS()
 class AResourceGatherer : public AGC_Actor, public ISelectable
@@ -48,6 +49,8 @@ public:
 	FGathered OnGathered;
 	UPROPERTY(EditAnywhere, BlueprintAssignable)
 	FGolemScanned OnGolemScanned;
+	UPROPERTY(EditAnywhere, BlueprintAssignable)
+	FProcessHalted OnProcessHalted;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Event")
 	FMonsterEventData EventData;
