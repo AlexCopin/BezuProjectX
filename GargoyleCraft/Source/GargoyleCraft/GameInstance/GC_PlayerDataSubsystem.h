@@ -7,6 +7,7 @@
 #include "GC_GameInstance.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "GC_PlayerDataSubsystem.generated.h"
+#include <GargoyleCraft/Craft/PDA_Blueprint.h>
 
 class UPDA_GameData;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDataInitialized, FPlayerData, DataSent);
@@ -63,6 +64,18 @@ public:
 	void AddToResource(FGameplayTag ResourceTag, int Value);
 	UFUNCTION(BlueprintCallable)
 	bool PayResource(FGameplayTag ResourceTag, int Value);
+	UFUNCTION(BlueprintCallable)
+	bool IsResourceSufficient(FGameplayTag ResourceTag, int Value);
 	UPROPERTY(EditAnywhere, BlueprintAssignable)
 	FOnResourceUpdated OnResourceUpdated;
+
+	//-----------------RecipesBlueprints-------
+	UFUNCTION(BlueprintCallable)
+	void ApplyRecipeOnGolem(AGolem* Golem);
+	UFUNCTION(BlueprintCallable)
+	bool TryConstructRecipe(UPDA_Blueprint* Recipe);
+
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TMap<FGameplayTag, TObjectPtr<UPDA_Blueprint>> Recipes;
 };

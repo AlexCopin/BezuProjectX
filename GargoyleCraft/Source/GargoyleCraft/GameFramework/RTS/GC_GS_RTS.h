@@ -21,6 +21,8 @@ class GARGOYLECRAFT_API AGC_GS_RTS : public AGameStateBase
 public:
 	virtual void BeginPlay() override;
 
+	virtual void Tick(float DeltaTime) override;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<UPDA_GameData> DefaultGameData;
   UFUNCTION(BlueprintCallable)
@@ -36,4 +38,7 @@ public:
 
 	UPROPERTY(BlueprintAssignable)
 	FOnPoolUpdated OnPoolUpdated;
+
+	UPROPERTY(BlueprintReadOnly)
+	float GameDuration = 0;
 };

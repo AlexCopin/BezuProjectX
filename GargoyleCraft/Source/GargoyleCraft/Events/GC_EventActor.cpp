@@ -29,7 +29,8 @@ void AGC_EventActor::Init(const FMonsterEventData& Data)
 		SpawnDatas.Add(tempData);
 		i += tempData.Number;
 	}
-	GetWorld()->GetTimerManager().SetTimer(SpawnTimer, this, &AGC_EventActor::SpawnActor, SpawnDatas[0].Delay, false, SpawnDatas[0].Delay);
+	if(SpawnDatas.IsValidIndex(0))
+		GetWorld()->GetTimerManager().SetTimer(SpawnTimer, this, &AGC_EventActor::SpawnActor, SpawnDatas[0].Delay, false, SpawnDatas[0].Delay);
 }
 
 void AGC_EventActor::BeginPlay()

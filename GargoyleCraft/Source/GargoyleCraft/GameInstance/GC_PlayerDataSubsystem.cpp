@@ -84,32 +84,33 @@ bool UGC_PlayerDataSubsystem::IsGolemInPlayerArmy(UPDA_Golem* DAGolem)
 
 bool UGC_PlayerDataSubsystem::TryAddGolemInArmy(UPDA_Golem* GolemData)
 {
-	if (ensure(!GolemData))
-		return false;
-
 	if (PlayerData.ArmyData.GolemTypesInArmy.Num() >= PlayerData.ArmyData.NbAvailableSlots)
 		return false;
 
-	if (PlayerData.ArmyData.TagsUnlocked.HasAllExact(GolemData->RequirementsTags))
+	if (ensure(GolemData))
 	{
-		if (ensure(GameData))
+		if (PlayerData.ArmyData.TagsUnlocked.HasAllExact(GolemData->RequirementsTags))
 		{
-			auto golemRow = GameData->AvailableGolemTypes->FindRow<FGolemBaseData>(GolemData->GolemTypeTag.GetTagName(), "Context");
-			if(!golemRow)
-				return false;
-
-			if (!golemRow->IsAvailable)
+			if (ensure(GameData))
 			{
-				UE_LOG(LogTemp, Warning, TEXT("Golem not available"));
-				return false;
-			}
+				auto golemRow = GameData->AvailableGolemTypes->FindRow<FGolemBaseData>(GolemData->GolemTypeTag.GetTagName(), "Context");
+				if (!golemRow)
+					return false;
 
+				if (!golemRow->IsAvailable)
+				{
+					UE_LOG(LogTemp, Warning, TEXT("Golem not available"));
+					return false;
+				}
+
+			}
 		}
+		PlayerData.ArmyData.GolemTagsInArmy.AddTag(GolemData->GolemTypeTag);
+		PlayerData.ArmyData.GolemTypesInArmy.Add(GolemData);
+		OnArmyUpdated.Broadcast(GolemData, true, PlayerData.ArmyData);
+		return true;
 	}
-	PlayerData.ArmyData.GolemTagsInArmy.AddTag(GolemData->GolemTypeTag);
-	PlayerData.ArmyData.GolemTypesInArmy.Add(GolemData);
-	OnArmyUpdated.Broadcast(GolemData, true, PlayerData.ArmyData);
-	return true;
+	return false;
 }
 
 bool UGC_PlayerDataSubsystem::RemoveGolemFromArmy(UPDA_Golem* GolemData)
@@ -135,10 +136,44 @@ void UGC_PlayerDataSubsystem::AddToResource(FGameplayTag ResourceTag, int Value)
 bool UGC_PlayerDataSubsystem::PayResource(FGameplayTag ResourceTag, int Value)
 {
 	FResourceData* resourceData = PlayerData.ResourcesData.Find(ResourceTag);
-	if (resourceData->Quantity - Value < 0)
-		return false;
+	
+	return IsResourceSufficient(ResourceTag, Value);
 
 	resourceData->Quantity -= Value;
 	OnResourceUpdated.Broadcast(ResourceTag, resourceData->Quantity, Value);
+	return true;
+}
+
+bool UGC_PlayerDataSubsystem::IsResourceSufficient(FGameplayTag ResourceTag, int Value)
+{
+	FResourceData* resourceData = PlayerData.ResourcesData.Find(ResourceTag);
+	if (resourceData->Quantity - Value < 0)
+		return false;
+	return true;
+}
+
+void UGC_PlayerDataSubsystem::ApplyRecipeOnGolem(AGolem* Golem)
+{
+	if(ensure(Golem))
+	{
+		if(auto recipe = *Recipes.Find(Golem->DataAsset->GolemTypeTag))
+		{
+			recipe->Improvement->ApplyImprovement(Golem->AbilitySystemComponent);
+		}
+	}
+}
+
+bool UGC_PlayerDataSubsystem::TryConstructRecipe(UPDA_Blueprint* Recipe)
+{
+	for(auto resource : Recipe->ResourcesRequired)
+	{
+		FResourceData* resourceData = PlayerData.ResourcesData.Find(resource.Key);
+		if (!IsResourceSufficient(resource.Key, resource.Value))
+			return false;
+	}
+	for (auto resource : Recipe->ResourcesRequired)
+	{
+		PayResource(resource.Key, resource.Value);
+	}
 	return true;
 }

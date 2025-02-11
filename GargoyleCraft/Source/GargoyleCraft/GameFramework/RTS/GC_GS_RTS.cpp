@@ -13,6 +13,12 @@ void AGC_GS_RTS::BeginPlay()
 	GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->SetGameData(DefaultGameData);
 }
 
+void AGC_GS_RTS::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	GameDuration += DeltaTime;
+}
+
 void AGC_GS_RTS::AddToPool(EGolemAllegiance Allegiance, AGolem* Golem)
 {
   if(!Golem)

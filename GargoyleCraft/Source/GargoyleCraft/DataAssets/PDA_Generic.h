@@ -16,8 +16,10 @@ class GARGOYLECRAFT_API UPDA_Generic : public UPrimaryDataAsset
 	GENERATED_BODY()
 	
 public:
-	UFUNCTION(BlueprintCallable)
-	FTooltipData GetTooltip() { return TooltipData; }
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	FTooltipData GetTooltip();
+
+	virtual FTooltipData GetTooltip_Implementation() { return TooltipData; }
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Tooltip")
 	FTooltipData TooltipData;
