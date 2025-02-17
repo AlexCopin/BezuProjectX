@@ -137,7 +137,8 @@ bool UGC_PlayerDataSubsystem::PayResource(FGameplayTag ResourceTag, int Value)
 {
 	FResourceData* resourceData = PlayerData.ResourcesData.Find(ResourceTag);
 	
-	return IsResourceSufficient(ResourceTag, Value);
+	if (!IsResourceSufficient(ResourceTag, Value))
+		return false;
 
 	resourceData->Quantity -= Value;
 	OnResourceUpdated.Broadcast(ResourceTag, resourceData->Quantity, Value);
@@ -156,15 +157,26 @@ void UGC_PlayerDataSubsystem::ApplyRecipeOnGolem(AGolem* Golem)
 {
 	if(ensure(Golem))
 	{
-		if(auto recipe = *Recipes.Find(Golem->DataAsset->GolemTypeTag))
+		if(auto recipes = Recipes.Find(Golem->DataAsset->GolemTypeTag))
 		{
-			recipe->Improvement->ApplyImprovement(Golem->AbilitySystemComponent);
+			for(auto recipe : *recipes)
+			{
+				recipe->Improvement->ApplyImprovement(Golem->AbilitySystemComponent);
+			}
 		}
 	}
 }
 
-bool UGC_PlayerDataSubsystem::TryConstructRecipe(UPDA_Blueprint* Recipe)
+bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Blueprint* Recipe)
 {
+	auto arrayRecipe = Recipes.Find(GolemType);
+	if (arrayRecipe)
+	{
+		if (arrayRecipe->Find(Recipe))
+		{
+			return false;
+		}
+	}
 	for(auto resource : Recipe->ResourcesRequired)
 	{
 		FResourceData* resourceData = PlayerData.ResourcesData.Find(resource.Key);
@@ -175,5 +187,7 @@ bool UGC_PlayerDataSubsystem::TryConstructRecipe(UPDA_Blueprint* Recipe)
 	{
 		PayResource(resource.Key, resource.Value);
 	}
+	if (arrayRecipe)
+		arrayRecipe->Add(Recipe);
 	return true;
 }

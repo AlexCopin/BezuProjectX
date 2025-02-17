@@ -6,8 +6,8 @@
 #include "GargoyleCraft/Include/GC_Structs.h"
 #include "GC_GameInstance.h"
 #include "Subsystems/GameInstanceSubsystem.h"
-#include "GC_PlayerDataSubsystem.generated.h"
 #include <GargoyleCraft/Craft/PDA_Blueprint.h>
+#include "GC_PlayerDataSubsystem.generated.h"
 
 class UPDA_GameData;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDataInitialized, FPlayerData, DataSent);
@@ -73,9 +73,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void ApplyRecipeOnGolem(AGolem* Golem);
 	UFUNCTION(BlueprintCallable)
-	bool TryConstructRecipe(UPDA_Blueprint* Recipe);
+	bool TryConstructRecipe(FGameplayTag GolemType, UPDA_Blueprint* Recipe);
 
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TMap<FGameplayTag, TObjectPtr<UPDA_Blueprint>> Recipes;
+	TMap<FGameplayTag, TArray<UPDA_Blueprint*>> Recipes;
 };
