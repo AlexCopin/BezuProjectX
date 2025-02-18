@@ -2,6 +2,7 @@
 
 #include "GargoyleCraft/Golems/Data/PDA_Golem.h"
 #include "GargoyleCraft/Golems/Data/PDA_GolemArmy.h"
+#include <GargoyleCraft/Craft/PDA_Blueprint.h>
 #include "GC_Structs.generated.h"
 
 class UGC_GameplayAbility;
@@ -60,6 +61,8 @@ public:
 	FHeroData HeroData;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
 	FArmyData ArmyData;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Craft")
+	FGameplayTagContainer RecipeTagsUnlocked;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Resources")
 	TMap<FGameplayTag, FResourceData> ResourcesData;
 };
@@ -92,6 +95,18 @@ public:
 	FGameplayTag GolemTag;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TObjectPtr<UPDA_Golem> GolemData;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	bool IsAvailable;
+};
+USTRUCT(BlueprintType)
+struct FRecipeData : public FTableRowBase
+{
+	GENERATED_BODY()
+public:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FGameplayTag RecipeTag;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TObjectPtr<UPDA_Blueprint> RecipeData;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	bool IsAvailable;
 };

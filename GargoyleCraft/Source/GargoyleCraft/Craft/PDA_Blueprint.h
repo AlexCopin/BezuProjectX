@@ -11,6 +11,8 @@ class GARGOYLECRAFT_API UPDA_Blueprint : public UPDA_Generic
 	GENERATED_BODY()
 public:
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Settings")
+	FGameplayTag RecipeTag;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Improvement")
 	TObjectPtr<UPDA_Improvement> Improvement;

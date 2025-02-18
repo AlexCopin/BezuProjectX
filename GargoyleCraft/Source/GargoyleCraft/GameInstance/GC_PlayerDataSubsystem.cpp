@@ -153,6 +153,53 @@ bool UGC_PlayerDataSubsystem::IsResourceSufficient(FGameplayTag ResourceTag, int
 	return true;
 }
 
+
+
+
+
+TArray<UPDA_Blueprint*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromGameData()
+{
+	TArray<UPDA_Blueprint*> returnValue = {};
+	if (ensure(GameData))
+	{
+		TArray<FRecipeData*> RecipeBaseDatas;
+		GameData->AvailableRecipes->GetAllRows(FString("AllRows"), RecipeBaseDatas);
+		for (auto recipeBaseData : RecipeBaseDatas)
+		{
+			if (!recipeBaseData->IsAvailable)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Recipe not available"));
+				continue;
+			}
+			returnValue.Add(recipeBaseData->RecipeData);
+		}
+	}
+	return returnValue;
+}
+
+TArray<UPDA_Blueprint*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromPlayerData()
+{
+	TArray<UPDA_Blueprint*> returnValue = {};
+	if (ensure(GameData))
+	{
+		for (auto tag : PlayerData.RecipeTagsUnlocked)
+		{
+			auto recipeData = GameData->AvailableRecipes->FindRow<FRecipeData>(tag.GetTagName(), "Context");
+			if (!recipeData->IsAvailable)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Recipe not available"));
+				continue;
+			}
+			returnValue.Add(recipeData->RecipeData);
+		}
+	}
+	return returnValue;
+}
+
+
+
+
+
 void UGC_PlayerDataSubsystem::ApplyRecipeOnGolem(AGolem* Golem)
 {
 	if(ensure(Golem))

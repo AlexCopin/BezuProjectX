@@ -21,4 +21,6 @@ public:
 
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TObjectPtr<UDataTable> AvailableGolemTypes;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<UDataTable> AvailableRecipes;
 };

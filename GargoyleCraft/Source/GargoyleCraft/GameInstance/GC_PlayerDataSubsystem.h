@@ -70,6 +70,12 @@ public:
 	FOnResourceUpdated OnResourceUpdated;
 
 	//-----------------RecipesBlueprints-------
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	TArray<UPDA_Blueprint*> GetAvailableRecipesFromGameData();
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	TArray<UPDA_Blueprint*> GetAvailableRecipesFromPlayerData();
+
 	UFUNCTION(BlueprintCallable)
 	void ApplyRecipeOnGolem(AGolem* Golem);
 	UFUNCTION(BlueprintCallable)
