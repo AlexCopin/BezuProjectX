@@ -216,12 +216,15 @@ void UGC_PlayerDataSubsystem::ApplyRecipeOnGolem(AGolem* Golem)
 
 bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Blueprint* Recipe)
 {
-	auto arrayRecipe = Recipes.Find(GolemType);
-	if (arrayRecipe)
+	if(!Recipes.IsEmpty())
 	{
-		if (arrayRecipe->Find(Recipe))
+		auto arrayRecipe = Recipes.Find(GolemType);
+		if (arrayRecipe)
 		{
-			return false;
+			if (arrayRecipe->Find(Recipe))
+			{
+				return false;
+			}
 		}
 	}
 	for(auto resource : Recipe->ResourcesRequired)
@@ -234,7 +237,14 @@ bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Bl
 	{
 		PayResource(resource.Key, resource.Value);
 	}
+	auto arrayRecipe = Recipes.Find(GolemType);
 	if (arrayRecipe)
 		arrayRecipe->Add(Recipe);
+	else
+	{
+		TArray<UPDA_Blueprint*> arrayTemp;
+		arrayTemp.Add(Recipe);
+		Recipes.Emplace(GolemType, arrayTemp);
+	}
 	return true;
 }
