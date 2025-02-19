@@ -197,8 +197,42 @@ TArray<UPDA_Blueprint*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromPlayerDa
 }
 
 
+UPDA_Blueprint* UGC_PlayerDataSubsystem::GetRecipeData(FGameplayTag RecipeTag)
+{
+	UPDA_Blueprint* returnValue;
+	if (!PlayerData.RecipeTagsUnlocked.HasTagExact(RecipeTag))
+		return nullptr;
+	if (ensure(GameData))
+	{
+		auto recipeData = GameData->AvailableRecipes->FindRow<FRecipeData>(RecipeTag.GetTagName(), "Context");
+		if (!recipeData->IsAvailable)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Recipe not available"));
+			return nullptr;
+		}
+		returnValue = recipeData->RecipeData;
+	}
+	return returnValue;
+}
 
 
+bool UGC_PlayerDataSubsystem::TryAddRecipeToPlayerData(FGameplayTag RecipeTag)
+{
+	if (PlayerData.RecipeTagsUnlocked.HasTagExact(RecipeTag))
+		return true;
+
+	if (ensure(GameData))
+	{
+		auto recipeData = GameData->AvailableRecipes->FindRow<FRecipeData>(RecipeTag.GetTagName(), "Context");
+		if (!recipeData->IsAvailable)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Recipe not available"));
+			return false;
+		}
+		PlayerData.RecipeTagsUnlocked.AddTag(RecipeTag);
+		return true;
+	}
+}
 
 void UGC_PlayerDataSubsystem::ApplyRecipeOnGolem(AGolem* Golem)
 {
@@ -206,9 +240,9 @@ void UGC_PlayerDataSubsystem::ApplyRecipeOnGolem(AGolem* Golem)
 	{
 		if(auto recipes = Recipes.Find(Golem->DataAsset->GolemTypeTag))
 		{
-			for(auto recipe : *recipes)
+			for(auto recipeTag : recipes->GetGameplayTagArray())
 			{
-				recipe->Improvement->ApplyImprovement(Golem->AbilitySystemComponent);
+				GetRecipeData(recipeTag)->Improvement->ApplyImprovement(Golem->AbilitySystemComponent);
 			}
 		}
 	}
@@ -221,30 +255,33 @@ bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Bl
 		auto arrayRecipe = Recipes.Find(GolemType);
 		if (arrayRecipe)
 		{
-			if (arrayRecipe->Find(Recipe))
+			if (arrayRecipe->HasTagExact(Recipe->RecipeTag))
 			{
 				return false;
 			}
 		}
 	}
+	//Check resources quantity
 	for(auto resource : Recipe->ResourcesRequired)
 	{
 		FResourceData* resourceData = PlayerData.ResourcesData.Find(resource.Key);
 		if (!IsResourceSufficient(resource.Key, resource.Value))
 			return false;
 	}
+	//Pay all resources
 	for (auto resource : Recipe->ResourcesRequired)
 	{
 		PayResource(resource.Key, resource.Value);
 	}
+	//Add recipetag
 	auto arrayRecipe = Recipes.Find(GolemType);
 	if (arrayRecipe)
-		arrayRecipe->Add(Recipe);
+		arrayRecipe->AddTag(Recipe->RecipeTag);
 	else
 	{
-		TArray<UPDA_Blueprint*> arrayTemp;
-		arrayTemp.Add(Recipe);
-		Recipes.Emplace(GolemType, arrayTemp);
+		FGameplayTagContainer containerTemp;
+		containerTemp.AddTag(Recipe->RecipeTag);
+		Recipes.Emplace(GolemType, containerTemp);
 	}
 	return true;
 }

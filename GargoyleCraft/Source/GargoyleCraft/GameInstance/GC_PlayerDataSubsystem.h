@@ -75,12 +75,16 @@ public:
 	TArray<UPDA_Blueprint*> GetAvailableRecipesFromGameData();
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<UPDA_Blueprint*> GetAvailableRecipesFromPlayerData();
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	UPDA_Blueprint* GetRecipeData(FGameplayTag RecipeTag);
 
+	UFUNCTION(BlueprintCallable)
+	bool TryAddRecipeToPlayerData(FGameplayTag RecipeTag);
 	UFUNCTION(BlueprintCallable)
 	void ApplyRecipeOnGolem(AGolem* Golem);
 	UFUNCTION(BlueprintCallable)
 	bool TryConstructRecipe(FGameplayTag GolemType, UPDA_Blueprint* Recipe);
 
 protected:
-	TMap<FGameplayTag, TArray<UPDA_Blueprint*>> Recipes;
+	TMap<FGameplayTag, FGameplayTagContainer> Recipes;
 };
