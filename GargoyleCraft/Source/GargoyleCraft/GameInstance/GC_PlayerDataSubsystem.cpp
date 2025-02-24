@@ -5,6 +5,7 @@
 
 #include "GargoyleCraft/GameData/PDA_GameData.h"
 #include "GargoyleCraft/Resources/PDA_Resource.h"
+#include <GargoyleCraft/Include/GC_Macros.h>
 
 void UGC_PlayerDataSubsystem::Initialize(FSubsystemCollectionBase& Collection) 
 {
@@ -199,7 +200,6 @@ TArray<UPDA_Blueprint*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromPlayerDa
 
 UPDA_Blueprint* UGC_PlayerDataSubsystem::GetRecipeData(FGameplayTag RecipeTag)
 {
-	UPDA_Blueprint* returnValue;
 	if (!PlayerData.RecipeTagsUnlocked.HasTagExact(RecipeTag))
 		return nullptr;
 	if (ensure(GameData))
@@ -210,9 +210,9 @@ UPDA_Blueprint* UGC_PlayerDataSubsystem::GetRecipeData(FGameplayTag RecipeTag)
 			UE_LOG(LogTemp, Warning, TEXT("Recipe not available"));
 			return nullptr;
 		}
-		returnValue = recipeData->RecipeData;
+		return recipeData->RecipeData;
 	}
-	return returnValue;
+	return nullptr;
 }
 
 
@@ -232,6 +232,7 @@ bool UGC_PlayerDataSubsystem::TryAddRecipeToPlayerData(FGameplayTag RecipeTag)
 		PlayerData.RecipeTagsUnlocked.AddTag(RecipeTag);
 		return true;
 	}
+	return false;
 }
 
 void UGC_PlayerDataSubsystem::ApplyRecipeOnGolem(AGolem* Golem)
@@ -284,4 +285,12 @@ bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Bl
 		Recipes.Emplace(GolemType, containerTemp);
 	}
 	return true;
+}
+
+void UGC_PlayerDataSubsystem::TryAddConsumableTag(const FLootData& ConsumableData)
+{
+	/*if(Tag.MatchesTag(MAKE_TAG("")))
+	{
+
+	}*/
 }

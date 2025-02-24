@@ -12,35 +12,39 @@
 AGolem* UAbilityTools::FindNearestGolem(const UObject* WorldContextObject, const AActor* From,
                                         TArray<TEnumAsByte<EGolemAllegiance>> AllegiancesToSearch, float Range)
 {
-	TArray<AGolem*> GolemsToSearch;
-	for(int i = 0; i < AllegiancesToSearch.Num(); i++)
+	if(auto GS = WorldContextObject->GetWorld()->GetGameState<AGC_GS_RTS>())
 	{
-		switch(AllegiancesToSearch[i])
+		TArray<AGolem*> GolemsToSearch;
+		for (int i = 0; i < AllegiancesToSearch.Num(); i++)
 		{
-		case Ally :
-			GolemsToSearch.Append(WorldContextObject->GetWorld()->GetGameState<AGC_GS_RTS>()->FriendlyGolems);
-			break;
-		case Enemy:
-			GolemsToSearch.Append(WorldContextObject->GetWorld()->GetGameState<AGC_GS_RTS>()->EnemyGolems);
-			break;
-		case Neutral:
-			GolemsToSearch.Append(WorldContextObject->GetWorld()->GetGameState<AGC_GS_RTS>()->NeutralGolems);
-			break;
+			switch (AllegiancesToSearch[i])
+			{
+			case Ally:
+				GolemsToSearch.Append(GS->FriendlyGolems);
+				break;
+			case Enemy:
+				GolemsToSearch.Append(GS->EnemyGolems);
+				break;
+			case Neutral:
+				GolemsToSearch.Append(GS->NeutralGolems);
+				break;
+			}
 		}
-	}
-	AGolem* returnGolem = nullptr;
-	float closestDistance = FLT_MAX;
-	FVector originLocation = From->GetActorLocation();
-	for(auto golem : GolemsToSearch)
-	{
-		auto tempDist = FVector::Distance(originLocation, golem->GetActorLocation());
-		if(closestDistance > tempDist && tempDist <= Range)
+		AGolem* returnGolem = nullptr;
+		float closestDistance = FLT_MAX;
+		FVector originLocation = From->GetActorLocation();
+		for (auto golem : GolemsToSearch)
 		{
-			closestDistance = tempDist;
-			returnGolem = golem;
+			auto tempDist = FVector::Distance(originLocation, golem->GetActorLocation());
+			if (closestDistance > tempDist && tempDist <= Range)
+			{
+				closestDistance = tempDist;
+				returnGolem = golem;
+			}
 		}
+		return returnGolem;
 	}
-	return returnGolem;
+	return nullptr;
 }
 
 void UAbilityTools::ApplyDamage(UAbilitySystemComponent* Source, UAbilitySystemComponent* Target, float Value)

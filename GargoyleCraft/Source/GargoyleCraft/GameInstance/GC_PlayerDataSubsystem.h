@@ -68,9 +68,9 @@ public:
 	bool IsResourceSufficient(FGameplayTag ResourceTag, int Value);
 	UPROPERTY(EditAnywhere, BlueprintAssignable)
 	FOnResourceUpdated OnResourceUpdated;
+	//---------------------------------------------------
 
 	//-----------------RecipesBlueprints-------
-
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	TArray<UPDA_Blueprint*> GetAvailableRecipesFromGameData();
 	UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -84,6 +84,10 @@ public:
 	void ApplyRecipeOnGolem(AGolem* Golem);
 	UFUNCTION(BlueprintCallable)
 	bool TryConstructRecipe(FGameplayTag GolemType, UPDA_Blueprint* Recipe);
+	//---------------------------------------------------
+
+	UFUNCTION(BlueprintCallable)
+	void TryAddConsumableTag(const FLootData& ConsumableData);
 
 protected:
 	TMap<FGameplayTag, FGameplayTagContainer> Recipes;

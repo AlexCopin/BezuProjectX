@@ -148,3 +148,18 @@ public:
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Settings")
 	TArray<TSubclassOf<AGolem>> SpawnedActors;
 };
+
+
+USTRUCT(BlueprintType)
+struct FLootData
+{
+	GENERATED_BODY()
+public:
+	//Can be tag of Recipes / Resources
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings")
+	FGameplayTag LootTag;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Settings")
+	int Num;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = 0, ClampMax = 1), Category="Settings")
+	float DropChance;
+};

@@ -1,9 +1,9 @@
 #pragma once
-
 #include "GargoyleCraft/Include/GC_Structs.h"
 #include "UObject/Interface.h"
 #include "Initializable.generated.h"
 
+struct FPlayerData;
 class AGC_PC_RTS;
 
 UINTERFACE(MinimalAPI, Blueprintable)

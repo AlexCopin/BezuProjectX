@@ -10,6 +10,7 @@
 #include "Golem.generated.h"
 
 class UPDA_Golem;
+class UC_Drop;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFinishedCreated);
 
@@ -28,6 +29,8 @@ public:
 		TObjectPtr<UC_Pool> PoolComponent;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TObjectPtr<UGC_AbilitySystemComponent> AbilitySystemComponent;
+		UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TObjectPtr<UC_Drop> DropComponent;
 	UFUNCTION()
 		void OnFinishedCreated();
 
@@ -60,6 +63,7 @@ public:
 	//---Events Attributes
 	UFUNCTION(BlueprintNativeEvent)
 	void OnDeath();
+	void OnDeath_Implementation();
 
 	//---
 private:

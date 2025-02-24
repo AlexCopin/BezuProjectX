@@ -1,4 +1,4 @@
-#include "Golem.h"
+	#include "Golem.h"
 
 #include "Components/CapsuleComponent.h"
 #include "AIController.h"
@@ -13,6 +13,7 @@
 #include "GargoyleCraft/GameplayAbilitySystem/GameplayEffects/GE_Target.h"
 #include "GargoyleCraft/Include/GC_Macros.h"
 #include "GargoyleCraft/Include/GC_Structs.h"
+#include "GargoyleCraft/Components/Golem/C_Drop.h"
 
 #include "NavigationSystem.h"
 
@@ -21,6 +22,7 @@ AGolem::AGolem()
   SetRootComponent(GetCapsuleComponent());
   PoolComponent = CreateDefaultSubobject<UC_Pool>("PoolComponent");
   AbilitySystemComponent = CreateDefaultSubobject<UGC_AbilitySystemComponent>("GolemASC");
+  DropComponent = CreateDefaultSubobject<UC_Drop>("DropComponent");
 }
 
 void AGolem::Init(UPDA_Golem* PDAGolem, FVector FirstTargetLocation)
@@ -220,5 +222,6 @@ void AGolem::TryActivateAbility()
 void AGolem::OnDeath_Implementation()
 {
 	Execute_Unselected(this, Cast<AGC_PC_RTS>(GetWorld()->GetFirstPlayerController()));
+	DropComponent->SpawnLoot();
 	Destroy();
 }

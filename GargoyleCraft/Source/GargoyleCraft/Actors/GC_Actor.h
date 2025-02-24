@@ -7,6 +7,8 @@
 #include "GameFramework/Actor.h"
 #include "GC_Actor.generated.h"
 
+struct FPlayerData;
+
 UCLASS()
 class AGC_Actor : public AActor, public IInitializable
 {
