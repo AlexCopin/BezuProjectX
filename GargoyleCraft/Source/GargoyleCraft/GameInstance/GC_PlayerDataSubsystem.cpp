@@ -230,6 +230,7 @@ bool UGC_PlayerDataSubsystem::TryAddRecipeToPlayerData(FGameplayTag RecipeTag)
 			return false;
 		}
 		PlayerData.RecipeTagsUnlocked.AddTag(RecipeTag);
+		OnResourceUpdated.Broadcast(RecipeTag, 1, 1);
 		return true;
 	}
 	return false;
@@ -289,8 +290,11 @@ bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Bl
 
 void UGC_PlayerDataSubsystem::TryAddConsumableTag(const FLootData& ConsumableData)
 {
-	/*if(Tag.MatchesTag(MAKE_TAG("")))
+	if(ConsumableData.LootTag.MatchesTag(MAKE_TAG("Consumable.Resource")))
 	{
-
-	}*/
+		AddToResource(ConsumableData.LootTag, ConsumableData.Num);
+	}else if(ConsumableData.LootTag.MatchesTag(MAKE_TAG("Consumable.Recipe")))
+	{
+		TryAddRecipeToPlayerData(ConsumableData.LootTag);
+	}
 }
