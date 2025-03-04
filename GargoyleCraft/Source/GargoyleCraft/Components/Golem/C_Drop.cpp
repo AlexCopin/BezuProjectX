@@ -24,8 +24,11 @@ void UC_Drop::SpawnLoot()
 				continue;
 
 			auto drop = GetWorld()->SpawnActorDeferred<ADrop>(DropClass, GetOwner()->GetActorTransform());
-			drop->Init(lootData);
-			UGameplayStatics::FinishSpawningActor(drop, GetOwner()->GetActorTransform());
+			if(drop)
+			{
+				drop->Init(lootData);
+				UGameplayStatics::FinishSpawningActor(drop, GetOwner()->GetActorTransform());
+			}
 		}
 	}
 }

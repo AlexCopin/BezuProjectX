@@ -19,7 +19,7 @@ class GARGOYLECRAFT_API UGC_MainNotificationsWidget : public UGC_Widget
 	GENERATED_BODY()
 
 public:
-	virtual bool Initialize() override;
+	virtual void NativeConstruct() override;
 
 	UFUNCTION(BlueprintNativeEvent)
 	void NotifyResourceUpdated(FGameplayTag ResourceTag, int NewValue, int ChangeValue);

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/HUD.h"
+#include "GargoyleCraft/HUD/GC_HUD.h"
 #include "GargoyleCraft/Widgets/GC_Widget.h"
 #include <GargoyleCraft/Include/GC_Structs.h>
 
@@ -13,16 +13,8 @@
  * 
  */
 UCLASS()
-class GARGOYLECRAFT_API AGC_Lobby_Hud : public AHUD
+class GARGOYLECRAFT_API AGC_Lobby_Hud : public AGC_HUD
 {
 	GENERATED_BODY()
-public:
 
-	virtual void BeginPlay() override;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	TSubclassOf<UGC_Widget>	MainLobbyWidget;
-
-	UFUNCTION()
-	void OnInitialized(FPlayerData PlayerData);
 };

@@ -89,6 +89,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void TryAddConsumableTag(const FLootData& ConsumableData);
 
+	//-----------Tooltip Generic--------------
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FTooltipData GetSimpleTooltip(FGameplayTag DataTag);
+	//----------------------------------------
+
 protected:
 	TMap<FGameplayTag, FGameplayTagContainer> Recipes;
 };

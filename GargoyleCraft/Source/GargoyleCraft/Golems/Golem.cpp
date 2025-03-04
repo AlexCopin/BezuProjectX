@@ -16,6 +16,7 @@
 #include "GargoyleCraft/Components/Golem/C_Drop.h"
 
 #include "NavigationSystem.h"
+#include <GargoyleCraft/GameInstance/GC_PlayerDataSubsystem.h>
 
 AGolem::AGolem()
 {
@@ -89,6 +90,8 @@ void AGolem::OnFinishedCreated()
 
 		//Events Attributes
 		AbilitySystemComponent->ASC_OnDeath.AddDynamic(this, &AGolem::AGolem::OnDeath);
+
+		GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->ApplyRecipeOnGolem(this);
 	}
 
 }

@@ -7,6 +7,7 @@
 
 void AGC_HUD::BeginPlay()
 {
+	Super::BeginPlay();
 	if (GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->IsInitialized)
 		Execute_Initialize(this, GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->PlayerData);
 	else
@@ -15,6 +16,10 @@ void AGC_HUD::BeginPlay()
 
 void AGC_HUD::Initialize_Implementation(FPlayerData DataSent)
 {
-	MainDynamicResourceWidget = CreateWidget<UGC_MainNotificationsWidget>(GetOwningPlayerController(), MainDynamicResourceWidgetClass);
-	MainDynamicResourceWidget->AddToViewport();
+	MainNotificationsWidget = CreateWidget<UGC_MainNotificationsWidget>(GetOwningPlayerController(), MainNotificationsWidgetClass);
+	if (MainNotificationsWidget)
+		MainNotificationsWidget->AddToViewport();
+	MainWidget = CreateWidget<UGC_Widget>(GetWorld(), MainWidgetClass);
+	if (MainWidget)
+		MainWidget->AddToViewport();
 }

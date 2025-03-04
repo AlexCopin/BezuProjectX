@@ -23,12 +23,18 @@ public:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-	TSubclassOf<UGC_MainNotificationsWidget> MainDynamicResourceWidgetClass;
+	TSubclassOf<UGC_MainNotificationsWidget> MainNotificationsWidgetClass;
 	UPROPERTY(BlueprintReadOnly)
-	TObjectPtr<UGC_MainNotificationsWidget> MainDynamicResourceWidget;
+	TObjectPtr<UGC_MainNotificationsWidget> MainNotificationsWidget;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	TSubclassOf<UGC_Widget>	MainWidgetClass;
+	UPROPERTY(BlueprintReadOnly)
+	TObjectPtr<UGC_Widget> MainWidget;
 
 	//Initializable
 	virtual void Initialize_Implementation(FPlayerData DataSent) override;
+
+
 	bool Initialized = false;
 };

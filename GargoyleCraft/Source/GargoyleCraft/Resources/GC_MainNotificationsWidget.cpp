@@ -4,15 +4,14 @@
 #include "GC_MainNotificationsWidget.h"
 #include <GargoyleCraft/GameInstance/GC_PlayerDataSubsystem.h>
 
-bool UGC_MainNotificationsWidget::Initialize()
+void UGC_MainNotificationsWidget::NativeConstruct()
 {
-	Super::Initialize();
+	Super::NativeConstruct();
 	if(auto PD = GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>())
 	{
 		PD->OnResourceUpdated.AddDynamic(this, &UGC_MainNotificationsWidget::NotifyResourceUpdated);
 		PD->OnArmyUpdated.AddDynamic(this, &UGC_MainNotificationsWidget::NotifyArmyUpdated);
 	}
-	return true;
 }
 
 void UGC_MainNotificationsWidget::NotifyResourceUpdated_Implementation(FGameplayTag ResourceTag, int NewValue, int ChangeValue)
