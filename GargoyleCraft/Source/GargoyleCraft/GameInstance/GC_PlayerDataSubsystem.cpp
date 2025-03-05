@@ -240,11 +240,14 @@ void UGC_PlayerDataSubsystem::ApplyRecipeOnGolem(AGolem* Golem)
 {
 	if(ensure(Golem))
 	{
-		if(auto recipes = Recipes.Find(Golem->DataAsset->GolemTypeTag))
+		if (Golem->DataAsset)
 		{
-			for(auto recipeTag : recipes->GetGameplayTagArray())
+			if (auto recipes = Recipes.Find(Golem->DataAsset->GolemTypeTag))
 			{
-				GetRecipeData(recipeTag)->Improvement->ApplyImprovement(Golem->AbilitySystemComponent);
+				for (auto recipeTag : recipes->GetGameplayTagArray())
+				{
+					GetRecipeData(recipeTag)->Improvement->ApplyImprovement(Golem->AbilitySystemComponent);
+				}
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include <GameplayEffect.h>
 #include "GC_TooltipManager.generated.h"
 
 USTRUCT(BlueprintType, Blueprintable)
@@ -20,8 +21,11 @@ public:
 };
 
 UCLASS()
-class UGC_TooltipManager : public UObject 
+class UGC_TooltipLibrary : public UBlueprintFunctionLibrary 
 {
 	GENERATED_BODY()
 
+public:
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
+	static FString ConstructGameplayEffectModifierInfos(const FGameplayModifierInfo& ModInfos);
 };

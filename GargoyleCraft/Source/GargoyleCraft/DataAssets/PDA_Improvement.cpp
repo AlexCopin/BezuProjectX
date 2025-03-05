@@ -16,3 +16,24 @@ void UPDA_Improvement::ApplyImprovement(UGC_AbilitySystemComponent* ASC)
       ASC->ApplyGameplayEffectSpecToSelf(*spec.Data);
     }
 }
+
+FTooltipData UPDA_Improvement::GetTooltip_Implementation()
+{
+	FTooltipData tooltipData;
+	FString AddedString;
+	int i = 0;
+	for (auto effect : GameplayEffects)
+	{
+		i++;
+		AddedString += "\n" + FString::FromInt(i);
+		const UGameplayEffect* DefaultEffect = effect->GetDefaultObject<UGameplayEffect>();
+		if (!DefaultEffect)
+			continue;
+		for (auto mod : DefaultEffect->Modifiers)
+		{
+			AddedString += "\n- " + UGC_TooltipLibrary::ConstructGameplayEffectModifierInfos(mod) + "\n";
+		}
+	}
+	tooltipData.Description = FText::FromString(AddedString);
+	return tooltipData;
+}

@@ -14,10 +14,12 @@ class GARGOYLECRAFT_API UPDA_Improvement : public UPDA_Generic
 	GENERATED_BODY()
 public:
 
-  void ApplyImprovement(UGC_AbilitySystemComponent* ASC);
+	void ApplyImprovement(UGC_AbilitySystemComponent* ASC);
 
     UPROPERTY(EditDefaultsOnly,BlueprintReadOnly)
     TArray<TSubclassOf<UGC_GameplayAbility>> Abilities;
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
     TArray<TSubclassOf<UGameplayEffect>> GameplayEffects;
+
+	virtual FTooltipData GetTooltip_Implementation() override;
 };
