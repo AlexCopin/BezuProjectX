@@ -6,15 +6,15 @@ FTooltipData UPDA_Blueprint::GetTooltip_Implementation()
 	FTooltipData tempData = Super::GetTooltip_Implementation();
 	TArray<FGameplayTag> keys;
 	ResourcesRequired.GetKeys(keys);
-	FText resourcesInfos;
+	FString resourcesInfos;
 	for(FGameplayTag resourceTag : keys)
 	{
-		resourcesInfos = FText::FromString(resourceTag.GetTagName().ToString() + " - " + FString::FromInt(*ResourcesRequired.Find(resourceTag)) + "\n");
+		resourcesInfos += resourceTag.GetTagName().ToString() + " - " + FString::FromInt(*ResourcesRequired.Find(resourceTag)) + "\n";
 	}
 	FFormatNamedArguments Args;
 	Args.Add(TEXT("OriginalDesc"), TooltipData.Description);
-	Args.Add(TEXT("ResourcesRequired"), resourcesInfos);
+	Args.Add(TEXT("ResourcesRequired"), FText::FromString(resourcesInfos));
 	Args.Add(TEXT("ImprovementDesc"), Improvement->GetTooltip().Description);
-	tempData.Description = FText::Format(FText::FromString("{OriginalDesc} Changes : {ImprovementDesc} \n {ResourcesRequired}"), Args);
+	tempData.Description = FText::Format(FText::FromString("{OriginalDesc}\n*Changes : {ImprovementDesc} \n*Cost : {ResourcesRequired}"), Args);
 	return tempData;
 }

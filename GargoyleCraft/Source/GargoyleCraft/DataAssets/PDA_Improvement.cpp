@@ -21,11 +21,8 @@ FTooltipData UPDA_Improvement::GetTooltip_Implementation()
 {
 	FTooltipData tooltipData;
 	FString AddedString;
-	int i = 0;
 	for (auto effect : GameplayEffects)
 	{
-		i++;
-		AddedString += "\n" + FString::FromInt(i);
 		const UGameplayEffect* DefaultEffect = effect->GetDefaultObject<UGameplayEffect>();
 		if (!DefaultEffect)
 			continue;
