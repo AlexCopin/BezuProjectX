@@ -267,12 +267,9 @@ bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Bl
 		}
 	}
 	//Check resources quantity
-	for(auto resource : Recipe->ResourcesRequired)
-	{
-		FResourceData* resourceData = PlayerData.ResourcesData.Find(resource.Key);
-		if (!IsResourceSufficient(resource.Key, resource.Value))
-			return false;
-	}
+	if (!IsResourceSufficientForRecipe(Recipe))
+		return false;
+
 	//Pay all resources
 	for (auto resource : Recipe->ResourcesRequired)
 	{
@@ -287,6 +284,18 @@ bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Bl
 		FGameplayTagContainer containerTemp;
 		containerTemp.AddTag(Recipe->RecipeTag);
 		Recipes.Emplace(GolemType, containerTemp);
+	}
+	return true;
+}
+
+bool UGC_PlayerDataSubsystem::IsResourceSufficientForRecipe(UPDA_Blueprint* Recipe)
+{
+	//Check resources quantity
+	for (auto resource : Recipe->ResourcesRequired)
+	{
+		FResourceData* resourceData = PlayerData.ResourcesData.Find(resource.Key);
+		if (!IsResourceSufficient(resource.Key, resource.Value))
+			return false;
 	}
 	return true;
 }

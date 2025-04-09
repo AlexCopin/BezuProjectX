@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"GargoyleCraft": "UnrealEditor-GargoyleCraft-Win64-DebugGame.dll",
+		"GargoyleCraftEditor": "UnrealEditor-GargoyleCraftEditor-Win64-DebugGame.dll"
+	}
+}

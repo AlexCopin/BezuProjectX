@@ -84,6 +84,8 @@ public:
 	void ApplyRecipeOnGolem(AGolem* Golem);
 	UFUNCTION(BlueprintCallable)
 	bool TryConstructRecipe(FGameplayTag GolemType, UPDA_Blueprint* Recipe);
+	UFUNCTION(BlueprintCallable)
+	bool IsResourceSufficientForRecipe(UPDA_Blueprint* Recipe);
 	//---------------------------------------------------
 
 	UFUNCTION(BlueprintCallable)
