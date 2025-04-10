@@ -19,6 +19,9 @@ void AGC_PC_RTS::AddToSelectedGolems(AGolem* Golem)
 		}
 		SelectedGolems.AddUnique(Golem);
 		OnGolemAdded.Broadcast(Golem);
+		CurrentSelectionData.SelectedGolems = SelectedGolems;
+		CurrentSelectionData.NumberSelected = SelectedGolems.Num();
+		OnSelectionUpdated.Broadcast(CurrentSelectionData);
 		OnTargetsUpdated.Broadcast(this);
 	}
 }
@@ -32,6 +35,9 @@ void AGC_PC_RTS::RemoveFromSelectedGolems(AGolem* Golem)
 			ControlableGolems.Remove(Golem);
 		}
 		SelectedGolems.Remove(Golem);
+		CurrentSelectionData.SelectedGolems = SelectedGolems;
+		CurrentSelectionData.NumberSelected = SelectedGolems.Num();
+		OnSelectionUpdated.Broadcast(CurrentSelectionData);
 		OnGolemRemoved.Broadcast(Golem);
 		OnTargetsUpdated.Broadcast(this);
 	}
