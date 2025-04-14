@@ -11,9 +11,9 @@ struct FTooltipData
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FText Title;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true))
 	FText Description;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (MultiLine = true))
 	FText Flavor;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSoftObjectPtr<UTexture2D> Icon;

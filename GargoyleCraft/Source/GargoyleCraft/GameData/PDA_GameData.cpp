@@ -5,9 +5,9 @@
 
 FAttributeDisplayData UPDA_GameData::FindAttributeDisplayValue(FGameplayAttribute Attribute)
 {
-		if(auto recipeData = AttributesDisplayValues->FindRow<FAttributeDisplayData>(*Attribute.GetName(), "Context"))
+		if(auto attributeData = AttributesDisplayValues->FindRow<FAttributeDisplayData>(*Attribute.GetName(), "Context"))
 		{
-			return *recipeData;
+			return *attributeData;
 		}
     return FAttributeDisplayData();
 }
