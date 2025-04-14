@@ -41,7 +41,7 @@ public:
 		void UpdateTargetLocation(FVector NewTargetLocation);
     UFUNCTION(BlueprintCallable)
 		FVector GetCurrentTargetLocation() { return CurrentTargetLocation; }
-    UPROPERTY()
+    UPROPERTY(BlueprintReadOnly)
 		TObjectPtr<UPDA_Golem> DataAsset;
   //AbilitySystemInterface
     virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override { return AbilitySystemComponent; }
