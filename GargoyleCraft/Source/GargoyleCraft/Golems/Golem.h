@@ -7,6 +7,8 @@
 #include "GargoyleCraft/GameplayAbilitySystem/GC_AbilitySystemComponent.h"
 #include "GameplayEffectTypes.h"
 #include "Interfaces/Selectable.h"
+#include "GargoyleCraft/Interfaces/TooltipInterface.h"
+#include <GargoyleCraft/Tooltip/GC_TooltipManager.h>
 #include "Golem.generated.h"
 
 class UPDA_Golem;
@@ -15,7 +17,7 @@ class UC_Drop;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFinishedCreated);
 
 UCLASS()
-class AGolem : public ACharacter, public IAbilitySystemInterface, public ISelectable
+class AGolem : public ACharacter, public IAbilitySystemInterface, public ISelectable, public ITooltipInterface
 {
     GENERATED_BODY()
 public:
@@ -64,8 +66,10 @@ public:
 	UFUNCTION(BlueprintNativeEvent)
 	void OnDeath();
 	void OnDeath_Implementation();
-
 	//---
+
+	//-----TooltipInterface
+	virtual FTooltipData GetTooltip_Implementation() override;
 private:
 
 	TObjectPtr<AActor> Target = nullptr;

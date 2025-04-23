@@ -228,3 +228,19 @@ void AGolem::OnDeath_Implementation()
 	DropComponent->SpawnLoot();
 	Destroy();
 }
+
+FTooltipData AGolem::GetTooltip_Implementation()
+{
+	FTooltipData returnData;
+	returnData.Title = DataAsset->TooltipData.Title;
+	returnData.Icon = DataAsset->TooltipData.Icon;
+	returnData.Flavor = DataAsset->TooltipData.Flavor;
+
+	FFormatNamedArguments Args;
+	Args.Add(TEXT("OriginalDesc"), DataAsset->TooltipData.Description);
+	Args.Add(TEXT("Attributes"), UGC_TooltipLibrary::GetTooltipDataFromAbilitySystemComponent(this, AbilitySystemComponent).Description);
+	returnData.Description = FText::Format(NSLOCTEXT("Golem", "Golem.Tooltip", "{OriginalDesc}\n{Attributes}"), Args);
+	
+
+	return returnData;
+}

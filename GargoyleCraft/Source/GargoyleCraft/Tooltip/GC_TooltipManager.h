@@ -30,5 +30,5 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
 	static FString ConstructGameplayEffectModifierInfos(const FGameplayModifierInfo& ModInfos);
 	UFUNCTION(BlueprintCallable)
-	static FTooltipData GetTooltipDataFromAbilitySystemComponent(UObject* WorldContext, UGC_AbilitySystemComponent*);
+	static FTooltipData GetTooltipDataFromAbilitySystemComponent(UObject* WorldContext, UGC_AbilitySystemComponent* ASC);
 };

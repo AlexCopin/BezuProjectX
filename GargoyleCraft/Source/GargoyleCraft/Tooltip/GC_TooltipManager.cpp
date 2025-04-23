@@ -1,5 +1,7 @@
 #include "GC_TooltipManager.h"
 #include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
+#include <GargoyleCraft/GameFramework/GC_GameModeBase.h>
+#include "GargoyleCraft/GameData/PDA_GameData.h"
 
 FString UGC_TooltipLibrary::ConstructGameplayEffectModifierInfos(const FGameplayModifierInfo& ModInfos)
 {
@@ -29,12 +31,16 @@ FTooltipData UGC_TooltipLibrary::GetTooltipDataFromAbilitySystemComponent(UObjec
 	TArray<FGameplayAttribute> attributesOut;
 	ASC->GetAllAttributes(attributesOut);
 	//Finish here by getting AttributeDisplayData for each attribute and building the tooltipData
-	WorldContext->GetWorld();
+	auto gameData = WorldContext->GetWorld()->GetAuthGameMode<AGC_GameModeBase>()->DefaultGameData;
+	FString stringAttributes = "Stats\n";
 	for(auto attribute : attributesOut)
 	{
-		bool bIsFound;
-		ASC->GetGameplayAttributeValue(attribute, bIsFound);
-		attribute.GetNumericValue(attributeSet);
+		auto attributeDisplayData = gameData->FindAttributeDisplayValue(attribute);
+		if (attributeDisplayData.IsHidden)
+			continue;
+		stringAttributes += attributeDisplayData.TooltipData.Title.ToString() + FString::SanitizeFloat(attribute.GetNumericValue(ASC->GetAttributeSet(UAttributeSet_Character::StaticClass()))) + "\n";
 	}
+	tooltipData.Title = FText::FromString(ASC->GetOwner()->GetName());
+	tooltipData.Description = FText::FromString(stringAttributes);
 	return tooltipData;
 }

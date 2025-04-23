@@ -14,7 +14,7 @@ FTooltipData UPDA_Blueprint::GetTooltip_Implementation()
 	FFormatNamedArguments Args;
 	Args.Add(TEXT("OriginalDesc"), TooltipData.Description);
 	Args.Add(TEXT("ResourcesRequired"), FText::FromString(resourcesInfos));
-	Args.Add(TEXT("ImprovementDesc"), Improvement->GetTooltip().Description);
-	tempData.Description = FText::Format(FText::FromString("{OriginalDesc}\n*Changes : {ImprovementDesc} \n*Cost : {ResourcesRequired}"), Args);
+	Args.Add(TEXT("ImprovementDesc"), Execute_GetTooltip(Improvement).Description);
+	tempData.Description = FText::Format(FText::FromString("{OriginalDesc}\n Changes : {ImprovementDesc} \n Cost : {ResourcesRequired}"), Args);
 	return tempData;
 }
