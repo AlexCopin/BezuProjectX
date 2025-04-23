@@ -1,4 +1,5 @@
 #include "GC_TooltipManager.h"
+#include "GargoyleCraft/GameplayAbilitySystem/AttributeSets/AttributeSet_Character.h"
 
 FString UGC_TooltipLibrary::ConstructGameplayEffectModifierInfos(const FGameplayModifierInfo& ModInfos)
 {
@@ -19,4 +20,21 @@ FString UGC_TooltipLibrary::ConstructGameplayEffectModifierInfos(const FGameplay
 		}
 	}
     return returnString;
+}
+
+FTooltipData UGC_TooltipLibrary::GetTooltipDataFromAbilitySystemComponent(UObject* WorldContext, UGC_AbilitySystemComponent* ASC)
+{
+	FTooltipData tooltipData;
+	auto attributeSet = ASC->GetAttributeSet(UAttributeSet_Character::StaticClass());
+	TArray<FGameplayAttribute> attributesOut;
+	ASC->GetAllAttributes(attributesOut);
+	//Finish here by getting AttributeDisplayData for each attribute and building the tooltipData
+	WorldContext->GetWorld();
+	for(auto attribute : attributesOut)
+	{
+		bool bIsFound;
+		ASC->GetGameplayAttributeValue(attribute, bIsFound);
+		attribute.GetNumericValue(attributeSet);
+	}
+	return tooltipData;
 }

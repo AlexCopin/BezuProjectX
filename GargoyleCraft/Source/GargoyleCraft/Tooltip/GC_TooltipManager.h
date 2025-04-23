@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include <GameplayEffect.h>
+#include "GargoyleCraft/GameplayAbilitySystem/GC_AbilitySystemComponent.h"
 #include "GC_TooltipManager.generated.h"
 
 USTRUCT(BlueprintType, Blueprintable)
@@ -28,4 +29,6 @@ class UGC_TooltipLibrary : public UBlueprintFunctionLibrary
 public:
 	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
 	static FString ConstructGameplayEffectModifierInfos(const FGameplayModifierInfo& ModInfos);
+	UFUNCTION(BlueprintCallable)
+	static FTooltipData GetTooltipDataFromAbilitySystemComponent(UObject* WorldContext, UGC_AbilitySystemComponent*);
 };
