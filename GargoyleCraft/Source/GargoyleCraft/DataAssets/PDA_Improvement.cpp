@@ -17,7 +17,7 @@ void UPDA_Improvement::ApplyImprovement(UGC_AbilitySystemComponent* ASC)
     }
 }
 
-FTooltipData UPDA_Improvement::GetTooltip_Implementation()
+FTooltipData UPDA_Improvement::GetTooltip_Implementation(UObject* WorldContext)
 {
 	FTooltipData tooltipData;
 	FString AddedString;
@@ -28,7 +28,7 @@ FTooltipData UPDA_Improvement::GetTooltip_Implementation()
 			continue;
 		for (auto mod : DefaultEffect->Modifiers)
 		{
-			AddedString += "\n- " + UGC_TooltipLibrary::ConstructGameplayEffectModifierInfos(mod) + "\n";
+			AddedString += "\n" + UGC_TooltipLibrary::ConstructGameplayEffectModifierInfos(mod);
 		}
 	}
 	tooltipData.Description = FText::FromString(AddedString);

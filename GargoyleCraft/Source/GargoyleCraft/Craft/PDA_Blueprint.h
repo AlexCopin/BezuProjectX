@@ -20,5 +20,5 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Resources")
 	TMap<FGameplayTag, int> ResourcesRequired;
 
-	virtual FTooltipData GetTooltip_Implementation() override;
+	virtual FTooltipData GetTooltip_Implementation(UObject* WorldContext) override;
 };

@@ -19,7 +19,8 @@ void AGC_HUD::Initialize_Implementation(FPlayerData DataSent)
 	MainNotificationsWidget = CreateWidget<UGC_MainNotificationsWidget>(GetOwningPlayerController(), MainNotificationsWidgetClass);
 	if (MainNotificationsWidget)
 		MainNotificationsWidget->AddToViewport();
-	MainWidget = CreateWidget<UGC_Widget>(GetWorld(), MainWidgetClass);
+	MainWidget = CreateWidget<UGC_Widget>(GetOwningPlayerController(), MainWidgetClass);
+	MainWidget->SetOwningPlayer(GetOwningPlayerController());
 	if (MainWidget)
 		MainWidget->AddToViewport();
 }

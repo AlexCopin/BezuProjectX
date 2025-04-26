@@ -12,13 +12,13 @@ FString UGC_TooltipLibrary::ConstructGameplayEffectModifierInfos(const FGameplay
 	{
 		if (ModInfos.ModifierOp == EGameplayModOp::AddBase || ModInfos.ModifierOp == EGameplayModOp::AddFinal || ModInfos.ModifierOp == EGameplayModOp::Additive)
 		{
-			FString magnString = (1 - magnitude > 0) ? "+" : "";
+			FString magnString = (magnitude > 0) ? "+" : "-";
 			returnString += magnString + FString::FromInt(magnitude);
 		}
 		else if (ModInfos.ModifierOp == EGameplayModOp::Multiplicitive || ModInfos.ModifierOp == EGameplayModOp::MultiplyAdditive || ModInfos.ModifierOp == EGameplayModOp::Division)
 		{
-			FString magnString = (1 - magnitude > 0) ? "+" : "";
-			returnString += magnString + FString::FromInt((1 - magnitude) * 100) + "%";
+			FString magnString = (magnitude - 1 > 0) ? "+" : "-";
+			returnString += magnString + FString::FromInt((magnitude - 1) * 100) + "%";
 		}
 	}
     return returnString;

@@ -16,5 +16,5 @@ class ITooltipInterface
 	GENERATED_BODY()
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	FTooltipData GetTooltip();
+	FTooltipData GetTooltip(UObject* WorldContext);
 };

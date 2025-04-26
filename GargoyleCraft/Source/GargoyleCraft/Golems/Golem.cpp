@@ -229,7 +229,7 @@ void AGolem::OnDeath_Implementation()
 	Destroy();
 }
 
-FTooltipData AGolem::GetTooltip_Implementation()
+FTooltipData AGolem::GetTooltip_Implementation(UObject* WorldContext)
 {
 	FTooltipData returnData;
 	returnData.Title = DataAsset->TooltipData.Title;

@@ -69,7 +69,7 @@ public:
 	//---
 
 	//-----TooltipInterface
-	virtual FTooltipData GetTooltip_Implementation() override;
+	virtual FTooltipData GetTooltip_Implementation(UObject* WorldContext) override;
 private:
 
 	TObjectPtr<AActor> Target = nullptr;

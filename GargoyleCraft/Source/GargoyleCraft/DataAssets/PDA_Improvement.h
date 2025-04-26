@@ -21,5 +21,5 @@ public:
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
     TArray<TSubclassOf<UGameplayEffect>> GameplayEffects;
 
-	virtual FTooltipData GetTooltip_Implementation() override;
+	virtual FTooltipData GetTooltip_Implementation(UObject* WorldContext) override;
 };

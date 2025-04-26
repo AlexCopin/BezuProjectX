@@ -314,9 +314,9 @@ void UGC_PlayerDataSubsystem::TryAddConsumableTag(const FLootData& ConsumableDat
 FTooltipData UGC_PlayerDataSubsystem::GetSimpleTooltip(FGameplayTag DataTag)
 {
 	if (DataTag.MatchesTag(MAKE_TAG("Consumable.Resource")))
-		return ITooltipInterface::Execute_GetTooltip(GetResourceData(DataTag).PDA_Resource);
+		return ITooltipInterface::Execute_GetTooltip(GetResourceData(DataTag).PDA_Resource, this);
 	else if (DataTag.MatchesTag(MAKE_TAG("Consumable.Recipe")))
-		return ITooltipInterface::Execute_GetTooltip(GetRecipeData(DataTag));
+		return ITooltipInterface::Execute_GetTooltip(GetRecipeData(DataTag), this);
 
     return FTooltipData();
 }

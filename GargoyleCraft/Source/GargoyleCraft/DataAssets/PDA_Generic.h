@@ -26,7 +26,5 @@ public:
 	FTooltipData TooltipData;
 
 	//-----TooltipInterface
-	virtual FTooltipData GetTooltip_Implementation() override {
-		return TooltipData;
-	};
+	virtual FTooltipData GetTooltip_Implementation(UObject* WorldContext) override;
 };
