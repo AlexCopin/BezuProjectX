@@ -1,4 +1,4 @@
-	#include "Golem.h"
+	#include "Golem_Troop.h"
 
 #include "Components/CapsuleComponent.h"
 #include "AIController.h"
@@ -18,28 +18,19 @@
 #include "NavigationSystem.h"
 #include <GargoyleCraft/GameInstance/GC_PlayerDataSubsystem.h>
 
-AGolem::AGolem()
-{
-  SetRootComponent(GetCapsuleComponent());
-  PoolComponent = CreateDefaultSubobject<UC_Pool>("PoolComponent");
-  AbilitySystemComponent = CreateDefaultSubobject<UGC_AbilitySystemComponent>("GolemASC");
-  DropComponent = CreateDefaultSubobject<UC_Drop>("DropComponent");
-}
 
-void AGolem::Init_Implementation(UPDA_Golem* PDAGolem, FVector FirstTargetLocation)
+void AGolem_Troop::Init_Implementation(UPDA_Golem* PDAGolem, FVector FirstTargetLocation)
 {
-	DataAsset = PDAGolem;
-	CurrentTargetLocation = FirstTargetLocation;
+	Super::Init_Implementation(PDAGolem, FirstTargetLocation);
 }
 
 
-void AGolem::BeginPlay()
+void AGolem_Troop::BeginPlay()
 {
   Super::BeginPlay();
-  OnFinishedCreated();
 }
 
-void AGolem::Tick(float DeltaSeconds)
+void AGolem_Troop::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 	DrawDebugCircle(GetWorld(), GetActorLocation(), AbilitySystemComponent->GetSet<UAttributeSet_Character>()->GetAggroRange(), 50, FColor::Red, false, -1, 0, 0, FVector(0,1,0), FVector(1,0,0), false);
@@ -66,111 +57,48 @@ void AGolem::Tick(float DeltaSeconds)
 	}
 }
 
-void AGolem::OnFinishedCreated_Implementation()
+void AGolem_Troop::OnFinishedCreated_Implementation()
 {
-	if (ensure(AbilitySystemComponent))
+	Super::OnFinishedCreated_Implementation();
+}
+
+void AGolem_Troop::UpdateTargetLocation_Implementation(FVector NewTargetLocation)
+{
+	Super::UpdateTargetLocation_Implementation(NewTargetLocation);
+	CurrentTargetLocation = NewTargetLocation;
+	// Get the Navigation System
+	UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(GetWorld());
+	if (!NavSys) return;
+
+	FNavLocation NearestLocation;
+	float SearchRadius = 2000.f;
+	bool bFoundLocation = NavSys->ProjectPointToNavigation(CurrentTargetLocation,NearestLocation, FVector(SearchRadius));
+	CurrentTargetLocation = NearestLocation;
+	auto controller = Cast<AAIController>(GetController());
+	if(ensure(controller))
 	{
-		const UAttributeSet_Character* set = AbilitySystemComponent->GetSet<UAttributeSet_Character>();
-		if(PoolComponent->GolemAllegiance == Ally)
-		{
-			AbilitySystemComponent->InitAbilityActorInfo(GetWorld()->GetFirstPlayerController()->GetPawn(), this);
-		}
-		if (ensure(DataAsset))
-		{
-			UpdateTargetLocation(CurrentTargetLocation);
-			DataAsset->Apply(GetAbilitySystemComponent());
-		}
-		AbilitySystemComponent->ApplyDefaultValues();
-		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UAttributeSet_Character::GetMovementSpeedAttribute()).AddUObject(this, &AGolem::OnSpeedChanged);
-		GetCharacterMovement()->MaxWalkSpeed = set->GetMovementSpeed();
-		GetCharacterMovement()->MaxAcceleration = set->GetMovementSpeed();
-
-		//TIMER TRY ACTIVATE ABILITY (AVOID FRAMERATE TICKING)
-		GetWorld()->GetTimerManager().SetTimer(TimerTryActivateAbility, this, &AGolem::TryActivateAbility, 0.15f, true);
-
-		//Events Attributes
-		AbilitySystemComponent->ASC_OnDeath.AddDynamic(this, &AGolem::AGolem::OnDeath);
-
-		GetWorld()->GetGameInstance()->GetSubsystem<UGC_PlayerDataSubsystem>()->ApplyRecipeOnGolem(this);
+		controller->MoveToLocation(CurrentTargetLocation);
+		ApplyMoveForced();
 	}
-
 }
 
-void AGolem::UpdateTargetLocation_Implementation(FVector NewTargetLocation)
-{
-  CurrentTargetLocation = NewTargetLocation;
-  // Get the Navigation System
-  UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(GetWorld());
-  if (!NavSys) return;
-
-  FNavLocation NearestLocation;
-  float SearchRadius = 2000.f;
-  bool bFoundLocation = NavSys->ProjectPointToNavigation(CurrentTargetLocation,NearestLocation, FVector(SearchRadius));
-  CurrentTargetLocation = NearestLocation;
-  auto controller = Cast<AAIController>(GetController());
-  if(ensure(controller))
-  {
-	  controller->MoveToLocation(CurrentTargetLocation);
-	  ApplyMoveForced();
-  }
-}
-
-AActor* AGolem::Selected_Implementation(AGC_PC_RTS* PlayerController)
+AActor* AGolem_Troop::Selected_Implementation(AGC_PC_RTS* PlayerController)
 {
 	PlayerController->AddToSelectedGolems(this);
 	return this;
 }
-AActor* AGolem::Unselected_Implementation(AGC_PC_RTS* PlayerController)
+AActor* AGolem_Troop::Unselected_Implementation(AGC_PC_RTS* PlayerController)
 {
 	PlayerController->RemoveFromSelectedGolems(this);
 	return this;
 }
 
-
-void AGolem::OnSpeedChanged(const FOnAttributeChangeData& Values)
+void AGolem_Troop::ReachLocationTick_Implementation()
 {
-  GetCharacterMovement()->MaxWalkSpeed = Values.NewValue;
-  GetCharacterMovement()->MaxAcceleration = Values.NewValue;
+	Super::ReachLocationTick_Implementation();
 }
 
-void AGolem::ApplyMoveForced()
-{
-	if (ForcedMoveEffect.IsValid())
-		return;
-	auto context = GetAbilitySystemComponent()->MakeEffectContext();
-	auto spec = GetAbilitySystemComponent()->MakeOutgoingSpec(UGE_MoveForced::StaticClass(), 1, context);
-	ForcedMoveEffect = GetAbilitySystemComponent()->ApplyGameplayEffectSpecToSelf(*spec.Data);
-
-	if (ForcedMoveEffect.IsValid())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("AGolem::ApplyMoveForced"));
-		GetWorld()->GetTimerManager().SetTimer(TimerReachLocation, this, &AGolem::ReachLocationTick, 0.2f, true);
-	}
-}
-
-
-void AGolem::ReachLocationTick_Implementation()
-{
-	if (ForcedMoveEffect.IsValid())
-	{
-		if (GetMovementComponent()->Velocity.Length() <= 0.1f)
-		{
-			RemoveMoveForced();
-		}
-	}
-}
-void AGolem::RemoveMoveForced()
-{
-	if (ForcedMoveEffect.IsValid())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("AGolem::RemoveMoveForced"));
-		GetAbilitySystemComponent()->RemoveActiveGameplayEffect(ForcedMoveEffect);
-		ForcedMoveEffect.Invalidate();
-		GetWorld()->GetTimerManager().ClearTimer(TimerReachLocation);
-	}
-}
-
-void AGolem::SetTarget(AActor* _Target)
+void AGolem_Troop::SetTarget(AActor* _Target)
 {
 	Target = _Target;
 	if(_Target)
@@ -185,8 +113,9 @@ void AGolem::SetTarget(AActor* _Target)
 
 }
 
-void AGolem::TryActivateAbility()
+void AGolem_Troop::TryActivateAbility()
 {
+	Super::TryActivateAbility();
 	if (Target)
 	{
 		if (AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Targeting")) 
@@ -222,15 +151,17 @@ void AGolem::TryActivateAbility()
 	}
 }
 
-void AGolem::OnDeath_Implementation()
+void AGolem_Troop::OnDeath_Implementation()
 {
+	Super::OnDeath_Implementation();
 	Execute_Unselected(this, Cast<AGC_PC_RTS>(GetWorld()->GetFirstPlayerController()));
 	DropComponent->SpawnLoot();
 	Destroy();
 }
 
-FTooltipData AGolem::GetTooltip_Implementation(UObject* WorldContext)
+FTooltipData AGolem_Troop::GetTooltip_Implementation(UObject* WorldContext)
 {
+	Super::GetTooltip_Implementation(WorldContext);
 	FTooltipData returnData;
 	returnData.Title = DataAsset->TooltipData.Title;
 	returnData.Icon = DataAsset->TooltipData.Icon;

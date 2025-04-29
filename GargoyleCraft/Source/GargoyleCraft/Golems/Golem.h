@@ -22,8 +22,9 @@ class AGolem : public ACharacter, public IAbilitySystemInterface, public ISelect
     GENERATED_BODY()
 public:
 	AGolem();
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 		void Init(UPDA_Golem* PDAGolem, FVector FirstTargetLocation);
+		virtual void Init_Implementation(UPDA_Golem* PDAGolem, FVector FirstTargetLocation);
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaSeconds) override;
 	
@@ -33,14 +34,16 @@ public:
 		TObjectPtr<UGC_AbilitySystemComponent> AbilitySystemComponent;
 		UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TObjectPtr<UC_Drop> DropComponent;
-	UFUNCTION()
+	UFUNCTION(BlueprintNativeEvent)
 		void OnFinishedCreated();
+		virtual void OnFinishedCreated_Implementation();
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		bool bIsSelected;
 
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 		void UpdateTargetLocation(FVector NewTargetLocation);
+		virtual void UpdateTargetLocation_Implementation(FVector NewTargetLocation);
     UFUNCTION(BlueprintCallable)
 		FVector GetCurrentTargetLocation() { return CurrentTargetLocation; }
     UPROPERTY(BlueprintReadOnly)
@@ -52,31 +55,33 @@ public:
 	virtual AActor* Selected_Implementation(AGC_PC_RTS* PlayerController) override;
 	virtual AActor* Unselected_Implementation(AGC_PC_RTS* PlayerController) override;
 
-    void OnSpeedChanged(const FOnAttributeChangeData& Values);
+    virtual void OnSpeedChanged(const FOnAttributeChangeData& Values);
 
 	void ApplyMoveForced();
 	void RemoveMoveForced();
 
-	void SetTarget(AActor* _Target);
+	virtual void SetTarget(AActor* _Target);
 	TObjectPtr<AActor> GetTarget() { return Target; };
 
-	void TryActivateAbility();
+	//Put it into ASC
+	virtual void TryActivateAbility();
 
 	//---Events Attributes
 	UFUNCTION(BlueprintNativeEvent)
 	void OnDeath();
-	void OnDeath_Implementation();
+	virtual void OnDeath_Implementation();
 	//---
 
 	//-----TooltipInterface
 	virtual FTooltipData GetTooltip_Implementation(UObject* WorldContext) override;
-private:
+protected:
+	UFUNCTION(BlueprintNativeEvent)
+	void ReachLocationTick();
+	virtual void ReachLocationTick_Implementation();
 
 	TObjectPtr<AActor> Target = nullptr;
 
 	bool IsMovingToTarget;
-	UFUNCTION()
-	void ReachLocationTick();
 
     FVector CurrentTargetLocation;
 	FActiveGameplayEffectHandle ForcedMoveEffect;
