@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\alex\\perso\\gargoylecraft\\bezuprojectx\\gargoylecraft\\plugins\\electronicnodes\\intermediate\\build\\win64\\unrealeditor\\inc\\electronicnodes\\uht\\enupdateconfig.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\alex\\perso\\gargoylecraft\\bezuprojectx\\gargoylecraft\\intermediate\\build\\win64\\x64\\gargoylecrafteditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.novalfmtstr.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\alex\\perso\\gargoylecraft\\bezuprojectx\\gargoylecraft\\plugins\\electronicnodes\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\electronicnodes\\definitions.electronicnodes.h",
+            "c:\\alex\\perso\\gargoylecraft\\bezuprojectx\\gargoylecraft\\plugins\\electronicnodes\\source\\electronicnodes\\private\\popup\\enupdateconfig.h",
+            "c:\\alex\\perso\\gargoylecraft\\bezuprojectx\\gargoylecraft\\plugins\\electronicnodes\\intermediate\\build\\win64\\unrealeditor\\inc\\electronicnodes\\uht\\enupdateconfig.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

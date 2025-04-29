@@ -42,6 +42,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/ElectronicNodes/Binaries/Win64/UnrealEditor-ElectronicNodes-Win64-DebugGame.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ElectronicNodes/Binaries/Win64/UnrealEditor-ElectronicNodes-Win64-DebugGame.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ElectronicNodes/Binaries/Win64/UnrealEditor-Win64-DebugGame.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/USD/UsdResources/Win64/plugins/ar/resources/plugInfo.json",
 			"Type": "RequiredResource"
 		},
@@ -4853,6 +4865,10 @@
 	"RuntimeDependencies": [
 		{
 			"Path": "$(ProjectDir)/GargoyleCraft.uproject",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ElectronicNodes/ElectronicNodes.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -30659,6 +30675,7 @@
 		"EditorPerformance",
 		"EditorScriptingUtilities",
 		"EditorTelemetry",
+		"ElectronicNodes",
 		"EngineAssetDefinitions",
 		"EngineCameras",
 		"EnhancedInput",
