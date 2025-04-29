@@ -65,52 +65,20 @@ void AGolem_Troop::OnFinishedCreated_Implementation()
 void AGolem_Troop::UpdateTargetLocation_Implementation(FVector NewTargetLocation)
 {
 	Super::UpdateTargetLocation_Implementation(NewTargetLocation);
-	CurrentTargetLocation = NewTargetLocation;
-	// Get the Navigation System
-	UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(GetWorld());
-	if (!NavSys) return;
-
-	FNavLocation NearestLocation;
-	float SearchRadius = 2000.f;
-	bool bFoundLocation = NavSys->ProjectPointToNavigation(CurrentTargetLocation,NearestLocation, FVector(SearchRadius));
-	CurrentTargetLocation = NearestLocation;
-	auto controller = Cast<AAIController>(GetController());
-	if(ensure(controller))
-	{
-		controller->MoveToLocation(CurrentTargetLocation);
-		ApplyMoveForced();
-	}
 }
 
 AActor* AGolem_Troop::Selected_Implementation(AGC_PC_RTS* PlayerController)
 {
-	PlayerController->AddToSelectedGolems(this);
-	return this;
+	return Super::Selected_Implementation(PlayerController);
 }
 AActor* AGolem_Troop::Unselected_Implementation(AGC_PC_RTS* PlayerController)
 {
-	PlayerController->RemoveFromSelectedGolems(this);
-	return this;
-}
-
-void AGolem_Troop::ReachLocationTick_Implementation()
-{
-	Super::ReachLocationTick_Implementation();
+	return Super::Unselected_Implementation(PlayerController);
 }
 
 void AGolem_Troop::SetTarget(AActor* _Target)
 {
-	Target = _Target;
-	if(_Target)
-	{
-		auto context = GetAbilitySystemComponent()->MakeEffectContext();
-		auto spec = GetAbilitySystemComponent()->MakeOutgoingSpec(UGE_Target::StaticClass(), 1, context);
-		TargetEffect = GetAbilitySystemComponent()->ApplyGameplayEffectSpecToSelf(*spec.Data);
-	}else
-	{
-		GetAbilitySystemComponent()->RemoveActiveGameplayEffect(TargetEffect);
-	}
-
+	Super::SetTarget(_Target);
 }
 
 void AGolem_Troop::TryActivateAbility()
@@ -121,7 +89,7 @@ void AGolem_Troop::TryActivateAbility()
 		if (AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Targeting")) 
 			&& !AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Ability.Ongoing")))
 		{
-			for(auto abilityData : AbilitySystemComponent->Abilities)
+			for(auto& abilityData : AbilitySystemComponent->Abilities)
 			{
 				if(abilityData.Range >= FVector::Distance(GetActorLocation(), Target->GetActorLocation()))
 				{
@@ -153,25 +121,12 @@ void AGolem_Troop::TryActivateAbility()
 
 void AGolem_Troop::OnDeath_Implementation()
 {
-	Super::OnDeath_Implementation();
 	Execute_Unselected(this, Cast<AGC_PC_RTS>(GetWorld()->GetFirstPlayerController()));
 	DropComponent->SpawnLoot();
-	Destroy();
+	Super::OnDeath_Implementation();
 }
 
 FTooltipData AGolem_Troop::GetTooltip_Implementation(UObject* WorldContext)
 {
-	Super::GetTooltip_Implementation(WorldContext);
-	FTooltipData returnData;
-	returnData.Title = DataAsset->TooltipData.Title;
-	returnData.Icon = DataAsset->TooltipData.Icon;
-	returnData.Flavor = DataAsset->TooltipData.Flavor;
-
-	FFormatNamedArguments Args;
-	Args.Add(TEXT("OriginalDesc"), DataAsset->TooltipData.Description);
-	Args.Add(TEXT("Attributes"), UGC_TooltipLibrary::GetTooltipDataFromAbilitySystemComponent(this, AbilitySystemComponent).Description);
-	returnData.Description = FText::Format(NSLOCTEXT("Golem", "Golem.Tooltip", "{OriginalDesc}\n{Attributes}"), Args);
-	
-
-	return returnData;
+	return Super::GetTooltip_Implementation(WorldContext);
 }

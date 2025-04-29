@@ -42,28 +42,6 @@ void AGolem::BeginPlay()
 void AGolem::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
-	DrawDebugCircle(GetWorld(), GetActorLocation(), AbilitySystemComponent->GetSet<UAttributeSet_Character>()->GetAggroRange(), 50, FColor::Red, false, -1, 0, 0, FVector(0,1,0), FVector(1,0,0), false);
-
-	if(!AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Moving.Forced")))
-	{
-		if(Target)
-		{
-			if(AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Targeting")) 
-				&& !AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Ability.Ongoing"))
-				&& !AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Ability.InRange")))
-			{
-				if (PoolComponent->GolemAllegiance == EGolemAllegiance::Ally)
-				{
-					UE_LOG(LogTemp, Warning, TEXT("MoveToLocation"));
-				}
-				auto controller = Cast<AAIController>(GetController());
-				if (ensure(controller))
-				{
-					controller->MoveToLocation(Target->GetActorLocation());
-				}
-			}
-		}
-	}
 }
 
 void AGolem::OnFinishedCreated_Implementation()
@@ -182,50 +160,14 @@ void AGolem::SetTarget(AActor* _Target)
 	{
 		GetAbilitySystemComponent()->RemoveActiveGameplayEffect(TargetEffect);
 	}
-
 }
 
 void AGolem::TryActivateAbility()
 {
-	if (Target)
-	{
-		if (AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Targeting")) 
-			&& !AbilitySystemComponent->HasMatchingGameplayTag(MAKE_TAG("State.Ability.Ongoing")))
-		{
-			for(auto abilityData : AbilitySystemComponent->Abilities)
-			{
-				if(abilityData.Range >= FVector::Distance(GetActorLocation(), Target->GetActorLocation()))
-				{
-					AbilitySystemComponent->AddLooseGameplayTag(MAKE_TAG("State.Ability.InRange"));
-					if (AbilitySystemComponent->HasMatchingGameplayTag(abilityData.CooldownTag))
-						continue;
-					if(AbilitySystemComponent->TryActivateAbility(abilityData.AbilityHandle))
-					{
-						auto controller = Cast<AAIController>(GetController());
-						if (ensure(controller))
-						{
-							controller->StopMovement();
-						}
-					}
-					break;
-				}
-				else 
-				{
-					if (PoolComponent->GolemAllegiance == EGolemAllegiance::Ally) 
-					{
-						UE_LOG(LogTemp, Warning, TEXT("Remove InRange Tag"));
-					}
-					AbilitySystemComponent->RemoveLooseGameplayTag(MAKE_TAG("State.Ability.InRange"));
-				}
-			}
-		}
-	}
 }
 
 void AGolem::OnDeath_Implementation()
 {
-	Execute_Unselected(this, Cast<AGC_PC_RTS>(GetWorld()->GetFirstPlayerController()));
-	DropComponent->SpawnLoot();
 	Destroy();
 }
 
