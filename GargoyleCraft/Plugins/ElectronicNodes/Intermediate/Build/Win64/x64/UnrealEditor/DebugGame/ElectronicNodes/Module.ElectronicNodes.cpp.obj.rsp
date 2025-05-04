@@ -1,11 +1,11 @@
-"D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\UnrealEditor\Inc\ElectronicNodes\UHT\ElectronicNodesSettings.gen.cpp"
+"D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ElectronicNodes\Module.ElectronicNodes.cpp"
 /FI"D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\GargoyleCraftEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.NoValFmtStr.ValApi.Cpp20.h"
 /FI"D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ElectronicNodes\Definitions.ElectronicNodes.h"
 /Yu"D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\GargoyleCraftEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.NoValFmtStr.ValApi.Cpp20.h"
 /Fp"D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Intermediate\Build\Win64\x64\GargoyleCraftEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.NoValFmtStr.ValApi.Cpp20.h.pch"
-/Fo"D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ElectronicNodes\ElectronicNodesSettings.gen.cpp.obj"
-/experimental:log "D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ElectronicNodes\ElectronicNodesSettings.gen.cpp.sarif"
-/sourceDependencies "D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ElectronicNodes\ElectronicNodesSettings.gen.cpp.dep.json"
+/Fo"D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ElectronicNodes\Module.ElectronicNodes.cpp.obj"
+/experimental:log "D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ElectronicNodes\Module.ElectronicNodes.cpp.sarif"
+/sourceDependencies "D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ElectronicNodes\Module.ElectronicNodes.cpp.dep.json"
 @"D:\UnrealProjects\0_BezuProjectX\GargoyleCraft\Plugins\ElectronicNodes\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ElectronicNodes\ElectronicNodes.Shared.rsp"
 /d2ssa-cfg-question-
 /Zc:inline
