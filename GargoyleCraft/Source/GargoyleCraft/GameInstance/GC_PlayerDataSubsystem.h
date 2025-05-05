@@ -13,6 +13,7 @@ class UPDA_GameData;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDataInitialized, FPlayerData, DataSent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnArmyUpdated, UPDA_Golem*, GolemConcerned, bool, bAdded, FArmyData, ArmyData);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnResourceUpdated, FGameplayTag, ResourceTag, int, NewValue, int, ChangeValue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHeroUpdated, FHeroData, HeroData);
 /**
  * 
  */
@@ -95,6 +96,20 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FTooltipData GetSimpleTooltip(FGameplayTag DataTag);
 	//----------------------------------------
+
+
+	//---------------------Hero---------------------------
+	UPDA_HeroPart* GetHeroPartData(FGameplayTag HeroPartTag);
+	int GetHeroPartNumberAvailable(FGameplayTag HeroPartTag);
+
+	UFUNCTION(BlueprintCallable)
+	bool TryConstructHeroPart(FGameplayTag HeroPartTag);
+	UFUNCTION(BlueprintCallable)
+	bool TryApplyHeroPart(FGameplayTag HeroPartTag);
+
+	UPROPERTY(BlueprintAssignable)
+	FOnHeroUpdated OnHeroUpdated;
+	//----------------------------------------------------
 
 protected:
 	TMap<FGameplayTag, FGameplayTagContainer> Recipes;

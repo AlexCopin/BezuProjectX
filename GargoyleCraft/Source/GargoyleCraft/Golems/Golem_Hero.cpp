@@ -19,6 +19,15 @@
 #include <GargoyleCraft/GameInstance/GC_PlayerDataSubsystem.h>
 
 
+AGolem_Hero::AGolem_Hero()
+{
+	LeftArmSkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("Left Arm");
+	RightArmSkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("Right Arm");
+	HeadSkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("Head");
+	TorsoSkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("Torso");
+	LegsSkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("Legs");
+}
+
 void AGolem_Hero::Init_Implementation(UPDA_Golem* PDAGolem, FVector FirstTargetLocation)
 {
 	Super::Init_Implementation(PDAGolem, FirstTargetLocation);

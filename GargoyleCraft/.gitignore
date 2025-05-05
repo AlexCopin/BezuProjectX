@@ -55,9 +55,9 @@ Build/*
 ./Build/*
 
 #Plugins
-/Plugins/ElectronicNodes/**
-/Plugins/ElectronicNodes/*
-/Plugins/ElectronicNodes/
+Plugins/ElectronicNodes/**
+Plugins/ElectronicNodes/*
+Plugins/ElectronicNodes/
 
 #Logs
 Logs/*

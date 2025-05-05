@@ -24,6 +24,8 @@ public:
     TObjectPtr<UDataTable> AvailableGolemTypes;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
 	TObjectPtr<UDataTable> AvailableRecipes;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
+	TObjectPtr<UDataTable> DataTableHeroParts;
   UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Display")
   TObjectPtr<UDataTable> AttributesDisplayValues;
 

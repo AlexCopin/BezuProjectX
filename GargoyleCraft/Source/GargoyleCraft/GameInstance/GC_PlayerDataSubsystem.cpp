@@ -317,6 +317,86 @@ FTooltipData UGC_PlayerDataSubsystem::GetSimpleTooltip(FGameplayTag DataTag)
 		return ITooltipInterface::Execute_GetTooltip(GetResourceData(DataTag).PDA_Resource, this);
 	else if (DataTag.MatchesTag(MAKE_TAG("Consumable.Recipe")))
 		return ITooltipInterface::Execute_GetTooltip(GetRecipeData(DataTag), this);
+	else if (DataTag.MatchesTag(MAKE_TAG("Consumable.HeroPart")))
+		return ITooltipInterface::Execute_GetTooltip(GetHeroPartData(DataTag), this);
 
     return FTooltipData();
+}
+
+UPDA_HeroPart* UGC_PlayerDataSubsystem::GetHeroPartData(FGameplayTag HeroPartTag)
+{
+	if (!PlayerData.AvailableHeroParts.Find(HeroPartTag))
+		return nullptr;
+	if (ensure(GameData))
+	{
+		auto heroPartData = GameData->DataTableHeroParts->FindRow<FHeroPartData>(HeroPartTag.GetTagName(), "Context");
+		if (!heroPartData->IsAvailable)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("HeroPart not available"));
+			return nullptr;
+		}
+		return heroPartData->HeroPartData;
+	}
+	return nullptr;
+}
+
+int UGC_PlayerDataSubsystem::GetHeroPartNumberAvailable(FGameplayTag HeroPartTag)
+{
+	if (int* found = PlayerData.AvailableHeroParts.Find(HeroPartTag))
+		return *found;
+	return -1;
+}
+
+bool UGC_PlayerDataSubsystem::TryConstructHeroPart(FGameplayTag HeroPartTag)
+{
+	int partNum = GetHeroPartNumberAvailable(HeroPartTag);
+	if(0 < partNum)
+	{
+		auto heroPartData = GetHeroPartData(HeroPartTag);
+		if (!IsResourceSufficientForRecipe(heroPartData))
+			return false;
+
+		//Pay all resources
+		for (auto resource : heroPartData->ResourcesRequired)
+		{
+			PayResource(resource.Key, resource.Value);
+		}
+
+		PlayerData.AvailableHeroParts.Emplace(HeroPartTag, partNum - 1);
+		int* levelPart = PlayerData.UnlockedHeroParts.Find(HeroPartTag);
+		if (levelPart)
+			PlayerData.UnlockedHeroParts.Emplace(HeroPartTag, *levelPart + 1);
+		else
+			PlayerData.UnlockedHeroParts.Emplace(HeroPartTag, 1);
+
+		return true;
+	}
+	return false;
+}
+
+bool UGC_PlayerDataSubsystem::TryApplyHeroPart(FGameplayTag HeroPartTag)
+{
+	if (PlayerData.UnlockedHeroParts.Find(HeroPartTag))
+	{
+		if (HeroPartTag.MatchesTag(MAKE_TAG("Consumable.HeroPart.LeftArm"))) {
+			PlayerData.HeroData.CurrentLeftArm = HeroPartTag;
+		}else if (HeroPartTag.MatchesTag(MAKE_TAG("Consumable.HeroPart.RightArm"))) {
+			PlayerData.HeroData.CurrentRightArm = HeroPartTag;
+		}
+		else if (HeroPartTag.MatchesTag(MAKE_TAG("Consumable.HeroPart.Head"))) {
+			PlayerData.HeroData.CurrentHead = HeroPartTag;
+		}
+		else if (HeroPartTag.MatchesTag(MAKE_TAG("Consumable.HeroPart.Torso"))) {
+			PlayerData.HeroData.CurrentTorso = HeroPartTag;
+		}
+		else if (HeroPartTag.MatchesTag(MAKE_TAG("Consumable.HeroPart.Legs"))) {
+			PlayerData.HeroData.CurrentLegs = HeroPartTag;
+		}
+		else if (HeroPartTag.MatchesTag(MAKE_TAG("Consumable.HeroPart.Core"))) {
+			PlayerData.HeroData.CurrentCores.AddTag(HeroPartTag);
+		}
+		OnHeroUpdated.Broadcast(PlayerData.HeroData);
+	}
+
+	return false;
 }

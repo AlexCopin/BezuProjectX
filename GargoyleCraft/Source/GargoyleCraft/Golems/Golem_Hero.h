@@ -9,6 +9,22 @@ class AGolem_Hero : public AGolem
 {
     GENERATED_BODY()
 public:
+	AGolem_Hero();
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<USkeletalMeshComponent> LeftArmSkeletalMeshComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<USkeletalMeshComponent> RightArmSkeletalMeshComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<USkeletalMeshComponent> HeadSkeletalMeshComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<USkeletalMeshComponent> TorsoSkeletalMeshComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<USkeletalMeshComponent> LegsSkeletalMeshComponent;
+
+
+
 	virtual void Init_Implementation(UPDA_Golem* PDAGolem, FVector FirstTargetLocation) override;
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaSeconds) override;
