@@ -6,7 +6,7 @@
 #include "GargoyleCraft/Include/GC_Structs.h"
 #include "GC_GameInstance.h"
 #include "Subsystems/GameInstanceSubsystem.h"
-#include <GargoyleCraft/Craft/PDA_Blueprint.h>
+#include <GargoyleCraft/Craft/PDA_Recipe.h>
 #include "GC_PlayerDataSubsystem.generated.h"
 
 class UPDA_GameData;
@@ -72,20 +72,20 @@ public:
 
 	//-----------------RecipesBlueprints-------
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	TArray<UPDA_Blueprint*> GetAvailableRecipesFromGameData();
+	TArray<UPDA_Recipe*> GetAvailableRecipesFromGameData();
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	TArray<UPDA_Blueprint*> GetAvailableRecipesFromPlayerData();
+	TArray<UPDA_Recipe*> GetAvailableRecipesFromPlayerData();
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	UPDA_Blueprint* GetRecipeData(FGameplayTag RecipeTag);
+	UPDA_Recipe* GetRecipeData(FGameplayTag RecipeTag);
 
 	UFUNCTION(BlueprintCallable)
 	bool TryAddRecipeToPlayerData(FGameplayTag RecipeTag);
 	UFUNCTION(BlueprintCallable)
 	void ApplyRecipeOnGolem(AGolem* Golem);
 	UFUNCTION(BlueprintCallable)
-	bool TryConstructRecipe(FGameplayTag GolemType, UPDA_Blueprint* Recipe);
+	bool TryConstructRecipe(FGameplayTag GolemType, UPDA_Recipe* Recipe);
 	UFUNCTION(BlueprintCallable)
-	bool IsResourceSufficientForRecipe(UPDA_Blueprint* Recipe);
+	bool IsResourceSufficientForRecipe(UPDA_Recipe* Recipe);
 	//---------------------------------------------------
 
 	UFUNCTION(BlueprintCallable)

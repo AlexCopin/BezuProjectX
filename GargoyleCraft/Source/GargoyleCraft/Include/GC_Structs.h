@@ -2,7 +2,7 @@
 
 #include "GargoyleCraft/Golems/Data/PDA_Golem.h"
 #include "GargoyleCraft/Golems/Data/PDA_GolemArmy.h"
-#include <GargoyleCraft/Craft/PDA_Blueprint.h>
+#include <GargoyleCraft/Craft/PDA_Recipe.h>
 #include "GC_Structs.generated.h"
 
 class UGC_GameplayAbility;
@@ -106,7 +106,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FGameplayTag RecipeTag;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	TObjectPtr<UPDA_Blueprint> RecipeData;
+	TObjectPtr<UPDA_Recipe> RecipeData;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	bool IsAvailable;
 };

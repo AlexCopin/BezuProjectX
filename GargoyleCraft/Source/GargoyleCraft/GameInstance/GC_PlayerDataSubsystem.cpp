@@ -158,9 +158,9 @@ bool UGC_PlayerDataSubsystem::IsResourceSufficient(FGameplayTag ResourceTag, int
 
 
 
-TArray<UPDA_Blueprint*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromGameData()
+TArray<UPDA_Recipe*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromGameData()
 {
-	TArray<UPDA_Blueprint*> returnValue = {};
+	TArray<UPDA_Recipe*> returnValue = {};
 	if (ensure(GameData))
 	{
 		TArray<FRecipeData*> RecipeBaseDatas;
@@ -178,9 +178,9 @@ TArray<UPDA_Blueprint*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromGameData
 	return returnValue;
 }
 
-TArray<UPDA_Blueprint*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromPlayerData()
+TArray<UPDA_Recipe*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromPlayerData()
 {
-	TArray<UPDA_Blueprint*> returnValue = {};
+	TArray<UPDA_Recipe*> returnValue = {};
 	if (ensure(GameData))
 	{
 		for (auto tag : PlayerData.RecipeTagsUnlocked)
@@ -198,7 +198,7 @@ TArray<UPDA_Blueprint*> UGC_PlayerDataSubsystem::GetAvailableRecipesFromPlayerDa
 }
 
 
-UPDA_Blueprint* UGC_PlayerDataSubsystem::GetRecipeData(FGameplayTag RecipeTag)
+UPDA_Recipe* UGC_PlayerDataSubsystem::GetRecipeData(FGameplayTag RecipeTag)
 {
 	if (!PlayerData.RecipeTagsUnlocked.HasTagExact(RecipeTag))
 		return nullptr;
@@ -253,7 +253,7 @@ void UGC_PlayerDataSubsystem::ApplyRecipeOnGolem(AGolem* Golem)
 	}
 }
 
-bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Blueprint* Recipe)
+bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Recipe* Recipe)
 {
 	if(!Recipes.IsEmpty())
 	{
@@ -288,7 +288,7 @@ bool UGC_PlayerDataSubsystem::TryConstructRecipe(FGameplayTag GolemType, UPDA_Bl
 	return true;
 }
 
-bool UGC_PlayerDataSubsystem::IsResourceSufficientForRecipe(UPDA_Blueprint* Recipe)
+bool UGC_PlayerDataSubsystem::IsResourceSufficientForRecipe(UPDA_Recipe* Recipe)
 {
 	//Check resources quantity
 	for (auto resource : Recipe->ResourcesRequired)

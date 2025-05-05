@@ -1,8 +1,8 @@
-#include "PDA_Blueprint.h"
+#include "PDA_Recipe.h"
 #include <GargoyleCraft/GameInstance/GC_PlayerDataSubsystem.h>
 
 #define LOCTEXT_NAMESPACE "Recipe"
-FTooltipData UPDA_Blueprint::GetTooltip_Implementation(UObject* WorldContext)
+FTooltipData UPDA_Recipe::GetTooltip_Implementation(UObject* WorldContext)
 {
 	// Append with a space between
 	FTooltipData tempData = Super::GetTooltip_Implementation(WorldContext);

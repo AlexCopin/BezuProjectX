@@ -3,10 +3,10 @@
 #include "GargoyleCraft/DataAssets/PDA_Generic.h"
 #include "GargoyleCraft/DataAssets/PDA_Improvement.h"
 #include "GameplayTagContainer.h"
-#include "PDA_Blueprint.generated.h"
+#include "PDA_Recipe.generated.h"
 
 UCLASS()
-class GARGOYLECRAFT_API UPDA_Blueprint : public UPDA_Generic
+class GARGOYLECRAFT_API UPDA_Recipe : public UPDA_Generic
 {
 	GENERATED_BODY()
 public:

@@ -1,11 +1,11 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\unrealprojects\\0_bezuprojectx\\gargoylecraft\\plugins\\electronicnodes\\intermediate\\build\\win64\\unrealeditor\\inc\\electronicnodes\\uht\\electronicnodes.init.gen.cpp",
+        "Source": "c:\\alex\\perso\\gargoylecraft\\bezuprojectx\\gargoylecraft\\plugins\\electronicnodes\\intermediate\\build\\win64\\unrealeditor\\inc\\electronicnodes\\uht\\electronicnodes.init.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\unrealprojects\\0_bezuprojectx\\gargoylecraft\\intermediate\\build\\win64\\x64\\gargoylecrafteditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.novalfmtstr.valapi.cpp20.h.pch",
+        "PCH": "c:\\alex\\perso\\gargoylecraft\\bezuprojectx\\gargoylecraft\\intermediate\\build\\win64\\x64\\gargoylecrafteditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.novalfmtstr.valapi.cpp20.h.pch",
         "Includes": [
-            "d:\\unrealprojects\\0_bezuprojectx\\gargoylecraft\\plugins\\electronicnodes\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\electronicnodes\\definitions.electronicnodes.h"
+            "c:\\alex\\perso\\gargoylecraft\\bezuprojectx\\gargoylecraft\\plugins\\electronicnodes\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\electronicnodes\\definitions.electronicnodes.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
